@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="common.css">
+</head>
+
+<body>
+
+    <header class="navbar-wrapper" data-aos="fade-down" data-aos-duration="800">
+        <nav class="navbar-container">
+
+            <div class="nav-logo-section">
+                <a href="index.html">
+                    <img src="./asset/green1_logo.webp" alt="logo" class="logo"></a>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li class="mobile-close-btn" id="closeMobileMenu">
+                    <i class="fa-solid fa-xmark"></i>
+                </li>
+
+                <li>
+                    <a href="#" class="nav-item active" onclick="setActive(this)">
+                        <i class="fa-solid fa-house"></i> Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item" onclick="setActive(this)">
+                        <i class="fa-solid fa-star"></i> Features
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item" onclick="setActive(this)">
+                        <i class="fa-solid fa-lightbulb"></i> Solutions
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item" onclick="setActive(this)">
+                        <i class="fa-solid fa-blog"></i> Blog
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-item" onclick="setActive(this)">
+                        <i class="fa-solid fa-envelope"></i> Contact
+                    </a>
+                </li>
+
+                <li class="nav-actions-mobile-wrapper">
+                    <div class="nav-actions">
+                        <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
+                        <button class="get-started-btn" onclick="window.location.href='createaccount.html'">Get Started
+                            <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="hamburger" id="hamburgerMenu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+        </nav>
+    </header>
+
+    <section class="hero-section" id="hero">
+        <div class="hero-bg-glow"></div>
+
+        <div class="hero-container">
+            <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
+                <span class="badge">🚀 The Future of SaaS is Here</span>
+                <h1 class="hero-title">
+                    Build, Scale & Automate Your Business With <span class="highlight-text">Stackly</span>
+                </h1>
+
+                <div class="dynamic-features-wrapper">
+                    <div class="dynamic-feature active">
+                        <h3><i class="fa-solid fa-bullseye" style="color: #FF5F56;"></i> Marketing</h3>
+                        <p>Automate your campaigns, reach more customers, and track ROI in real-time with our smart
+                            tools.</p>
+                    </div>
+                    <div class="dynamic-feature">
+                        <h3><i class="fa-solid fa-headset" style="color: #FFBD2E;"></i> Support</h3>
+                        <p>Resolve customer queries 10x faster with AI-driven ticketing and automated response
+                            workflows.</p>
+                    </div>
+                    <div class="dynamic-feature">
+                        <h3><i class="fa-solid fa-chart-pie" style="color: #27C93F;"></i> Analytics</h3>
+                        <p>Get deep insights into your business growth with customizable dashboards and detailed
+                            reports.</p>
+                    </div>
+                </div>
+
+                <div class="hero-buttons">
+                    <button class="primary-btn">Start Free Trial <i class="fa-solid fa-arrow-right"></i></button>
+                    <button class="secondary-btn"><i class="fa-solid fa-play"></i> Watch Demo</button>
+                </div>
+            </div>
+
+            <div class="hero-visual" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+
+                <div class="dashboard-mockup">
+                    <div class="mockup-header">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                    </div>
+                    <div class="mockup-body">
+                        <div class="mockup-image-container">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+                                alt="Dashboard Analytics">
+                        </div>
+
+                        <div class="mockup-details">
+                            <div class="detail-title">Custom Workflow Pipeline</div>
+
+                            <div class="mockup-data">
+                                <p><i class="fa-solid fa-check-circle" style="color: #2EE59D;"></i> System data sync
+                                    completed.</p>
+                                <p><i class="fa-solid fa-spinner fa-spin" style="color: #FFBD2E;"></i> Processing 5,430
+                                    new events...</p>
+                                <!-- <p><i class="fa-solid fa-arrow-trend-up" style="color: #2EE59D;"></i> Conversion rate up by 12%.</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="floating-card card-top-left floating-anim-1">
+                    <i class="fa-solid fa-chart-line card-icon"></i>
+                    <div class="card-text">
+                        <h4>+150%</h4>
+                        <p>Revenue Growth</p>
+                    </div>
+                </div>
+
+                <div class="floating-card card-bottom-right floating-anim-2">
+                    <i class="fa-solid fa-users card-icon"></i>
+                    <div class="card-text">
+                        <h4>10k+</h4>
+                        <p>Active Users</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="brands-section" data-aos="fade-up" data-aos-duration="1000">
+        <div class="brands-container">
+            <p class="brands-title">Trusted By Growing Companies Worldwide</p>
+
+            <div class="brands-marquee-strip">
+                <div class="marquee-track">
+
+                    <div class="logo-item"><i class="fa-brands fa-aws"></i> AWS</div>
+                    <div class="logo-item"><i class="fa-brands fa-google"></i> Google</div>
+                    <div class="logo-item"><i class="fa-brands fa-microsoft"></i> Microsoft</div>
+                    <div class="logo-item"><i class="fa-brands fa-slack"></i> Slack</div>
+                    <div class="logo-item"><i class="fa-brands fa-figma"></i> Figma</div>
+                    <div class="logo-item"><i class="fa-brands fa-stripe"></i> Stripe</div>
+
+                    <div class="logo-item"><i class="fa-brands fa-aws"></i> AWS</div>
+                    <div class="logo-item"><i class="fa-brands fa-google"></i> Google</div>
+                    <div class="logo-item"><i class="fa-brands fa-microsoft"></i> Microsoft</div>
+                    <div class="logo-item"><i class="fa-brands fa-slack"></i> Slack</div>
+                    <div class="logo-item"><i class="fa-brands fa-figma"></i> Figma</div>
+                    <div class="logo-item"><i class="fa-brands fa-stripe"></i> Stripe</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sticky-features-section" id="why-choose">
+        <div class="sticky-container">
+
+            <div class="sticky-left">
+                <div class="sticky-content-wrapper">
+                    <span class="badge">Why Stackly?</span>
+                    <h2 class="section-title">Built for <span class="highlight-text">Performance</span></h2>
+                    <p class="section-subtitle">We build tools that adapt to your workflow. See why top teams rely on
+                        Stackly to scale their business.</p>
+
+                    <div class="sticky-visual" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="glass-mockup">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+                                alt="Dashboard View">
+                            <div class="floating-badge bottom-right">
+                                <i class="fa-solid fa-bolt" style="color: #FFBD2E;"></i> Ultra Fast
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scrolling-right">
+
+                <div class="feature-scroll-card" data-aos="fade-up" data-aos-duration="800">
+                    <div class="feature-icon"><i class="fa-solid fa-users-gear"></i></div>
+                    <h3>Real-Time Collaboration</h3>
+                    <p>Bring your entire team together in one unified workspace. Share files, assign tasks, and
+                        communicate without constantly switching apps.</p>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check" style="color: var(--primary-green);"></i> Live document editing
+                        </li>
+                        <li><i class="fa-solid fa-check" style="color: var(--primary-green);"></i> Instant team
+                            messaging</li>
+                    </ul>
+                </div>
+
+                <div class="feature-scroll-card" data-aos="fade-up" data-aos-duration="800">
+                    <div class="feature-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h3>Advanced Data Analytics</h3>
+                    <p>Stop guessing and start making data-driven decisions. Our powerful analytics engine provides deep
+                        insights into your business metrics.</p>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check" style="color: var(--primary-green);"></i> Customizable
+                            dashboards</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--primary-green);"></i> Automated weekly
+                            reports</li>
+                    </ul>
+                </div>
+
+                <div class="feature-scroll-card" data-aos="fade-up" data-aos-duration="800">
+                    <div class="feature-icon"><i class="fa-solid fa-layer-group"></i></div>
+                    <h3>Seamless Integrations</h3>
+                    <p>Connect Stackly with the tools you already use and love. Automate data flow across your entire
+                        tech stack effortlessly.</p>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check" style="color: var(--primary-green);"></i> One-click Slack &
+                            Google sync</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--primary-green);"></i> Open REST API support
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="feature-scroll-card" data-aos="fade-up" data-aos-duration="800">
+                    <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Enterprise-Grade Security</h3>
+                    <p>Keep your business data safe with our industry-leading security protocols. We prioritize your
+                        privacy above everything else.</p>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check" style="color: var(--primary-green);"></i> End-to-end data
+                            encryption</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--primary-green);"></i> Role-based access
+                            controls</li>
+                    </ul>
+                </div>
+
+                <div class="feature-scroll-card" data-aos="fade-up" data-aos-duration="800">
+                    <div class="feature-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <h3>AI-Powered Automation</h3>
+                    <p>Put repetitive tasks on autopilot. Let our smart AI handle the heavy lifting so your team can
+                        focus on growth.</p>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check" style="color: var(--primary-green);"></i> Smart task routing
+                        </li>
+                        <li><i class="fa-solid fa-check" style="color: var(--primary-green);"></i> AI email
+                            auto-responses</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="features-showcase-section" id="features">
+        <div class="bento-container">
+
+            <div class="section-header" data-aos="fade-up" data-aos-duration="800">
+                <span class="badge">Features Showcase</span>
+                <h2 class="section-title">Everything You Need In <span class="highlight-text">One Platform</span></h2>
+                <p class="section-subtitle">No more fragmented tools. Stackly brings your entire operation into a
+                    beautifully unified command center.</p>
+            </div>
+
+            <div class="bento-grid">
+
+                <div class="bento-card bento-large-featured" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="bento-glow-glow"></div>
+                    <div class="bento-card-content">
+                        <div class="bento-icon"><i class="fa-solid fa-chart-column"></i></div>
+                        <div class="bento-text-group">
+                            <span class="bento-tag text-green">Most Powerful</span>
+                            <h3>Advanced Custom Analytics Command Center</h3>
+                            <p>Track metrics, build custom database funnels, monitor user behavior pattern structures,
+                                and generate automated real-time performance financial models instantly.</p>
+                        </div>
+                        <div class="bento-visual-mini">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+                                alt="Advanced Analytics Dashboard">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card bento-medium" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="bento-glow-glow"></div>
+                    <div class="bento-card-content">
+                        <div class="bento-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+                        <div class="bento-text-group">
+                            <h3>Lightning Automated Actions</h3>
+                            <p>Trigger instant webhooks, sync 3rd party cross-platform databases, and schedule cron jobs
+                                without code execution latency.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card bento-small" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <div class="bento-glow-glow"></div>
+                    <div class="bento-card-content">
+                        <div class="bento-icon icon-blue"><i class="fa-solid fa-lock"></i></div>
+                        <h3>Bank-Grade Security</h3>
+                        <p>End-to-end data AES-256 database protection model workflows.</p>
+                    </div>
+                </div>
+
+                <div class="bento-card bento-small" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="bento-glow-glow"></div>
+                    <div class="bento-card-content">
+                        <div class="bento-icon icon-yellow"><i class="fa-solid fa-code-fork"></i></div>
+                        <h3>Open API Framework</h3>
+                        <p>Connect core backend systems with flexible documentation nodes.</p>
+                    </div>
+                </div>
+
+                <div class="bento-card bento-medium-wide" data-aos="fade-up" data-aos-duration="1000"
+                    data-aos-delay="300">
+                    <div class="bento-glow-glow"></div>
+                    <div class="bento-card-content">
+                        <div class="bento-icon icon-purple"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <div class="bento-text-group">
+                            <h3>Next-Gen Smart AI Copilot Integration</h3>
+                            <p>Predict growth bottlenecks, auto-draft task priority logic, and resolve system anomalies
+                                dynamically inside your team workspace.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="walkthrough-section" id="walkthrough">
+        <div class="walkthrough-container">
+
+            <div class="section-header" data-aos="fade-up" data-aos-duration="800">
+                <span class="badge">Product Walkthrough</span>
+                <h2 class="section-title">See How <span class="highlight-text">Stackly Works</span></h2>
+                <p class="section-subtitle">Get your system up and running in less than 10 minutes. Five simple steps to
+                    total business automation.</p>
+            </div>
+
+            <div class="timeline-wrapper">
+                <div class="timeline-line"></div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="timeline-dot"><i class="fa-solid fa-plug"></i></div>
+                    <div class="timeline-content left">
+                        <span class="step-number">Step 01</span>
+                        <h3>Connect Your Data Sources</h3>
+                        <p>One-click integrations to securely link your existing cloud databases, customer sheets, and
+                            workspace platforms into Stackly's core framework.</p>
+                        <div class="step-badge"><i class="fa-solid fa-shield-halved"></i> Secured Link</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="timeline-dot"><i class="fa-solid fa-sliders"></i></div>
+                    <div class="timeline-content right">
+                        <span class="step-number">Step 02</span>
+                        <h3>Configure Smart Workflows</h3>
+                        <p>Use our visual drag-and-drop builder to model business priority routing, set conditional
+                            logic, and activate background triggers seamlessly.</p>
+                        <div class="step-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> No Code Required</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="timeline-dot"><i class="fa-solid fa-database"></i></div>
+                    <div class="timeline-content left">
+                        <span class="step-number">Step 03</span>
+                        <h3>Map Your Data Fields</h3>
+                        <p>Clearly define how data fields from your sources correspond to fields in your workflows,
+                            ensuring accurate data flow and zero processing errors.</p>
+                        <div class="step-badge"><i class="fa-solid fa-map-location-dot"></i> Data Alignment</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="timeline-dot"><i class="fa-solid fa-vials"></i></div>
+                    <div class="timeline-content right">
+                        <span class="step-number">Step 04</span>
+                        <h3>Test Your Automations</h3>
+                        <p>Run instant simulations and perform testing to identify and resolve any bottleneck issues in
+                            your workflows before deploying live.</p>
+                        <div class="step-badge"><i class="fa-solid fa-bug-slash"></i> QA Certified</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="timeline-dot"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="timeline-content left">
+                        <span class="step-number">Step 05</span>
+                        <h3>Automate & Scale Instantly</h3>
+                        <p>Watch your business execution latency drop to zero. Monitor automated data flows, live sync
+                            activities, and real-time report analytics automatically.</p>
+                        <div class="step-badge"><i class="fa-solid fa-bolt"></i> Live Execution</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="metrics-section" id="metrics">
+        <div class="metrics-container">
+
+            <div class="section-header" data-aos="fade-up" data-aos-duration="800">
+                <span class="badge">Success Metrics</span>
+                <h2 class="section-title">Numbers That Drive <span class="highlight-text">Confidence</span></h2>
+                <p class="section-subtitle">Our global infrastructure expands daily to deliver unmatched reliability and
+                    performance at scale.</p>
+            </div>
+
+            <div class="metrics-grid">
+
+                <div class="metric-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <div class="metric-cover-image">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
+                            alt="Global Teams Group">
+                        <div class="image-overlay-title"><i class="fa-solid fa-users"></i> Global Users</div>
+                    </div>
+                    <div class="metric-hover-content">
+                        <div class="metric-icon"><i class="fa-solid fa-users"></i></div>
+                        <div class="metric-number-wrapper">
+                            <span class="counter" data-target="50">0</span><span class="suffix">K+</span>
+                        </div>
+                        <h3>Active Global Users</h3>
+                        <p>Teams relying on Stackly every single day to scale operations.</p>
+                    </div>
+                </div>
+
+                <div class="metric-card card-highlighted" data-aos="fade-up" data-aos-duration="1000"
+                    data-aos-delay="200">
+                    <div class="metric-cover-image">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
+                            alt="Server Infrastructure">
+                        <div class="image-overlay-title"><i class="fa-solid fa-bolt"></i> System Uptime</div>
+                    </div>
+                    <div class="metric-hover-content">
+                        <div class="circular-progress-box">
+                            <svg class="progress-ring" width="80" height="80">
+                                <circle class="progress-ring-bg" cx="40" cy="40" r="34" />
+                                <circle class="progress-ring-circle" cx="40" cy="40" r="34" />
+                            </svg>
+                            <div class="circular-inner-text"><i class="fa-solid fa-bolt"></i></div>
+                        </div>
+                        <div class="metric-number-wrapper">
+                            <span class="counter" data-target="99">0</span><span class="decimals">.9%</span>
+                        </div>
+                        <h3>Platform Uptime</h3>
+                        <p>Enterprise-grade server reliability guaranteed around the clock.</p>
+                    </div>
+                </div>
+
+                <div class="metric-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                    <div class="metric-cover-image">
+                        <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=2033&auto=format&fit=crop"
+                            alt="World Connectivity Map">
+                        <div class="image-overlay-title"><i class="fa-solid fa-earth-americas"></i> Coverage</div>
+                    </div>
+                    <div class="metric-hover-content">
+                        <div class="metric-icon"><i class="fa-solid fa-earth-americas"></i></div>
+                        <div class="metric-number-wrapper">
+                            <span class="counter" data-target="120">0</span><span class="suffix">+</span>
+                        </div>
+                        <h3>Countries Reached</h3>
+                        <p>International corporate network implementations and global edge nodes.</p>
+                    </div>
+                </div>
+
+                <div class="metric-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <div class="metric-cover-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
+                            alt="Automation Graphs">
+                        <div class="image-overlay-title"><i class="fa-solid fa-square-check"></i> Automations</div>
+                    </div>
+                    <div class="metric-hover-content">
+                        <div class="metric-icon"><i class="fa-solid fa-square-check"></i></div>
+                        <div class="metric-number-wrapper">
+                            <span class="counter" data-target="10">0</span><span class="suffix">M+</span>
+                        </div>
+                        <h3>Tasks Automated</h3>
+                        <p>Repetitive business operational background actions completely eliminated.</p>
+                    </div>
+                </div>
+
+                <div class="metric-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="metric-cover-image">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop"
+                            alt="Happy Customers">
+                        <div class="image-overlay-title"><i class="fa-solid fa-face-smile"></i> Satisfaction</div>
+                    </div>
+                    <div class="metric-hover-content">
+                        <div class="metric-icon"><i class="fa-solid fa-face-smile"></i></div>
+                        <div class="metric-number-wrapper">
+                            <span class="counter" data-target="98">0</span><span class="suffix">%</span>
+                        </div>
+                        <h3>Customer CSAT</h3>
+                        <p>Industry-leading customer retention support happiness index tracking.</p>
+                    </div>
+                </div>
+
+                <div class="metric-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                    <div class="metric-cover-image">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2064&auto=format&fit=crop"
+                            alt="Abstract Code Speed">
+                        <div class="image-overlay-title"><i class="fa-solid fa-gauge-high"></i> Core Speed</div>
+                    </div>
+                    <div class="metric-hover-content">
+                        <div class="metric-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                        <div class="metric-number-wrapper">
+                            <span class="counter" data-target="14">0</span><span class="suffix">ms</span>
+                        </div>
+                        <h3>API Latency</h3>
+                        <p>Blazing fast data integration response engine across cloud databases.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="testimonials-slider-section" id="testimonials">
+        <div class="slider-container-wrapper">
+
+            <div class="section-header" data-aos="fade-up" data-aos-duration="800">
+                <span class="badge">Customer Stories</span>
+                <h2 class="section-title">Real Teams. <span class="highlight-text">Real Results.</span></h2>
+                <p class="section-subtitle">Discover how fast-growing companies scale their business operations
+                    effortlessly with Stackly.</p>
+            </div>
+
+            <div class="stacked-carousel-stage">
+                <div class="stacked-carousel-track" id="stackedTrack">
+
+                    <div class="stacked-card-slide" onclick="snapToSlide(0)">
+                        <div class="glass-slider-card">
+                            <div class="card-top-identity">
+                                <div class="profile-image-frame">
+                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop"
+                                        alt="Sarah J.">
+                                </div>
+                                <div class="client-title-meta">
+                                    <h4>Sarah Jenkins</h4>
+                                    <p>@sarah_eng_dev</p>
+                                </div>
+                                <div class="quote-graphic-mark"><i class="fa-solid fa-quote-right"></i></div>
+                            </div>
+                            <div class="star-rating">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="client-quote">"Stackly slashed our internal workflow execution latency to near
+                                zero. Setting up deep core multi-platform sync loops took us less than 10 minutes."</p>
+                        </div>
+                    </div>
+
+                    <div class="stacked-card-slide" onclick="snapToSlide(1)">
+                        <div class="glass-slider-card">
+                            <div class="card-top-identity">
+                                <div class="profile-image-frame">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop"
+                                        alt="Alex R.">
+                                </div>
+                                <div class="client-title-meta">
+                                    <h4>Alex Rivera</h4>
+                                    <p>@alex_rivera_cto</p>
+                                </div>
+                                <div class="quote-graphic-mark"><i class="fa-solid fa-quote-right"></i></div>
+                            </div>
+                            <div class="star-rating">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="client-quote">"The Bento Grid custom analytics center inside Stackly completely
+                                transformed how our product teams track data. Out-of-the-box system security is
+                                phenomenal."</p>
+                        </div>
+                    </div>
+
+                    <div class="stacked-card-slide" onclick="snapToSlide(2)">
+                        <div class="glass-slider-card">
+                            <div class="card-top-identity">
+                                <div class="profile-image-frame">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop"
+                                        alt="Elena R.">
+                                </div>
+                                <div class="client-title-meta">
+                                    <h4>Elena Rostova</h4>
+                                    <p>@elena_growth_lead</p>
+                                </div>
+                                <div class="quote-graphic-mark"><i class="fa-solid fa-quote-right"></i></div>
+                            </div>
+                            <div class="star-rating">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="client-quote">"We were struggling with data pipelines breakages across marketing
+                                suites until we mapped fields into Stackly. The AI handles background triggers
+                                flawlessly."</p>
+                        </div>
+                    </div>
+
+                    <div class="stacked-card-slide" onclick="snapToSlide(3)">
+                        <div class="glass-slider-card">
+                            <div class="card-top-identity">
+                                <div class="profile-image-frame">
+                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop"
+                                        alt="David K.">
+                                </div>
+                                <div class="client-title-meta">
+                                    <h4>David Kendrick</h4>
+                                    <p>@david_k_cloud</p>
+                                </div>
+                                <div class="quote-graphic-mark"><i class="fa-solid fa-quote-right"></i></div>
+                            </div>
+                            <div class="star-rating">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="client-quote">"Enterprise security protocols alignment configurations are highly
+                                complex, but Stackly made implementation seamless. Latency dropped down to 14ms
+                                instantly."</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="slider-action-controls">
+                    <button class="arrow-nav-btn" id="prevCardBtn"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="arrow-nav-btn" id="nextCardBtn"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="integrations-section" id="integrations">
+        <div class="integrations-container">
+
+            <div class="section-header" data-aos="fade-up" data-aos-duration="800">
+                <span class="badge">Integrations Hub</span>
+                <h2 class="section-title">Connect All Your <span class="highlight-text">Favorite Tools</span></h2>
+                <p class="section-subtitle">Hover over any platform logo to preview how Stackly securely orchestrates
+                    data pipelines in real-time.</p>
+            </div>
+
+            <div class="orbit-theater-stage" data-aos="zoom-in" data-aos-duration="1000">
+
+                <div class="orbit-center-core">
+                    <div class="core-logo-glow"></div>
+                    <div class="core-logo-badge">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                </div>
+
+                <div class="orbit-ring inner-ring">
+
+                    <div class="floating-app-wrapper app-notion">
+                        <div class="app-icon-inner">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/notion/notion-original.svg"
+                                alt="Notion">
+                        </div>
+                        <div class="app-hover-preview-card">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=400&auto=format&fit=crop"
+                                class="preview-card-img" alt="Notion Docs">
+                            <div class="preview-card-body">
+                                <h4>Notion Core Sync</h4>
+                                <p>Automate document generation, sync table databases, and update tasks instantly.</p>
+                                <span class="preview-tag">Database Sync</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="floating-app-wrapper app-github">
+                        <div class="app-icon-inner">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                                alt="GitHub" class="invert-img">
+                        </div>
+                        <div class="app-hover-preview-card">
+                            <img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=400&auto=format&fit=crop"
+                                class="preview-card-img" alt="GitHub Operations">
+                            <div class="preview-card-body">
+                                <h4>GitHub Devops Loop</h4>
+                                <p>Trigger webhooks on push events and automate repository synchronization metrics.</p>
+                                <span class="preview-tag">CI/CD Trigger</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="orbit-ring outer-ring">
+
+                    <div class="floating-app-wrapper app-slack">
+                        <div class="app-icon-inner">
+                            <img src="https://img.icons8.com/color/48/slack-new.png" alt="Slack">
+                        </div>
+                        <div class="app-hover-preview-card">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=400&auto=format&fit=crop"
+                                class="preview-card-img" alt="Slack Channels">
+                            <div class="preview-card-body">
+                                <h4>Slack Instant Alerts</h4>
+                                <p>Stream automated workflow updates and critical latency error logs to channels.</p>
+                                <span class="preview-tag">Notifications</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="floating-app-wrapper app-zoom">
+                        <div class="app-icon-inner">
+                            <img src="https://img.icons8.com/color/48/zoom.png" alt="Zoom">
+                        </div>
+                        <div class="app-hover-preview-card">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=400&auto=format&fit=crop"
+                                class="preview-card-img" alt="Zoom Sync">
+                            <div class="preview-card-body">
+                                <h4>Zoom API Gateway</h4>
+                                <p>Schedule secure workspace calls and process automatic report generation lists.</p>
+                                <span class="preview-tag">Webinars Sync</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="floating-app-wrapper app-gdrive">
+                        <div class="app-icon-inner">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+                                alt="Google Drive">
+                        </div>
+                        <div class="app-hover-preview-card">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop"
+                                class="preview-card-img" alt="Google Cloud">
+                            <div class="preview-card-body">
+                                <h4>Google Assets Flow</h4>
+                                <p>Link spreadsheet logs securely and archive documents automatically at zero lag.</p>
+                                <span class="preview-tag">Cloud Storage</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="faq-section" id="faq">
+        <div class="faq-container">
+
+            <div class="section-header" data-aos="fade-up" data-aos-duration="800">
+                <span class="badge">FAQ Support</span>
+                <h2 class="section-title">Questions? <span class="highlight-text">We've Got Answers</span></h2>
+                <p class="section-subtitle">Everything you need to know about Stackly's platform capabilities, data
+                    security setups, and workflow pricing matrices.</p>
+            </div>
+
+            <div class="faq-accordion-wrapper">
+
+                <div class="faq-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <button class="faq-question-btn">
+                        <span>How secure is my data transition loop with Stackly?</span>
+                        <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer-panel">
+                        <div class="faq-answer-inner">
+                            <p>We implement enterprise-grade bank-level encryption layers both at rest and during
+                                transit. Stackly securely links workspace channels through standard OAuth protocols,
+                                ensuring your internal databases tracking variables are 100% isolated and encrypted.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <button class="faq-question-btn">
+                        <span>Can I map custom database fields without any coding skills?</span>
+                        <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer-panel">
+                        <div class="faq-answer-inner">
+                            <p>Absolutely! Stackly features an intuitive drag-and-drop workflow mapper. You can connect,
+                                align, and sync uneven data properties fields across different third-party apps
+                                completely visually, with zero code deployment requirements.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                    <button class="faq-question-btn">
+                        <span>What happens if an automated background trigger logic breaks down?</span>
+                        <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer-panel">
+                        <div class="faq-answer-inner">
+                            <p>Stackly has a built-in automated smart retry mechanism. If an external API endpoints
+                                pipeline latency causes a timeout failure, our server queues the logs securely and
+                                attempts automatic data mapping sync loops recovery while logging reports straight to
+                                your dev dashboards.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <button class="faq-question-btn">
+                        <span>Is there an API implementation latency delay cap?</span>
+                        <span class="faq-toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="faq-answer-panel">
+                        <div class="faq-answer-inner">
+                            <p>No, our cloud clusters utilize premium optimized edge networks synchronization
+                                structures. Our baseline internal infrastructure routing delivers a blazing fast 14ms
+                                response engine, allowing near zero-latency real-time workspace actions automation at
+                                scale.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="workspace-showcase-section" id="workspace-hub">
+        <div class="workspace-showcase-container">
+
+            <div class="section-header" data-aos="fade-up" data-aos-duration="800">
+                <span class="badge">Ecosystem Hub</span>
+                <h2 class="section-title">Experience Your <span class="highlight-text">Future Workspace</span></h2>
+                <p class="section-subtitle">Discover how Stackly brings your projects, teams, data, and workflows
+                    together in one intelligent platform designed to help your business grow faster.</p>
+            </div>
+
+            <div class="workspace-bento-grid">
+
+                <div class="bento-wing-column left-wing">
+
+                    <div class="bento-showcase-card" data-aos="fade-right" data-aos-delay="100">
+                        <div class="card-image-slot">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop"
+                                alt="Real-Time Business Insights">
+                        </div>
+                        <div class="card-text-slot">
+                            <div class="card-icon-accent"><i class="fa-solid fa-chart-line"></i></div>
+                            <h3>Real-Time Business Insights</h3>
+                            <p>Track performance, monitor team productivity, and make data-driven decisions with
+                                powerful analytics dashboards updated in real time.</p>
+                        </div>
+                    </div>
+
+                    <div class="bento-showcase-card" data-aos="fade-right" data-aos-delay="200">
+                        <div class="card-image-slot">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop"
+                                alt="Seamless Team Collaboration">
+                        </div>
+                        <div class="card-text-slot">
+                            <div class="card-icon-accent"><i class="fa-solid fa-user-group"></i></div>
+                            <h3>Seamless Team Collaboration</h3>
+                            <p>Keep everyone aligned with shared workspaces, instant communication, file sharing, and
+                                project updates—all from a single platform.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-center-hub-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="center-preview-window">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop"
+                            alt="Stackly Unified Dashboard">
+                        <div class="center-glow-overlay"></div>
+                    </div>
+                    <div class="center-text-footer">
+                        <h3>Everything Connected In One Workspace</h3>
+                        <p>From collaboration and task management to analytics and automation, Stackly provides a
+                            unified environment where teams can work smarter, faster, and more effectively.</p>
+                    </div>
+
+                    <div class="bento-mini-stats-grid">
+                        <div class="mini-stat-node zoom-card">
+                            <h4>98%</h4>
+                            <p>Customer Satisfaction</p>
+                        </div>
+                        <div class="mini-stat-node zoom-card">
+                            <h4>50K+</h4>
+                            <p>Active Users</p>
+                        </div>
+                        <div class="mini-stat-node zoom-card">
+                            <h4>10M+</h4>
+                            <p>Tasks Managed</p>
+                        </div>
+                        <div class="mini-stat-node zoom-card">
+                            <h4>99.9%</h4>
+                            <p>Platform Uptime</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-wing-column right-wing">
+
+                    <div class="bento-showcase-card" data-aos="fade-left" data-aos-delay="100">
+                        <div class="card-image-slot">
+                            <img src="https://images.unsplash.com/photo-1542744094-3a31f103e35f?q=80&w=600&auto=format&fit=crop"
+                                alt="Smart Project Management">
+                        </div>
+                        <div class="card-text-slot">
+                            <div class="card-icon-accent"><i class="fa-solid fa-list-check"></i></div>
+                            <h3>Smart Project Management</h3>
+                            <p>Plan, organize, and deliver projects efficiently with automated workflows, progress
+                                tracking, and deadline management tools.</p>
+                        </div>
+                    </div>
+
+                    <div class="bento-showcase-card" data-aos="fade-left" data-aos-delay="200">
+                        <div class="card-image-slot">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop"
+                                alt="AI-Powered Automation">
+                        </div>
+                        <div class="card-text-slot">
+                            <div class="card-icon-accent"><i class="fa-solid fa-robot"></i></div>
+                            <h3>AI-Powered Automation</h3>
+                            <p>Reduce manual work and improve efficiency with intelligent automation that handles
+                                repetitive tasks and streamlines business operations.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="workspace-bottom-banner" data-aos="fade-up" data-aos-duration="800">
+                <p>Empower your team with a modern workspace built for productivity, collaboration, and sustainable
+                    business growth. Stackly helps you focus on what matters most while we simplify the rest. 🚀</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="cta-premium-section" id="cta-hub">
+        <div class="particles-container">
+            <div class="particle p-1"></div>
+            <div class="particle p-2"></div>
+            <div class="particle p-3"></div>
+            <div class="particle p-4"></div>
+        </div>
+
+        <div class="cta-premium-container">
+            <div class="cta-glow-card" data-aos="zoom-in-up" data-aos-duration="1000">
+                <div class="cta-mesh-glow-overlay"></div>
+
+                <div class="cta-content-wrapper">
+                    <span class="badge" data-aos="fade-down" data-aos-delay="200">Get Started Instantly</span>
+                    <h2 class="cta-title" data-aos="fade-up" data-aos-delay="300">Ready To Transform <br><span
+                            class="highlight-text">Your Workflow?</span></h2>
+                    <p class="cta-subtitle" data-aos="fade-up" data-aos-delay="400">Start your 14-day free trial today
+                        and experience a smarter, blazing fast way to manage your business databases and multi-platform
+                        automation pipelines. No credit card required.</p>
+
+                    <div class="cta-action-buttons-group" data-aos="fade-up" data-aos-delay="500">
+                        <a href="#" class="primary-cta-btn">Get Started Free <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#" class="secondary-cta-btn"><i class="fa-solid fa-calendar-days"></i> Book Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-top">
+                <div class="footer-brand" data-aos="fade-up" data-aos-delay="100">
+                    <div class="logo">
+                        <img src="./asset/green1_logo.webp" alt="Stackly Logo" class="footer-logo-img">
+                    </div>
+                    <p class="brand-desc">
+                        "Empowering startups and teams to scale faster. Streamline your workflows, boost productivity,
+                        and build the future with our all-in-one platform."
+                    </p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links-wrapper" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="footer-heading">Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Service</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-support" data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="support-info">
+                        <li>
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>support@stackly.learning</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Salem City, Tamil Nadu</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+91 98765 43210</span>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-clock"></i>
+                            <span>Mon - Fri: 9 AM - 6 PM</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-globe"></i>
+                            <span>www.stackly.learning</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-newsletter" data-aos="fade-up" data-aos-delay="400">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <p class="newsletter-desc">
+                        "Don't miss out! Join our newsletter to receive early access to new features, premium courses,
+                        and special offers directly in your inbox."</p>
+                    <form class="newsletter-form" id="newsletterForm" novalidate>
+                        <div class="newsletter-input-group">
+                            <input type="email" id="nlEmailInput" class="newsletter-input"
+                                placeholder="Enter student email" required>
+                            <button type="submit" class="newsletter-btn" id="nlBtn">JOIN</button>
+                        </div>
+                        <div id="nlMessage" class="form-message"></div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">© 2026 Stackly Learning. All rights reserved.</p>
+                <div class="bottom-links">
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">Refund Policy</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

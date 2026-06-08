@@ -1,0 +1,602 @@
+/* ========================================== */
+/* style.css */
+/* ========================================== */
+
+/* Color Palette Variables - Dark SaaS Theme */
+:root {
+    --primary-violet: #FFFFFF;
+    --dark-violet: #2EE59D;
+    --light-violet: #26164A;
+    --primary-green: #2EE59D;
+    --dark-green-hover: #22C583;
+    
+    --bg-color: #160A2E; /* Deep Dark Violet */
+    --text-dark: #FFFFFF;
+    --text-secondary: #B1A5CD;
+    --border-color: rgba(46, 229, 157, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color); 
+}
+
+/* Prevent scroll when menu is open */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* --- Navbar Wrapper --- */
+.navbar-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 1000;
+    transition: all 0.4s ease-in-out;
+}
+
+.navbar-wrapper.scrolled {
+    padding: 10px 20px;
+}
+
+
+.navbar-wrapper.scrolled .navbar-container {
+    background: rgba(22, 10, 46, 0.85); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(46, 229, 157, 0.1); 
+    border: 1px solid var(--border-color);
+}
+
+/* --- Navbar Container --- */
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 90px;
+    background: var(--light-violet); 
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2); 
+    border: 1px solid var(--border-color);
+    transition: all 0.4s ease;
+}
+
+/* --- Logo Section --- */
+/* --- Logo Section --- */
+.nav-logo-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001; /* Mobile menu overlay-ku mela theriya */
+}
+
+.nav-logo-section a {
+    text-decoration: none; /* Link underline-a remove panna */
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 35px; /* Unga thevaikku yetpa idhai mathikonga (e.g., 40px, 50px) */
+    width: auto; /* Aspect ratio-a maintain panna */
+    object-fit: contain; /* Image stretch aagama irukka */
+    transition: transform 0.3s ease; /* Hover aagum pothu smooth-a vara */
+    cursor: pointer;
+}
+
+/* Logo Hover Effect (Optional) */
+.logo:hover {
+    transform: scale(1.05); /* Hover pannum pothu light-a perusaaga */
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .logo {
+        height: 35px; /* Mobile-la konjam chinna size-la theriya */
+    }
+}
+
+.tagline {
+    font-size: 11px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+/* --- Navigation Links --- */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+    /* margin-right: 40px; */
+}
+
+.nav-item {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-dark);
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-item i {
+    font-size: 14px;
+    color: var(--primary-violet); 
+    transition: all 0.3s ease;
+}
+
+/* Hover State */
+.nav-item:hover {
+    color: var(--primary-green); 
+    background-color: rgba(46, 229, 157, 0.1); /* Light green background glow */
+}
+
+.nav-item:hover i {
+    color: var(--primary-green); 
+}
+
+.nav-item.active {
+    background-color: var(--primary-violet);
+    color: var(--bg-color); 
+}
+
+.nav-item.active i {
+    color: var(--primary-green); 
+}
+
+/* --- Action Buttons --- */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.login-btn {
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-violet);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.login-btn:hover {
+    color: var(--dark-violet); 
+}
+
+.get-started-btn {
+    background-color: var(--primary-green); 
+    color: #000000; 
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(46, 229, 157, 0.3); 
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.get-started-btn:hover {
+    background-color: var(--dark-green-hover);
+    color: #000000; 
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(46, 229, 157, 0.5);
+}
+
+/* Hide mobile elements on desktop */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    color: var(--primary-violet);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 1002;
+}
+
+.mobile-close-btn {
+    display: none;
+}
+
+/* --- Responsive Styles (Mobile Full Screen Menu) --- */
+@media (max-width: 992px) {
+    .nav-links {
+        gap: 10px;
+    }
+    .nav-item {
+        padding: 8px 12px;
+        font-size: 15px;
+    }
+}
+
+/* Update your media query in style.css */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    /* Full Screen Side Menu styling */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -200%; /* Start hidden off-screen */
+        width: 100%; /* 100% Full Screen Width */
+        height: 100vh; /* 100% Full Screen Height */
+        background: var(--bg-color); 
+        flex-direction: column;
+        align-items: center; /* Center horizontally */
+        
+        /* FIX FOR SCROLLING & ALIGNMENT */
+        justify-content: flex-start; /* Start from top instead of center */
+        padding: 80px 20px 40px; /* Top padding space for close button */
+        overflow-y: auto; /* Enable vertical scrolling */
+        
+        transition: right 0.4s ease-in-out;
+        z-index: 2000; 
+    }
+
+    .nav-links.mobile-active {
+        right: 0; 
+    }
+
+    /* FIX FOR CLOSE BUTTON */
+    .mobile-close-btn {
+        display: block;
+        position: absolute;
+        top: 25px; /* Fixed distance from top */
+        right: 30px; /* Fixed distance from right */
+        font-size: 32px;
+        color: var(--primary-violet);
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        z-index: 2001; /* Ensure it stays above links */
+        background: var(--bg-color); /* Add bg to prevent overlap issues */
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .mobile-close-btn:hover {
+        transform: scale(1.1);
+        color: var(--primary-green);
+    }
+
+    .nav-item {
+        width: auto;
+        font-size: 20px;
+        padding: 15px 30px;
+        margin-bottom: 15px;
+        justify-content: center;
+    }
+
+    /* Action buttons in mobile menu */
+    .nav-actions-mobile-wrapper {
+        width: 80%;
+        max-width: 300px;
+        margin-top: 20px; /* Reduced margin */
+        padding-top: 20px; /* Reduced padding */
+        border-top: 1px solid rgba(255,255,255,0.1);
+        margin-bottom: 30px; /* Extra space at the bottom for scrolling */
+        /* margin-left: 60px; */
+    }
+
+    .nav-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .login-btn, .get-started-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 15px;
+        font-size: 18px;
+    }
+}
+
+/* Desktop View mattum (Mobile-a affect pannadhu) */
+@media (min-width: 769px) {
+    .nav-links {
+        flex: 1; /* Navbar-oda mīthi ulla muzhu space-ayum eduthukum */
+        justify-content: center;
+        margin-left: 50px; /* Menu items-a exact center-ku kondu vara */
+    }
+    
+    .nav-actions-mobile-wrapper {
+        margin-left: auto; /* Login & Get Started buttons-a extreme right-ku push panna */
+    }
+}
+
+
+/* --- Footer Main Styles --- */
+/* ========================================== */
+/* Footer Styles */
+/* ========================================== */
+.footer {
+    background-color: #26164A; 
+    color: #B1A5CD;
+    padding: 60px 0 20px; 
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Grid Layout --- */
+.footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr 2fr; 
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* --- Column 1: Brand Info --- */
+/* --- Column 1: Brand Info Logo --- */
+.footer-brand .logo {
+    display: flex;
+    flex-direction: row; /* Idhu dhaan pakathu pakathula kondu varum */
+    align-items: center; /* Rendayum neduvala nera (vertically center) vekkum */
+    justify-content: flex-start; /* Left side align panna */
+    gap: 12px; /* Logo-kum text-kum naduvula gap */
+    font-size: 24px;
+    font-weight: 800;
+    color: #22C583; /* Text color green-ku */
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* Image-kana specific size */
+.footer-logo-img {
+    height: 35px; /* Logo size-a inga adjust pannikonga */
+    width: auto;
+    object-fit: contain;
+}
+
+
+.brand-desc {
+    margin-bottom: 24px;
+    max-width: 300px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #2EE59D;
+    border-color: #2EE59D;
+    color: #26164A;
+    transform: translateY(-3px);
+}
+
+/* --- Column 2: Platform Links --- */
+.footer-heading {
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+}
+
+.footer-links a {
+    color: #B1A5CD;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #2EE59D;
+}
+
+/* --- Column 3: Support Info --- */
+.support-info {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0;
+}
+
+.support-info li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.support-info i {
+    color: #2EE59D; 
+    margin-top: 4px;
+    width: 16px;
+    text-align: center;
+}
+
+/* --- Column 4: Newsletter --- */
+.newsletter-desc {
+    margin-bottom: 20px;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column; 
+    gap: 8px; 
+    position: relative;
+}
+
+.newsletter-input-group {
+    display: flex;
+    width: 100%;
+}
+
+.newsletter-input {
+    flex-grow: 1;
+    padding: 12px 16px;
+    background-color: rgba(0, 0, 0, 0.2); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+    outline: none;
+    border-radius: 4px 0 0 4px; 
+    transition: border-color 0.3s ease;
+}
+
+.newsletter-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.newsletter-input:focus {
+    border-color: #2EE59D;
+}
+
+.newsletter-input.error {
+    border-color: #EF4444;
+}
+
+.newsletter-btn {
+    padding: 12px 24px;
+    background-color: #2EE59D; 
+    color: #000;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0; 
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-btn:hover {
+    background-color: #22C583;
+}
+
+.form-message {
+    font-size: 12px;
+    display: none;
+    margin-top: 4px;
+}
+
+.form-message.error {
+    color: #EF4444;
+    display: block;
+}
+
+.form-message.success {
+    color: #10B981;
+    display: block;
+}
+
+/* --- Footer Bottom --- */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 16px;
+}
+
+.copyright {
+    color: #FFFFFF;
+}
+
+.bottom-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.bottom-links a {
+    color: #B1A5CD;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.bottom-links a:hover {
+    color: #2EE59D;
+}
+
+.bottom-links a:not(:last-child)::after {
+    content: '|';
+    position: absolute;
+    right: -12px;
+    color: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 992px) {
+    .footer-top {
+        grid-template-columns: 1fr 1fr; 
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-top {
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center; 
+        text-align: center;
+        gap: 20px; 
+    }
+    
+    .bottom-links {
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .bottom-links a:not(:last-child)::after {
+        display: none; 
+    }
+}

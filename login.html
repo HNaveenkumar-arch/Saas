@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-violet: #26164A;
+            --text-dark: #111827;
+            --text-grey: #6B7280;
+            --primary-green: #2EE59D;
+            --hover-green: #22C583;
+            --bg-color: #F9FAFB;
+            --card-bg: #FFFFFF;
+            --border-color: #E5E7EB;
+            --error-color: #EF4444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-violet);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+            /* For absolute positioning of the back link */
+        }
+
+        /* --- Back to Home Link (Positioned Top Left) --- */
+        .back-link {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            text-decoration: none;
+            color: var(--card-bg);
+            /* White text to contrast with violet background */
+            font-size: 15px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s, transform 0.3s;
+            z-index: 10;
+        }
+
+        .back-link:hover {
+            color: var(--primary-green);
+            transform: translateX(-5px);
+            /* Slight movement on hover */
+        }
+
+        /* --- Main Layout Wrapper --- */
+        .layout-wrapper {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            align-items: stretch;
+            justify-content: center;
+        }
+
+        /* --- Login Card --- */
+        .login-page-container {
+            display: flex;
+            width: 100%;
+            max-width: 480px;
+            /* Centered, compact card without image */
+            background: var(--card-bg);
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            margin-top: 30px;
+        }
+
+        .login-card {
+            padding: 40px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- Login Internal Styles --- */
+        .logo {
+            font-size: 28px;
+            /* Slightly larger logo */
+            font-weight: 800;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Center logo */
+            gap: 10px;
+            margin-bottom: 24px;
+            letter-spacing: 1px;
+        }
+
+        .logo i {
+            color: var(--primary-green);
+        }
+
+        .header-text {
+            text-align: center;
+            /* Center header text */
+            margin-bottom: 30px;
+        }
+
+        .header-text h1 {
+            font-size: 26px;
+            color: var(--primary-violet);
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .header-text p {
+            font-size: 14px;
+            color: var(--text-grey);
+        }
+
+        /* Role Selection */
+        .role-container {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .role-card {
+            flex: 1;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: #FAFAFA;
+        }
+
+        .role-card:hover {
+            border-color: var(--primary-green);
+            background-color: #F0FDF4;
+        }
+
+        .role-card.active {
+            border: 2px solid var(--primary-green);
+            background-color: #F0FDF4;
+        }
+
+        .role-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .role-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .role-desc {
+            font-size: 11px;
+            color: var(--text-grey);
+            line-height: 1.4;
+        }
+
+        /* Form Styles & Validation */
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            /* Slightly increased gap */
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary-violet);
+            margin-bottom: 8px;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-wrapper input {
+            width: 100%;
+            padding: 12px 40px 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 14px;
+            color: var(--text-dark);
+            outline: none;
+            transition: border-color 0.3s ease;
+            background: #FAFAFA;
+        }
+
+        .input-wrapper input:focus {
+            border-color: var(--primary-green);
+            background: #FFF;
+        }
+
+        .input-wrapper input.error {
+            border-color: var(--error-color);
+            background: #FEF2F2;
+        }
+
+        /* Validation Icons */
+        .status-icon {
+            position: absolute;
+            right: 16px;
+            font-size: 14px;
+            display: none;
+            pointer-events: none;
+        }
+
+        .status-icon.error {
+            color: var(--error-color);
+        }
+
+        .error-message {
+            color: var(--error-color);
+            font-size: 11px;
+            margin-top: 4px;
+            display: none;
+        }
+
+        /* Password Specific */
+        .password-wrapper input {
+            padding-right: 65px;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 16px;
+            color: var(--text-grey);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .toggle-password:hover {
+            color: var(--primary-violet);
+        }
+
+        .password-wrapper .status-icon {
+            right: 40px;
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            margin-top: 4px;
+            margin-bottom: 8px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-grey);
+            cursor: pointer;
+        }
+
+        .forgot-pwd {
+            color: var(--primary-violet);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .forgot-pwd:hover {
+            text-decoration: underline;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-green);
+            color: #000;
+            border: none;
+            padding: 14px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            position: relative;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--hover-green);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(46, 229, 157, 0.3);
+        }
+
+        .divider {
+            text-align: center;
+            margin: 24px 0;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: var(--border-color);
+            z-index: 1;
+        }
+
+        .divider span {
+            position: relative;
+            z-index: 2;
+            background-color: var(--card-bg);
+            padding: 0 16px;
+            color: var(--text-grey);
+            font-size: 13px;
+        }
+
+        .social-logins {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .social-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--primary-violet);
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            border-color: var(--primary-green);
+            color: var(--primary-green);
+            transform: translateY(-2px);
+        }
+
+        .footer-text {
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-grey);
+        }
+
+        .footer-text a {
+            color: var(--primary-violet);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .footer-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Mobile Responsive --- */
+        @media (max-width: 500px) {
+            .back-link {
+                top: 15px;
+                left: 15px;
+                font-size: 14px;
+            }
+
+            .login-card {
+                padding: 30px 20px;
+            }
+
+            .role-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .role-desc {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="index.html" class="back-link" data-aos="fade-right" data-aos-delay="200">
+        <i class="fa-solid fa-arrow-left"></i> Back to Home
+    </a>
+
+    <div class="layout-wrapper" data-aos="zoom-in" data-aos-duration="800">
+
+        <div class="login-page-container">
+            <div class="login-card">
+
+                <div class="logo">
+                    <i class="fa-brands fa-stack-exchange"></i> STACKLY
+                </div>
+
+                <div class="header-text">
+                    <h1>Welcome Back</h1>
+                    <p>Login to access your dashboard</p>
+                </div>
+
+                <div class="role-container">
+                    <div class="role-card active" id="role-owner" onclick="selectRole('owner')">
+                        <div class="role-icon">🚀</div>
+                        <div class="role-title">Startup Owner</div>
+                        <div class="role-desc">Manage business operations, analytics & billing.</div>
+                    </div>
+
+                    <div class="role-card" id="role-member" onclick="selectRole('member')">
+                        <div class="role-icon">💻</div>
+                        <div class="role-title">Team Member</div>
+                        <div class="role-desc">Access assigned projects, tasks & collaboration.</div>
+                    </div>
+                </div>
+
+                <form id="loginForm" class="login-form" novalidate>
+
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <div class="input-wrapper">
+                            <input type="email" id="emailInput" placeholder="Enter email" required>
+                            <i class="fa-solid fa-circle-exclamation status-icon error" id="emailErrorIcon"></i>
+                        </div>
+                        <div class="error-message" id="emailError">Please enter a valid email.</div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Password</label>
+                        <div class="input-wrapper password-wrapper">
+                            <input type="password" id="passwordInput" placeholder="Enter password" required>
+                            <i class="fa-solid fa-circle-exclamation status-icon error" id="pwdErrorIcon"></i>
+                            <i class="fa-regular fa-eye-slash toggle-password" onclick="togglePassword()"></i>
+                        </div>
+                        <div class="error-message" id="passwordError">Password must be at least 6 characters.</div>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox"> Remember me
+                        </label>
+                        <a href="#" class="forgot-pwd">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="loginBtn">Login as Startup Owner</button>
+                </form>
+
+                <div class="divider">
+                    <span>or continue with</span>
+                </div>
+
+                <div class="social-logins">
+                    <button class="social-btn"><i class="fa-brands fa-linkedin-in"></i></button>
+                    <button class="social-btn"><i class="fa-brands fa-instagram"></i></button>
+                    <button class="social-btn"><i class="fa-brands fa-x-twitter"></i></button>
+                </div>
+
+                <div class="footer-text">
+                    New here? <a href="createaccount.html">Create Account</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({ once: true });
+        });
+
+        function togglePassword() {
+            const pwdInput = document.getElementById('passwordInput');
+            const toggleIcon = document.querySelector('.toggle-password');
+            if (pwdInput.type === 'password') {
+                pwdInput.type = 'text';
+                toggleIcon.classList.replace('fa-eye-slash', 'fa-eye');
+            } else {
+                pwdInput.type = 'password';
+                toggleIcon.classList.replace('fa-eye', 'fa-eye-slash');
+            }
+        }
+
+        let currentRole = 'owner';
+        function selectRole(role) {
+            currentRole = role;
+            document.getElementById('role-owner').classList.remove('active');
+            document.getElementById('role-member').classList.remove('active');
+            const loginBtn = document.getElementById('loginBtn');
+
+            if (role === 'owner') {
+                document.getElementById('role-owner').classList.add('active');
+                loginBtn.innerText = 'Login as Startup Owner';
+            } else {
+                document.getElementById('role-member').classList.add('active');
+                loginBtn.innerText = 'Login as Team Member';
+            }
+        }
+
+        const emailInput = document.getElementById('emailInput');
+        const passwordInput = document.getElementById('passwordInput');
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Clear errors when the user starts typing again
+        emailInput.addEventListener('input', function () {
+            emailInput.classList.remove('error');
+            document.getElementById('emailErrorIcon').style.display = 'none';
+            document.getElementById('emailError').style.display = 'none';
+        });
+
+        passwordInput.addEventListener('input', function () {
+            passwordInput.classList.remove('error');
+            document.getElementById('pwdErrorIcon').style.display = 'none';
+            document.getElementById('passwordError').style.display = 'none';
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Stop form submission
+
+            let isValid = true;
+            const emailVal = emailInput.value.trim();
+            const pwdVal = passwordInput.value.trim();
+
+            // 1. Validate Email ONLY on submit
+            if (emailVal === '' || !emailPattern.test(emailVal)) {
+                emailInput.classList.add('error');
+                document.getElementById('emailErrorIcon').style.display = 'block';
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            }
+
+            // 2. Validate Password ONLY on submit
+            if (pwdVal === '' || pwdVal.length < 6) {
+                passwordInput.classList.add('error');
+                document.getElementById('pwdErrorIcon').style.display = 'block';
+                document.getElementById('passwordError').style.display = 'block';
+                isValid = false;
+            }
+
+            // 3. If everything is correct, proceed
+            if (isValid) {
+                const btn = document.getElementById('loginBtn');
+                btn.innerText = 'Redirecting...';
+                setTimeout(() => {
+                    alert('Logged in successfully!');
+                    btn.innerText = `Login as ${currentRole === 'owner' ? 'Startup Owner' : 'Team Member'}`;
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+
+</html>
