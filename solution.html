@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="solution.css">
+</head>
+
+<body>
+
+    <div class="stackly-loader-wrapper" id="premiumLoaderPro">
+    <div class="stackly-loader-content">
+        <div class="stackly-glow"></div>
+        
+        <h1 class="stackly-brand">
+            <i class="fa-brands fa-stack-exchange"></i> STACKLY
+        </h1>
+        <p class="load-p">Saas StartUp</p>
+        
+        <div class="stackly-progress-track">
+            <div class="stackly-progress-bar"></div>
+        </div>
+    </div>
+</div>
+
+    <header class="navbar-wrapper" data-aos="fade-down" data-aos-duration="800">
+        <nav class="navbar-container">
+
+            <div class="nav-logo-section">
+                <a href="index.html">
+                    <img src="./asset/green1_logo.webp" alt="logo" class="logo"></a>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li class="mobile-close-btn" id="closeMobileMenu">
+                    <i class="fa-solid fa-xmark"></i>
+                </li>
+
+                <li>
+                    <a href="index.html" class="nav-item" onclick="setActive(this)">
+                        <i class="fa-solid fa-house"></i> Home
+                    </a>
+                </li>
+                <li>
+                    <a href="feature.html" class="nav-item" onclick="setActive(this)">
+                        <i class="fa-solid fa-star"></i> Features
+                    </a>
+                </li>
+                <li>
+                    <a href="solution.html" class="nav-item active" onclick="setActive(this)">
+                        <i class="fa-solid fa-lightbulb"></i> Solutions
+                    </a>
+                </li>
+                <li>
+                    <a href="blog.html" class="nav-item" onclick="setActive(this)">
+                        <i class="fa-solid fa-blog"></i> Blog
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html" class="nav-item" onclick="setActive(this)">
+                        <i class="fa-solid fa-envelope"></i> Contact
+                    </a>
+                </li>
+
+                <li class="nav-actions-mobile-wrapper">
+                    <div class="nav-actions">
+                        <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
+                        <button class="get-started-btn" onclick="window.location.href='createaccount.html'">Get Started
+                            <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="hamburger" id="hamburgerMenu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+        </nav>
+    </header>
+
+
+    
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-top">
+                <div class="footer-brand" data-aos="fade-up" data-aos-delay="100">
+                    <div class="logo">
+                        <img src="./asset/green1_logo.webp" alt="Stackly Logo" class="footer-logo-img">
+                    </div>
+                    <p class="brand-desc">
+                        "Empowering startups and teams to scale faster. Streamline your workflows, boost productivity,
+                        and build the future with our all-in-one platform."
+                    </p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links-wrapper" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="footer-heading">Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Solutions</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-support" data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="support-info">
+                        <li>
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>support@stackly.learning</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Salem City, Tamil Nadu</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+91 98765 43210</span>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-clock"></i>
+                            <span>Mon - Fri: 9 AM - 6 PM</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-globe"></i>
+                            <span>www.stackly.learning</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-newsletter" data-aos="fade-up" data-aos-delay="400">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <p class="newsletter-desc">
+                        "Don't miss out! Join our newsletter to receive early access to new features, premium courses,
+                        and special offers directly in your inbox."</p>
+                    <form class="newsletter-form" id="newsletterForm" novalidate>
+                        <div class="newsletter-input-group">
+                            <input type="email" id="nlEmailInput" class="newsletter-input"
+                                placeholder="Enter student email" required>
+                            <button type="submit" class="newsletter-btn" id="nlBtn">JOIN</button>
+                        </div>
+                        <div id="nlMessage" class="form-message"></div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">© 2026 Stackly Learning. All rights reserved.</p>
+                <div class="bottom-links">
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">Refund Policy</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

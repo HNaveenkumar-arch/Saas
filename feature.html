@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="feature.css">
+</head>
+
+<body>
+
+    <div class="stackly-loader-wrapper" id="premiumLoaderPro">
+        <div class="stackly-loader-content">
+            <div class="stackly-glow"></div>
+
+            <h1 class="stackly-brand">
+                <i class="fa-brands fa-stack-exchange"></i> STACKLY
+            </h1>
+            <p class="load-p">Saas StartUp</p>
+
+            <div class="stackly-progress-track">
+                <div class="stackly-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <header class="navbar-wrapper" data-aos="fade-down" data-aos-duration="800">
+        <nav class="navbar-container">
+
+            <div class="nav-logo-section">
+                <a href="index.html">
+                    <img src="./asset/green1_logo.webp" alt="logo" class="logo"></a>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li class="mobile-close-btn" id="closeMobileMenu">
+                    <i class="fa-solid fa-xmark"></i>
+                </li>
+
+                <li>
+                    <a href="index.html" class="nav-item" onclick="setActive(this)">
+                        <i class="fa-solid fa-house"></i> Home
+                    </a>
+                </li>
+                <li>
+                    <a href="feature.html" class="nav-item active" onclick="setActive(this)">
+                        <i class="fa-solid fa-star"></i> Features
+                    </a>
+                </li>
+                <li>
+                    <a href="solution.html" class="nav-item" onclick="setActive(this)">
+                        <i class="fa-solid fa-lightbulb"></i> Solutions
+                    </a>
+                </li>
+                <li>
+                    <a href="blog.html" class="nav-item" onclick="setActive(this)">
+                        <i class="fa-solid fa-blog"></i> Blog
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html" class="nav-item" onclick="setActive(this)">
+                        <i class="fa-solid fa-envelope"></i> Contact
+                    </a>
+                </li>
+
+                <li class="nav-actions-mobile-wrapper">
+                    <div class="nav-actions">
+                        <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
+                        <button class="get-started-btn" onclick="window.location.href='createaccount.html'">Get Started
+                            <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="hamburger" id="hamburgerMenu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+        </nav>
+    </header>
+
+    <section class="hero-feature-section">
+        <div class="container">
+
+            <div class="breadcrumb scroll-reveal">
+                <a href="#">Home</a> <span class="separator">&gt;&gt;</span> <span class="current">Features</span>
+            </div>
+
+            <div class="hero-content-wrapper">
+
+                <div class="hero-text">
+                    <h1 class="hero-title scroll-reveal">
+                        Powerful Features Built For <br>
+                        <span class="dynamic-text-wrapper">
+                            <span class="dynamic-text">
+                                <span>Modern Teams.</span>
+                                <span>Fast Growth.</span>
+                                <span>Smart Work.</span>
+                                <span>Modern Teams.</span> </span>
+                        </span>
+                    </h1>
+
+                    <p class="hero-description scroll-reveal delay-1">
+                        Everything you need to manage projects, automate workflows, and scale your business from one
+                        intelligent platform.
+                    </p>
+
+                    <div class="hero-cta scroll-reveal delay-2">
+                        <a href="#" class="btn btn-primary">Get Started Free</a>
+                        <a href="#" class="btn btn-secondary">View Demo</a>
+                    </div>
+
+                    <div class="animated-stats scroll-reveal delay-3">
+                        <div class="stat-item">
+                            <span class="stat-number">99.9%</span>
+                            <span class="stat-label">Uptime</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10k+</span>
+                            <span class="stat-label">Active Teams</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Support</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual scroll-reveal delay-2">
+                    <div class="floating-wrapper">
+
+                        <div class="mockup-container">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop"
+                                alt="Dashboard Mockup" class="dashboard-img">
+                            <div class="glow-effect"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="features-bento-section">
+        <div class="container">
+
+            <div class="section-header scroll-reveal">
+                <h2 class="section-title">One Platform. <br><span class="text-gradient">Endless Possibilities.</span>
+                </h2>
+                <p class="section-subtitle">Everything you need, neatly packed into one powerful ecosystem.</p>
+            </div>
+
+            <div class="bento-grid">
+
+                <div class="bento-item span-2 scroll-reveal delay-1">
+                    <div class="gradient-border-wrapper">
+                        <div class="bento-card flush-img smooth-zoom">
+                            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop"
+                                alt="Project Management" class="bento-img">
+                            <div class="card-overlay"></div>
+                            <div class="card-content">
+                                <h3>Project Management</h3>
+                                <p>Plan, track, and manage effortlesly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-item scroll-reveal delay-2">
+                    <div class="gradient-border-wrapper">
+                        <div class="bento-card smooth-zoom">
+                            <div class="small-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600&auto=format&fit=crop"
+                                    alt="Team" class="bento-img">
+                            </div>
+                            <h3>Team Collaboration</h3>
+                            <p>Real-time chat & file sharing.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-item scroll-reveal delay-1">
+                    <div class="gradient-border-wrapper">
+                        <div class="bento-card smooth-zoom">
+                            <div class="small-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop"
+                                    alt="Analytics" class="bento-img">
+                            </div>
+                            <h3>Analytics</h3>
+                            <p>Data-driven insights & reports.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-item span-2 scroll-reveal delay-2">
+                    <div class="gradient-border-wrapper">
+                        <div class="bento-card flush-img smooth-zoom">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
+                                alt="Automation" class="bento-img">
+                            <div class="card-overlay"></div>
+                            <div class="card-content">
+                                <h3>Automation</h3>
+                                <p>Save time by automating repetitive tasks & workflows.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-item scroll-reveal delay-3">
+                    <div class="gradient-border-wrapper">
+                        <div class="bento-card smooth-zoom">
+                            <div class="small-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?q=80&w=600&auto=format&fit=crop"
+                                    alt="Security" class="bento-img">
+                            </div>
+                            <h3>Security</h3>
+                            <p>Enterprise-grade data protection.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-item span-2 scroll-reveal delay-1">
+                    <div class="gradient-border-wrapper">
+                        <div class="bento-card flex-row smooth-zoom">
+                            <div class="card-text">
+                                <h3>Integrations</h3>
+                                <p>Connect seamlessly with apps like Slack, GitHub, and Google Drive.</p>
+                            </div>
+                            <div class="full-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format&fit=crop"
+                                    alt="Integrations" class="bento-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="smart-project-section">
+    <div class="container">
+        
+        <div class="zig-zag-row">
+            
+            <div class="visual-column scroll-reveal delay-1">
+                <div class="main-image-wrapper">
+                    
+                    <div class="inner-img-box">
+                        <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?q=80&w=1000&auto=format&fit=crop" alt="Project Dashboard" class="main-visual-img">
+                    </div>
+                    
+                    <div class="visual-glow"></div>
+
+                    <div class="floating-task-card card-top-right custom-float-1">
+                        <div class="task-icon check-icon">✓</div>
+                        <div class="task-info">
+                            <h4>Design Approved</h4>
+                            <span>Just now</span>
+                        </div>
+                    </div>
+
+                    <div class="floating-task-card card-bottom-left custom-float-2">
+                        <div class="task-icon alert-icon">⚡</div>
+                        <div class="task-info">
+                            <h4>High Priority Task</h4>
+                            <span>Assigned to you</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-column scroll-reveal delay-2">
+                
+                <div class="section-badge">✨ Smart Workflows</div>
+                
+                <h2 class="section-title">Manage Projects <br><span class="text-gradient drop-glow">With Confidence.</span></h2>
+                
+                <p class="section-subtitle content-desc">
+                    Plan, assign, track, and deliver projects faster with intelligent workflows.
+                </p>
+                
+                <ul class="premium-feature-list">
+                    <li><span class="list-check">✓</span> Automated task assignments</li>
+                    <li><span class="list-check">✓</span> Real-time progress tracking</li>
+                    <li><span class="list-check">✓</span> Custom workflow boards</li>
+                </ul>
+
+                <div class="mt-40">
+                    <a href="#" class="btn btn-primary">Explore Workflows</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="collaboration-section">
+    <div class="container">
+        
+        <div class="zig-zag-row reverse-row">
+            
+            <div class="content-column scroll-reveal delay-1">
+                <div class="section-badge">💬 Team Chat</div>
+                <h2 class="section-title">Collaborate <br><span class="text-gradient drop-glow">Without Limits.</span></h2>
+                <p class="section-subtitle content-desc">
+                    Communicate, share files, and work together seamlessly in real-time. Everything your team needs to stay in sync.
+                </p>
+
+                <div class="glass-info-card scroll-reveal delay-2">
+                    <div class="info-icon">📁</div>
+                    <div class="info-text">
+                        <h4>Secure File Sharing</h4>
+                        <p>Drag, drop, and share files up to 2GB instantly.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visual-column scroll-reveal delay-2">
+                <div class="chat-mockup-wrapper">
+                    
+                    <div class="visual-glow green-glow"></div>
+
+                    <div class="glass-chat-box">
+                        
+                        <div class="chat-header">
+                            <div class="chat-user-info">
+                                <div class="avatar-group">
+                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop" alt="User 1" class="chat-avatar">
+                                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100&auto=format&fit=crop" alt="User 2" class="chat-avatar">
+                                </div>
+                                <div class="chat-title">
+                                    <h4>Design Team</h4>
+                                    <span class="online-status"><span class="dot"></span> 3 Online</span>
+                                </div>
+                            </div>
+                            <div class="chat-actions">...</div>
+                        </div>
+
+                        <div class="chat-body" id="chatBox">
+                            
+                            <div class="message-row received bubble-anim-1">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop" alt="Sarah" class="msg-avatar">
+                                <div class="msg-bubble">Hey team, the new hero section design is ready for review! 🎨</div>
+                            </div>
+
+                            <div class="message-row sent bubble-anim-2">
+                                <div class="msg-bubble">Looks amazing! The neon green glow is perfect. 🚀</div>
+                            </div>
+
+                            <div class="message-row received bubble-anim-3">
+                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100&auto=format&fit=crop" alt="Mike" class="msg-avatar">
+                                <div class="msg-bubble file-bubble">
+                                    <div class="file-icon">📄</div>
+                                    <div class="file-details">
+                                        <span class="file-name">design_assets.zip</span>
+                                        <span class="file-size">12.4 MB</span>
+                                    </div>
+                                    <div class="download-icon">⬇</div>
+                                </div>
+                            </div>
+
+                            <div class="message-row received bubble-anim-4" id="typingIndicator">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop" alt="Sarah" class="msg-avatar">
+                                <div class="msg-bubble typing-bubble">
+                                    <span class="typing-dot"></span>
+                                    <span class="typing-dot"></span>
+                                    <span class="typing-dot"></span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="chat-input-area">
+                            <input type="text" id="userInput" class="real-input" placeholder="Type a message..." autocomplete="off">
+                            <button id="sendBtn" class="send-btn">➤</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="ai-automation-section">
+    <div class="animated-grid-bg"></div>
+    
+    <div class="container">
+        <div class="ai-vertical-layout">
+            
+            <div class="content-column scroll-reveal delay-1">
+                <div class="section-badge ai-badge">🤖 AI Powered</div>
+                <h2 class="section-title">Automate Repetitive <br><span class="text-gradient drop-glow">Work With AI.</span></h2>
+                <p class="section-subtitle content-desc">
+                    Save time and increase productivity through smart automation. Let our AI handle the heavy lifting while you focus on growth.
+                </p>
+
+                <div class="ai-feature-list-centered">
+                    <div class="ai-feature-item">
+                        <div class="ai-icon">⚡</div>
+                        <div class="ai-feature-text">
+                            <h4>Smart Triggers</h4>
+                            <p>Auto-assign tasks based on rules.</p>
+                        </div>
+                    </div>
+                    <div class="ai-feature-item">
+                        <div class="ai-icon">📊</div>
+                        <div class="ai-feature-text">
+                            <h4>Data Extraction</h4>
+                            <p>Pull insights from docs instantly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visual-column scroll-reveal delay-2">
+                <div class="ai-mockup-wrapper">
+                    <div class="ai-glow-bg"></div>
+                    
+                    <div class="ai-mockup-container">
+                        <div class="ai-mockup-header">
+                            <div class="ai-status">
+                                <span class="ai-pulse-dot"></span> STACKLY AI
+                            </div>
+                            <div class="ai-actions">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        
+                        <div class="ai-mockup-body">
+                            <div class="ai-msg user-msg">
+                                "Generate a weekly report for the design team."
+                            </div>
+                            
+                            <div class="ai-msg bot-msg">
+                                <div class="ai-processing">
+                                    <span class="p-dot"></span>
+                                    <span class="p-dot"></span>
+                                    <span class="p-dot"></span>
+                                </div>
+                                <div class="ai-response">
+                                    <span class="check-icon">✓</span> Workflow created successfully!
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="ai-mockup-footer">
+                            <div class="ai-input-bar">
+                                <span>Ask AI to automate...</span>
+                                <div class="ai-send-icon">✨</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="analytics-section" id="analytics">
+    <div class="analytics-container">
+        
+        <div class="section-header" data-aos="fade-up">
+            <span class="analytics-badge">Analytics & Reports</span>
+            <h2 class="analytics-title">Make Decisions With <span class="highlight-text">Data</span></h2>
+            <p class="analytics-subtitle">Track business growth with powerful reports and analytics. Stackly helps you visualize success in real-time.</p>
+        </div>
+
+        <div class="analytics-showcase">
+            
+            <div class="main-mockup hover-zoom-zone" data-aos="zoom-in" data-aos-duration="1000">
+                
+                <div class="mockup-img-container">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" alt="Stackly Analytics Dashboard">
+                </div>
+
+                <div class="mockup-overlay-content">
+                    <div class="overlay-text-wrap">
+                        <span class="live-badge"><i class="fa-solid fa-satellite"></i> LIVE DATA</span>
+                        <h3>Explore Reporting Suite</h3>
+                        <p>Dive deep into real-time visual reports and automated metrics.</p>
+                        <div class="overlay-actions">
+                            <button class="btn-overlay-primary">View Demo <i class="fa-solid fa-arrow-right"></i></button>
+                            <button class="btn-overlay-secondary">Learn Tools</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mockup-glow"></div>
+            </div>
+
+            <div class="floating-widget widget-chart float-anim-1" data-aos="fade-right" data-aos-delay="200">
+                <h4>Revenue Growth</h4>
+                <div class="css-bar-chart">
+                    <div class="bar"><div class="bar-fill" style="height: 40%;"></div></div>
+                    <div class="bar"><div class="bar-fill" style="height: 65%;"></div></div>
+                    <div class="bar"><div class="bar-fill" style="height: 50%;"></div></div>
+                    <div class="bar"><div class="bar-fill" style="height: 85%;"></div></div>
+                    <div class="bar"><div class="bar-fill active-bar" style="height: 100%;"></div></div>
+                </div>
+            </div>
+
+            <div class="floating-widget widget-ring float-anim-2" data-aos="fade-left" data-aos-delay="400">
+                <div class="ring-wrapper">
+                    <div class="progress-ring" style="--progress: 85%;">
+                        <span class="ring-value">85%</span>
+                    </div>
+                </div>
+                <div class="ring-text">
+                    <h4>Goal Reached</h4>
+                    <p>Q3 Target Locked</p>
+                </div>
+            </div>
+
+            <div class="floating-widget widget-counter float-anim-3" data-aos="fade-up" data-aos-delay="600">
+                <div class="counter-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                <div class="counter-text">
+                    <h3><span class="count-up" data-target="50000">0</span>+</h3>
+                    <p>Active Users</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="security-section" id="security">
+    <div class="bg-glow-blob top-left"></div>
+    <div class="bg-glow-blob bottom-right"></div>
+
+    <div class="security-container">
+        
+        <div class="security-content">
+            <div class="section-header left-align" data-aos="fade-right">
+                <span class="analytics-badge"><i class="fa-solid fa-lock"></i> Enterprise Security</span>
+                <h2 class="analytics-title">Protect Your <span class="highlight-text">Data</span></h2>
+                <p class="analytics-subtitle" style="text-align: left;">
+                    Your workspace is locked down and safe. We use advanced security and privacy controls so you can work with complete peace of mind.
+                </p>
+            </div>
+
+            <div class="security-feature-list">
+                <div class="sec-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="sec-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="sec-text">
+                        <h4>End-to-End Encryption</h4>
+                        <p>Military-grade AES-256 encryption protects your files and messages from unauthorized access.</p>
+                    </div>
+                </div>
+
+                <div class="sec-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="sec-icon"><i class="fa-solid fa-fingerprint"></i></div>
+                    <div class="sec-text">
+                        <h4>Multi-Factor Authentication</h4>
+                        <p>Double layer protection via SMS, Authenticator app, or hardware security keys.</p>
+                    </div>
+                </div>
+
+                <div class="sec-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="sec-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                    <div class="sec-text">
+                        <h4>Secure Cloud Storage</h4>
+                        <p>Automated, encrypted daily backups distributed across highly secure global servers.</p>
+                    </div>
+                </div>
+
+                <div class="sec-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="sec-icon"><i class="fa-solid fa-users-gear"></i></div>
+                    <div class="sec-text">
+                        <h4>Role-Based Access</h4>
+                        <p>Granular permissions ensure your team members only access what they absolutely need.</p>
+                    </div>
+                </div>
+
+                <div class="sec-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="sec-icon"><i class="fa-solid fa-file-shield"></i></div>
+                    <div class="sec-text">
+                        <h4>Global Compliance</h4>
+                        <p>Fully compliant with GDPR, HIPAA, and SOC2 standards for complete data sovereignty.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="security-visual">
+            <div class="shield-wrapper" data-aos="zoom-in" data-aos-delay="300">
+                <div class="shield-glow-aura"></div>
+                <i class="fa-solid fa-shield-cat shield-base"></i>
+                <div class="floating-lock"><i class="fa-solid fa-lock"></i></div>
+                <div class="floating-check"><i class="fa-solid fa-check"></i></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="cta-section">
+  <div class="cta-container">
+
+    <div class="cta-content">
+      <span class="cta-badge">🚀 Start Growing With Stackly</span>
+
+      <h2>
+        Ready To Transform <br>
+        The Way Your Team Works?
+      </h2>
+
+      <p>
+        Streamline projects, boost collaboration, and accelerate business growth
+        with Stackly — the all-in-one workspace built for modern teams.
+      </p>
+
+      <div class="cta-buttons">
+        <a href="#" class="btn-primary">Get Started Free</a>
+        <a href="#" class="btn-secondary">
+          <i class="fa-solid fa-play"></i>
+          Book a Demo
+        </a>
+      </div>
+    </div>
+
+    <div class="cta-stats">
+
+      <div class="stat-card">
+        <h3>50K+</h3>
+        <span>Active Users</span>
+      </div>
+
+      <div class="stat-card">
+        <h3>99.9%</h3>
+        <span>Platform Uptime</span>
+      </div>
+
+      <div class="stat-card">
+        <h3>120+</h3>
+        <span>Countries Served</span>
+      </div>
+
+      <div class="stat-card">
+        <h3>10M+</h3>
+        <span>Tasks Managed</span>
+      </div>
+
+    </div>
+
+    <div class="bottom-text">
+      No credit card required • Free 14-day trial • Cancel anytime
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-top">
+                <div class="footer-brand" data-aos="fade-up" data-aos-delay="100">
+                    <div class="logo">
+                        <img src="./asset/green1_logo.webp" alt="Stackly Logo" class="footer-logo-img">
+                    </div>
+                    <p class="brand-desc">
+                        "Empowering startups and teams to scale faster. Streamline your workflows, boost productivity,
+                        and build the future with our all-in-one platform."
+                    </p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links-wrapper" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="footer-heading">Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Solutions</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-support" data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="support-info">
+                        <li>
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>support@stackly.learning</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Salem City, Tamil Nadu</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+91 98765 43210</span>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-clock"></i>
+                            <span>Mon - Fri: 9 AM - 6 PM</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-globe"></i>
+                            <span>www.stackly.learning</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-newsletter" data-aos="fade-up" data-aos-delay="400">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <p class="newsletter-desc">
+                        "Don't miss out! Join our newsletter to receive early access to new features, premium courses,
+                        and special offers directly in your inbox."</p>
+                    <form class="newsletter-form" id="newsletterForm" novalidate>
+                        <div class="newsletter-input-group">
+                            <input type="email" id="nlEmailInput" class="newsletter-input"
+                                placeholder="Enter student email" required>
+                            <button type="submit" class="newsletter-btn" id="nlBtn">JOIN</button>
+                        </div>
+                        <div id="nlMessage" class="form-message"></div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">© 2026 Stackly Learning. All rights reserved.</p>
+                <div class="bottom-links">
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">Refund Policy</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    // NUMBER COUNTER ANIMATION WITH INTERSECTION OBSERVER
+    document.addEventListener("DOMContentLoaded", () => {
+        const counters = document.querySelectorAll('.count-up');
+        const speed = 200; 
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText.replace(/,/g, '');
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc).toLocaleString();
+                        setTimeout(updateCount, 15);
+                    } else {
+                        counter.innerText = target.toLocaleString();
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        const observerOptions = { threshold: 0.4 };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        const analyticsSection = document.querySelector('.analytics-section');
+        if(analyticsSection) observer.observe(analyticsSection);
+    });
+</script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+
+        const hiddenElements = document.querySelectorAll('.scroll-reveal');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const inputField = document.getElementById("userInput");
+        const sendBtn = document.getElementById("sendBtn");
+        const chatBox = document.getElementById("chatBox");
+        const typingIndicator = document.getElementById("typingIndicator");
+
+        function sendMessage() {
+            const messageText = inputField.value.trim();
+            if (messageText !== "") {
+                // 1. Create a new message div
+                const newMessageRow = document.createElement("div");
+                newMessageRow.className = "message-row sent instant-pop"; // New animation class
+                
+                const messageBubble = document.createElement("div");
+                messageBubble.className = "msg-bubble";
+                messageBubble.textContent = messageText;
+                
+                newMessageRow.appendChild(messageBubble);
+
+                // 2. Insert it before the typing indicator
+                chatBox.insertBefore(newMessageRow, typingIndicator);
+
+                // 3. Scroll to the bottom smoothly
+                chatBox.scrollTo({
+                    top: chatBox.scrollHeight,
+                    behavior: 'smooth'
+                });
+
+                // 4. Clear input
+                inputField.value = "";
+            }
+        }
+
+        // Send when button is clicked
+        sendBtn.addEventListener("click", sendMessage);
+
+        // Send when Enter key is pressed
+        inputField.addEventListener("keypress", function(e) {
+            if (e.key === "Enter") {
+                sendMessage();
+            }
+        });
+    });
+</script>
+</body>
+
+</html>

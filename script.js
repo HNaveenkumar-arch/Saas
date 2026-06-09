@@ -3,14 +3,14 @@
 /* ========================================== */
 
 // Initialize AOS (Animate on Scroll)
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     AOS.init({
         once: true
     });
 });
 
 // Sticky Navbar & Glassmorphism Effect on Scroll
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const navbarWrapper = document.querySelector('.navbar-wrapper');
     if (window.scrollY > 50) {
         navbarWrapper.classList.add('scrolled');
@@ -45,16 +45,16 @@ function setActive(element) {
     // Remove active class from all items
     const items = document.querySelectorAll('.nav-item');
     items.forEach(item => item.classList.remove('active'));
-    
+
     // Add active class to clicked item
     element.classList.add('active');
-    
+
     // Close mobile menu if it was open
     closeMenu();
 }
 
 // Hero Section - 3 Seconds Cyclical Feature Change
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const features = document.querySelectorAll(".dynamic-feature");
     let currentIndex = 0;
 
@@ -62,10 +62,10 @@ document.addEventListener("DOMContentLoaded", function() {
         setInterval(() => {
             // Remove active class from current item
             features[currentIndex].classList.remove("active");
-            
+
             // Move to next item (loop back to 0 if at the end)
             currentIndex = (currentIndex + 1) % features.length;
-            
+
             // Add active class to new item
             features[currentIndex].classList.add("active");
         }, 3000); // 3000 milliseconds = 3 seconds
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // Success Metrics Section Count-Up & Circle Progress Trigger
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const metricsSection = document.querySelector('.metrics-section');
     const counters = document.querySelectorAll('.counter');
     let hasAnimated = false; // Prevents re-triggering animation loops
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // ==========================================
 // 3D STACKED CAROUSEL - FLUID SLIDER ENGINE
 // ==========================================
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     let currentActiveIdx = 1; // Default starts focus centered on slide 1
     const slides = document.querySelectorAll('.stacked-card-slide');
     const nextBtn = document.getElementById('nextCardBtn');
@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Direct Touch/Click Snap tracking mechanic mapping setup
-    window.snapToSlide = function(targetIndex) {
+    window.snapToSlide = function (targetIndex) {
         // Now works seamlessly on BOTH desktop and mobile views!
         currentActiveIdx = targetIndex;
         renderStackedCarousel();
@@ -163,13 +163,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Controller navigation buttons triggers mapping settings 
     if (nextBtn && prevBtn) {
-        nextBtn.addEventListener('click', function(e) {
+        nextBtn.addEventListener('click', function (e) {
             e.stopPropagation(); // Stops touch bubbling conflicts errors
             currentActiveIdx = (currentActiveIdx + 1) % slides.length;
             renderStackedCarousel();
         });
 
-        prevBtn.addEventListener('click', function(e) {
+        prevBtn.addEventListener('click', function (e) {
             e.stopPropagation();
             currentActiveIdx = (currentActiveIdx - 1 + slides.length) % slides.length;
             renderStackedCarousel();
@@ -182,11 +182,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const stageContainer = document.querySelector('.stacked-carousel-stage');
 
     if (stageContainer) {
-        stageContainer.addEventListener('touchstart', function(e) {
+        stageContainer.addEventListener('touchstart', function (e) {
             touchStartX = e.changedTouches[0].screenX;
         }, { passive: true });
 
-        stageContainer.addEventListener('touchend', function(e) {
+        stageContainer.addEventListener('touchend', function (e) {
             touchEndX = e.changedTouches[0].screenX;
             handleSwipeGesture();
         }, { passive: true });
@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Window configuration size adjustment listeners tracking
     window.addEventListener('resize', renderStackedCarousel);
-    
+
     // Initial runtime activation call tracking triggers
     renderStackedCarousel();
 });
@@ -216,14 +216,14 @@ document.addEventListener("DOMContentLoaded", function() {
 // ==========================================
 // FAQ ACCORDION EXPANSION INTERACTION LOGIC
 // ==========================================
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const faqQuestionButtons = document.querySelectorAll('.faq-question-btn');
 
     faqQuestionButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const currentFaqItemCard = this.parentElement;
             const currentAnswerPanel = currentFaqItemCard.querySelector('.faq-answer-panel');
-            
+
             // Check up verify if current panel targets are already active open
             const isCardActiveAlready = currentFaqItemCard.classList.contains('faq-active');
 
@@ -236,7 +236,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (!isCardActiveAlready) {
                 // Activate current card tags parameters toggle class
                 currentFaqItemCard.classList.add('faq-active');
-                
+
                 // Calculates strict pixel height dimensions layout nodes scrolling heights perfectly dynamically
                 currentAnswerPanel.style.maxHeight = currentAnswerPanel.scrollHeight + "px";
             } else {
@@ -258,12 +258,12 @@ const nlBtn = document.getElementById('nlBtn');
 const emailPatternNL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 if (nlForm) {
-    nlInput.addEventListener('input', function() {
+    nlInput.addEventListener('input', function () {
         nlInput.classList.remove('error');
-        nlMessage.className = 'form-message'; 
+        nlMessage.className = 'form-message';
     });
 
-    nlForm.addEventListener('submit', function(e) {
+    nlForm.addEventListener('submit', function (e) {
         e.preventDefault();
         const emailVal = nlInput.value.trim();
 
@@ -280,14 +280,14 @@ if (nlForm) {
             nlInput.classList.remove('error');
             const originalText = nlBtn.innerText;
             nlBtn.innerText = 'WAIT...';
-            
+
             // Simulate API call
             setTimeout(() => {
                 nlMessage.textContent = 'Successfully joined the newsletter!';
                 nlMessage.className = 'form-message success';
                 nlBtn.innerText = 'JOINED';
-                nlInput.value = ''; 
-                
+                nlInput.value = '';
+
                 // Reset button
                 setTimeout(() => {
                     nlBtn.innerText = originalText;
@@ -297,3 +297,19 @@ if (nlForm) {
         }
     });
 }
+
+    window.addEventListener("load", () => {
+        const loader = document.getElementById("premiumLoaderPro");
+        
+        // Exact 2 seconds delay
+        setTimeout(() => {
+            // Adds the 'hide' class which triggers the sleek CSS exit animation
+            loader.classList.add("hide");
+            
+            // Wait for transition to finish before removing from DOM
+            setTimeout(() => {
+                loader.remove();
+            }, 700); // 700ms matches the CSS transition time
+            
+        }, 2000);
+    });

@@ -31,12 +31,14 @@
         }
 
         body {
-            background-color: var(--primary-violet); /* Dark Violet Background */
+            background-color: var(--primary-violet);
+            /* Dark Violet Background */
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 40px 20px; /* Added padding to ensure top/bottom spacing on small screens */
+            padding: 40px 20px;
+            /* Added padding to ensure top/bottom spacing on small screens */
             overflow-x: hidden;
             position: relative;
         }
@@ -47,7 +49,8 @@
             top: 30px;
             left: 30px;
             text-decoration: none;
-            color: var(--card-bg); /* White text to contrast with violet background */
+            color: var(--card-bg);
+            /* White text to contrast with violet background */
             font-size: 15px;
             font-weight: 500;
             display: flex;
@@ -65,11 +68,176 @@
         /* --- Main Layout Wrapper --- */
         .layout-wrapper {
             display: flex;
-            flex-direction: column; /* Changed to column for simple centering */
+            flex-direction: column;
+            /* Changed to column for simple centering */
             width: 100%;
             align-items: center;
             justify-content: center;
-            margin-top: 40px; /* Space for the absolute back button on mobile */
+            margin-top: 40px;
+            /* Space for the absolute back button on mobile */
+        }
+
+        /* ========================================== */
+        /* Ultra Premium Loader Styles                */
+        /* ========================================== */
+
+        .stackly-loader-wrapper {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #110822;
+            /* Deepest Violet for cinematic look */
+            transition: opacity 0.7s cubic-bezier(0.87, 0, 0.13, 1),
+                visibility 0.7s cubic-bezier(0.87, 0, 0.13, 1);
+        }
+
+        .stackly-loader-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: translateY(0);
+            transition: transform 0.7s cubic-bezier(0.87, 0, 0.13, 1);
+        }
+
+        /* Ambient Breathing Glow */
+        .stackly-glow {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            background: #2EE59D;
+            filter: blur(90px);
+            opacity: 0.15;
+            border-radius: 50%;
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+
+        /* Gradient Text Style */
+        .stackly-brand {
+            font-size: 42px;
+            font-weight: 900;
+            letter-spacing: 6px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            position: relative;
+            background: linear-gradient(135deg, #FFFFFF 0%, #B1A5CD 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Floating Icon */
+        .stackly-brand i {
+            color: #2EE59D;
+            -webkit-text-fill-color: #2EE59D;
+            font-size: 48px;
+            animation: floatIcon 2s ease-in-out infinite;
+        }
+
+        /* Sleek Progress Track */
+        .stackly-progress-track {
+            width: 260px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px;
+        }
+
+        /* Glowing Progress Bar */
+        .stackly-progress-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: #2EE59D;
+            width: 0%;
+            box-shadow: 0 0 10px #2EE59D, 0 0 20px rgba(46, 229, 157, 0.6);
+            /* 1.8 seconds loading animation */
+            animation: ultraLoad 1.8s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+        }
+
+        /* The Exit Animation Class */
+        .stackly-loader-wrapper.hide {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .load-p {
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 30px;
+
+        }
+
+        /* Content sliding slightly up and fading out */
+        .stackly-loader-wrapper.hide .stackly-loader-content {
+            transform: translateY(-40px) scale(0.98);
+        }
+
+        /* --- Keyframe Animations --- */
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.15;
+            }
+
+            50% {
+                transform: scale(1.5);
+                opacity: 0.25;
+            }
+        }
+
+        @keyframes floatIcon {
+
+            0%,
+            100% {
+                transform: translateY(0);
+                filter: drop-shadow(0 0 0 rgba(46, 229, 157, 0));
+            }
+
+            50% {
+                transform: translateY(-6px);
+                filter: drop-shadow(0 10px 15px rgba(46, 229, 157, 0.4));
+            }
+        }
+
+        @keyframes ultraLoad {
+            0% {
+                width: 0%;
+            }
+
+            40% {
+                width: 70%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .stackly-brand {
+                font-size: 32px;
+                letter-spacing: 4px;
+            }
+
+            .stackly-brand i {
+                font-size: 38px;
+            }
+
+            .stackly-progress-track {
+                width: 200px;
+            }
         }
 
         /* --- Signup Card --- */
@@ -81,7 +249,8 @@
             border-radius: 24px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             overflow: hidden;
-            position: relative; /* For the top accent bar if needed */
+            position: relative;
+            /* For the top accent bar if needed */
         }
 
         .signup-card {
@@ -162,7 +331,8 @@
             font-size: 14px;
             font-weight: 600;
             color: var(--text-dark);
-            margin-bottom: 0; /* Adjusted for smaller cards like in image */
+            margin-bottom: 0;
+            /* Adjusted for smaller cards like in image */
         }
 
         /* --- Form Styles & Validation --- */
@@ -250,7 +420,8 @@
             cursor: pointer;
             transition: all 0.3s ease;
             width: 100%;
-            margin-top: 8px; /* Slight extra margin above button */
+            margin-top: 8px;
+            /* Slight extra margin above button */
         }
 
         .submit-btn:hover {
@@ -337,7 +508,8 @@
         /* --- Mobile Responsive --- */
         @media (max-width: 500px) {
             body {
-                padding: 70px 15px 30px; /* Adjust padding to fit absolute back link */
+                padding: 70px 15px 30px;
+                /* Adjust padding to fit absolute back link */
             }
 
             .back-link {
@@ -363,7 +535,7 @@
             .role-card {
                 padding: 12px;
             }
-            
+
             .role-icon {
                 font-size: 20px;
             }
@@ -372,6 +544,21 @@
 </head>
 
 <body>
+
+    <div class="stackly-loader-wrapper" id="premiumLoaderPro">
+        <div class="stackly-loader-content">
+            <div class="stackly-glow"></div>
+
+            <h1 class="stackly-brand">
+                <i class="fa-brands fa-stack-exchange"></i> STACKLY
+            </h1>
+            <p class="load-p">Saas StartUp</p>
+
+            <div class="stackly-progress-track">
+                <div class="stackly-progress-bar"></div>
+            </div>
+        </div>
+    </div>
 
     <a href="index.html" class="back-link" data-aos="fade-right" data-aos-delay="200">
         <i class="fa-solid fa-arrow-left"></i> Back to Home
@@ -424,8 +611,10 @@
                     <div class="input-group">
                         <label>Password</label>
                         <div class="input-wrapper password-wrapper">
-                            <input type="password" id="passwordInput" placeholder="Create password (min 6 chars)" required>
-                            <i class="fa-regular fa-eye-slash toggle-password" onclick="togglePassword('passwordInput', this)"></i>
+                            <input type="password" id="passwordInput" placeholder="Create password (min 6 chars)"
+                                required>
+                            <i class="fa-regular fa-eye-slash toggle-password"
+                                onclick="togglePassword('passwordInput', this)"></i>
                         </div>
                         <div class="error-message" id="passwordError">Password must be at least 6 characters.</div>
                     </div>
@@ -434,7 +623,8 @@
                         <label>Confirm Password</label>
                         <div class="input-wrapper password-wrapper">
                             <input type="password" id="confirmPasswordInput" placeholder="Confirm password" required>
-                            <i class="fa-regular fa-eye-slash toggle-password" onclick="togglePassword('confirmPasswordInput', this)"></i>
+                            <i class="fa-regular fa-eye-slash toggle-password"
+                                onclick="togglePassword('confirmPasswordInput', this)"></i>
                         </div>
                         <div class="error-message" id="confirmPasswordError">Passwords do not match.</div>
                     </div>
@@ -462,6 +652,23 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        window.addEventListener("load", () => {
+            const loader = document.getElementById("premiumLoaderPro");
+
+            // Exact 2 seconds delay
+            setTimeout(() => {
+                // Adds the 'hide' class which triggers the sleek CSS exit animation
+                loader.classList.add("hide");
+
+                // Wait for transition to finish before removing from DOM
+                setTimeout(() => {
+                    loader.remove();
+                }, 700); // 700ms matches the CSS transition time
+
+            }, 2000);
+        });
+    </script>
 
     <script>
         // Initialize Animations
@@ -487,7 +694,7 @@
             currentRole = role;
             document.getElementById('role-owner').classList.remove('active');
             document.getElementById('role-member').classList.remove('active');
-            
+
             if (role === 'owner') {
                 document.getElementById('role-owner').classList.add('active');
             } else {
@@ -500,7 +707,7 @@
         const emailInput = document.getElementById('emailInput');
         const passwordInput = document.getElementById('passwordInput');
         const confirmPasswordInput = document.getElementById('confirmPasswordInput');
-        
+
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         // Clear errors on input
@@ -510,7 +717,7 @@
                 this.classList.remove('error');
                 // Find the corresponding error message div and hide it
                 const errorDiv = document.getElementById(this.id.replace('Input', 'Error'));
-                if(errorDiv) errorDiv.style.display = 'none';
+                if (errorDiv) errorDiv.style.display = 'none';
             });
         });
 
@@ -518,7 +725,7 @@
             e.preventDefault(); // Stop default form submission
 
             let isValid = true;
-            
+
             const nameVal = nameInput.value.trim();
             const emailVal = emailInput.value.trim();
             const pwdVal = passwordInput.value.trim();
@@ -557,10 +764,10 @@
                 const btn = document.getElementById('signupBtn');
                 const originalText = btn.innerText;
                 btn.innerText = 'Creating Account...';
-                
+
                 // Simulate an API call
                 setTimeout(() => {
-                    alert('Account created successfully!');
+                    window.location.href = 'login.html';
                     btn.innerText = originalText;
                     // Optional: Redirect to login page after successful creation
                     // window.location.href = 'login.html';

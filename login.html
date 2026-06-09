@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
     <style>
         :root {
@@ -407,6 +408,20 @@
 </head>
 
 <body>
+    <div class="stackly-loader-wrapper" id="premiumLoaderPro">
+    <div class="stackly-loader-content">
+        <div class="stackly-glow"></div>
+        
+        <h1 class="stackly-brand">
+            <i class="fa-brands fa-stack-exchange"></i> STACKLY
+        </h1>
+        <p class="load-p">Saas StartUp</p>
+        
+        <div class="stackly-progress-track">
+            <div class="stackly-progress-bar"></div>
+        </div>
+    </div>
+</div>
 
     <a href="index.html" class="back-link" data-aos="fade-right" data-aos-delay="200">
         <i class="fa-solid fa-arrow-left"></i> Back to Home
@@ -490,6 +505,23 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+    window.addEventListener("load", () => {
+        const loader = document.getElementById("premiumLoaderPro");
+        
+        // Exact 2 seconds delay
+        setTimeout(() => {
+            // Adds the 'hide' class which triggers the sleek CSS exit animation
+            loader.classList.add("hide");
+            
+            // Wait for transition to finish before removing from DOM
+            setTimeout(() => {
+                loader.remove();
+            }, 700); // 700ms matches the CSS transition time
+            
+        }, 2000);
+    });
+</script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -565,11 +597,22 @@
             }
 
             // 3. If everything is correct, proceed
+            // 3. If everything is correct, proceed
             if (isValid) {
+
+                // Email-a browser-la save pandrom
+                localStorage.setItem('loggedInEmail', emailVal);
+
                 const btn = document.getElementById('loginBtn');
                 btn.innerText = 'Redirecting...';
+
+                // Role-a check panni correct-ana dashboard-ku redirect pandrom
+                const destination = (currentRole === 'owner') ? 'dashboard1.html' : 'dashboard2.html';
+
                 setTimeout(() => {
-                    alert('Logged in successfully!');
+                    window.location.href = destination;
+
+                    // Redirect aanathuku appuram button text update aagum
                     btn.innerText = `Login as ${currentRole === 'owner' ? 'Startup Owner' : 'Team Member'}`;
                 }, 1000);
             }

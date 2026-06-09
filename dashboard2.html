@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Team Member Dashboard</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="dashboard2.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="stackly-loader-wrapper" id="premiumLoaderPro">
+    <div class="stackly-loader-content">
+        <div class="stackly-glow"></div>
+        
+        <h1 class="stackly-brand">
+            <i class="fa-brands fa-stack-exchange"></i> STACKLY
+        </h1>
+        <p class="load-p">Saas StartUp</p>
+        
+        <div class="stackly-progress-track">
+            <div class="stackly-progress-bar"></div>
+        </div>
+    </div>
+</div>
+
+    <div id="overlay"
+        style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:999; display:none;"
+        onclick="toggleMenu()"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html">
+                <img src="./asset/green1_logo.webp" alt="logo" class="logo"></a>
+            <p style="color: #ffffff; font-size: 12px; margin-top: 5px; padding-left: 35px;">Team Workspace</p>
+        </div>
+        <div class="sidebar-menu">
+            <div class="menu-item active" onclick="showSection('member-overview', this)"><i
+                    class="fa-solid fa-house"></i> Dashboard</div>
+            <div class="menu-item" onclick="showSection('member-tasks', this)"><i class="fa-solid fa-check-double"></i>
+                My Tasks</div>
+            <div class="menu-item" onclick="showSection('member-projects', this)"><i
+                    class="fa-solid fa-folder-open"></i> Projects</div>
+            <div class="menu-item" onclick="showSection('member-messages', this)"><i
+                    class="fa-solid fa-comment-dots"></i> Messages</div>
+            <div class="menu-item" onclick="showSection('member-profile', this)"><i class="fa-solid fa-user"></i>
+                Profile</div>
+        </div>
+        <div class="sidebar-footer">
+            <a href="index.html" class="footer-link"><i class="fa-solid fa-arrow-left"></i> Back To Home</a>
+            <a href="login.html" class="footer-link logout-link" onclick="localStorage.removeItem('loggedInEmail')"><i
+                    class="fa-solid fa-door-open"></i> Logout</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <div class="mobile-only-header">
+    <div class="mobile-logo-section">
+        <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+            <img src="./asset/green1_logo.webp" alt="logo" class="logo" style="height: 35px; width: auto;">
+        </a>
+        <p style="color: #434f70; font-size: 12px; margin-top: 5px; font-weight: 600;">Team Workspace</p>
+    </div>
+    
+    <i class="fa-solid fa-bars" onclick="toggleMenu()" style="font-size: 28px; color: var(--primary-violet); cursor: pointer;"></i>
+</div>
+
+        <div id="member-overview" class="content-section active">
+
+            <div class="welcome-card" data-aos="fade-down">
+                <div class="welcome-info">
+                    <h2 id="welcomeName">Hi User 👋</h2>
+                    <p>Stay updated with your daily activities, assigned projects, and team collaboration.</p>
+                </div>
+                <div class="email-badge">
+                    <i class="fa-solid fa-circle-user"></i> <span id="userMail"></span>
+                </div>
+            </div>
+
+            <h3 class="section-heading" data-aos="fade-up">Today's Overview</h3>
+            <div class="grid-layout" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-card">
+                    <i class="fa-solid fa-list-check" style="color: #3B82F6; background: rgba(59, 130, 246, 0.1);"></i>
+                    <div>
+                        <h4 class="stat-title">Assigned Tasks</h4>
+                        <h3 class="stat-value">12</h3>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-check-double"
+                        style="color: var(--primary-green); background: rgba(46, 229, 157, 0.1);"></i>
+                    <div>
+                        <h4 class="stat-title">Completed Tasks</h4>
+                        <h3 class="stat-value">8</h3>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-magnifying-glass"
+                        style="color: #F59E0B; background: rgba(245, 158, 11, 0.1);"></i>
+                    <div>
+                        <h4 class="stat-title">Pending Reviews</h4>
+                        <h3 class="stat-value">3</h3>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-clock" style="color: #EF4444; background: rgba(239, 68, 68, 0.1);"></i>
+                    <div>
+                        <h4 class="stat-title">Upcoming Deadlines</h4>
+                        <h3 class="stat-value">2</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-layout" style="margin-top: 30px;" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="panel-card">
+                    <h3 class="section-heading" style="margin-bottom: 20px;">Task Distribution</h3>
+                    <div class="chart-container">
+                        <canvas id="taskPieChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="panel-card">
+                    <h3 class="section-heading" style="margin-bottom: 20px;">Upcoming Meetings</h3>
+                    <ul class="activity-list">
+                        <li>
+                            <div class="activity-icon bg-blue"><i class="fa-solid fa-video"></i></div>
+                            <div class="activity-content">
+                                <p><strong>Daily Standup</strong> - Zoom Sync</p>
+                                <span>Today, 10:30 AM</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="activity-icon bg-yellow"><i class="fa-solid fa-users"></i></div>
+                            <div class="activity-content">
+                                <p><strong>Design Review</strong> - Google Meet</p>
+                                <span>Today, 02:00 PM</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="activity-icon bg-dark"><i class="fa-solid fa-bullseye"></i></div>
+                            <div class="activity-content">
+                                <p><strong>Sprint Planning</strong> - Conf. Room A</p>
+                                <span>Tomorrow, 11:00 AM</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <h3 class="section-heading" style="margin-top: 30px;" data-aos="fade-up" data-aos-delay="300">Activity
+                Timeline</h3>
+            <div class="panel-card" data-aos="fade-up" data-aos-delay="400">
+                <ul class="activity-list">
+                    <li>
+                        <div class="activity-icon bg-green"><i class="fa-solid fa-check"></i></div>
+                        <div class="activity-content">
+                            <p><strong>Task Completed:</strong> Designed SaaS Landing Page</p>
+                            <span>1 hour ago</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="activity-icon bg-blue"><i class="fa-solid fa-comment"></i></div>
+                        <div class="activity-content">
+                            <p><strong>New Comment:</strong> Arun mentioned you in "Mobile UI"</p>
+                            <span>3 hours ago</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="activity-icon bg-dark"><i class="fa-solid fa-folder-plus"></i></div>
+                        <div class="activity-content">
+                            <p><strong>Project Assigned:</strong> You were added to "Client Dashboard"</p>
+                            <span>Yesterday</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="member-tasks" class="content-section">
+            <h2 class="page-title">My Task Dashboard</h2>
+            <p class="page-subtitle">View all assigned tasks and monitor progress efficiently.</p>
+
+            <h3 class="section-heading" style="margin-top: 30px;">Task Status Overview</h3>
+            <div class="grid-layout">
+                <div class="task-status-card border-dark">
+                    <h4>To Do</h4>
+                    <h1>5</h1>
+                </div>
+                <div class="task-status-card border-blue">
+                    <h4>In Progress</h4>
+                    <h1>3</h1>
+                </div>
+                <div class="task-status-card border-yellow">
+                    <h4>Under Review</h4>
+                    <h1>2</h1>
+                </div>
+                <div class="task-status-card border-green">
+                    <h4>Completed</h4>
+                    <h1>18</h1>
+                </div>
+            </div>
+
+            <h3 class="section-heading" style="margin-top: 30px;">Priority Tasks</h3>
+            <div class="panel-card">
+                <ul class="task-list">
+                    <li>
+                        <div class="task-info">
+                            <input type="checkbox">
+                            <div>
+                                <p>API Integration for Payment Gateway</p>
+                                <span>Due: Today, 5:00 PM</span>
+                            </div>
+                        </div>
+                        <span class="badge badge-red">High Priority</span>
+                    </li>
+                    <li>
+                        <div class="task-info">
+                            <input type="checkbox">
+                            <div>
+                                <p>Fix Navigation Bug on Mobile</p>
+                                <span>Due: Tomorrow</span>
+                            </div>
+                        </div>
+                        <span class="badge badge-yellow">Medium</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="member-projects" class="content-section">
+            <h2 class="page-title">My Active Projects</h2>
+            <p class="page-subtitle">Projects currently assigned to you with status tracking.</p>
+
+            <div class="featured-project-highlight panel-card glass-morph" data-aos="fade-up">
+                <div class="featured-banner">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop"
+                        alt="Featured Tech Project">
+                    <div class="banner-overlay"></div>
+                </div>
+
+                <div class="featured-details">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h3 style="color:var(--primary-dark)">CRM Redesign</h3>
+                        <span class="badge badge-green">On Track</span>
+                    </div>
+                    <p class="project-desc">Complete overhaul of the internal CRM UI/UX for better efficiency.</p>
+
+                    <div class="stat-meta">
+                        <div>
+                            <i class="fa-solid fa-user-tie"></i> <span>Arun Kumar (PM)</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-layer-group"></i> <span>Frontend/Design</span>
+                        </div>
+                    </div>
+
+                    <h5 style="margin-top: 15px; font-size: 13px; color: var(--text-grey);">Main Progress Overview</h5>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 80%;"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 600;">
+                        <span>80% Completed</span>
+                        <span>Deadline: 20 Oct</span>
+                    </div>
+
+                    <button class="btn-primary" style="margin-top: 20px; width: 100%;">View Full Details</button>
+                </div>
+            </div>
+
+            <h3 class="section-heading" data-aos="fade-up" data-aos-delay="100">Recently Added Files</h3>
+            <div class="resources-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="resource-item glass-morph panel-card">
+                    <div class="res-visual res-figma">
+                        <i class="fa-brands fa-figma"></i>
+                    </div>
+                    <div class="res-details">
+                        <h5>Dashboard_v3_Draft.fig</h5>
+                        <span>12 MB • Updated Today</span>
+                    </div>
+                    <i class="fa-solid fa-download download-icon"></i>
+                </div>
+
+                <div class="resource-item glass-morph panel-card">
+                    <div class="res-visual res-pdf">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <div class="res-details">
+                        <h5>Client_Requirements.pdf</h5>
+                        <span>2.4 MB • 2 days ago</span>
+                    </div>
+                    <i class="fa-solid fa-download download-icon"></i>
+                </div>
+            </div>
+
+            <h3 class="section-heading" style="margin-top: 30px;" data-aos="fade-up" data-aos-delay="300">Upcoming
+                Milestones Timeline</h3>
+            <div class="timeline-container panel-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="timeline-line"></div>
+
+                <div class="timeline-item">
+                    <div class="milestone-icon bg-green"><i class="fa-solid fa-flag"></i></div>
+                    <div class="timeline-content">
+                        <p><strong>Wireframe Approval</strong> - CRM Redesign</p>
+                        <span>Done (Jun 26)</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="milestone-icon bg-yellow"><i class="fa-solid fa-flag"></i></div>
+                    <div class="timeline-content">
+                        <p><strong>Mobile UI Draft 1</strong> - Mobile App v2.0</p>
+                        <span>Due: Tomorrow</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item timeline-overdue">
+                    <div class="milestone-icon bg-red"><i class="fa-solid fa-exclamation-triangle"></i></div>
+                    <div class="timeline-content">
+                        <p><strong>Client Sync Meeting</strong> - (Overdue)</p>
+                        <span>Due: Yesterday</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="member-messages" class="content-section">
+            <h2 class="page-title" data-aos="fade-down">Workspace Conversations</h2>
+            <p class="page-subtitle" data-aos="fade-down" data-aos-delay="100">Stay connected with your team through
+                real-time messaging.</p>
+
+            <div class="grid-layout" style="margin-top: 30px;">
+
+                <div class="panel-card" data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h3 style="color: var(--primary-dark);">Direct Messages</h3>
+                        <span class="badge badge-green">2 New</span>
+                    </div>
+                    <ul class="chat-list">
+                        <li>
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop"
+                                alt="Arun" class="avatar-img">
+                            <div class="chat-content">
+                                <h5>Arun Kumar</h5>
+                                <p style="color: var(--primary-dark); font-weight: 600;">Did you push the latest
+                                    commits?</p>
+                            </div>
+                            <span class="time" style="color: var(--primary-green); font-weight: 700;">10:30 AM</span>
+                        </li>
+                        <li>
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop"
+                                alt="Priya" class="avatar-img">
+                            <div class="chat-content">
+                                <h5>Priya Dharshini</h5>
+                                <p>The design files are ready for review.</p>
+                            </div>
+                            <span class="time">Yesterday</span>
+                        </li>
+                    </ul>
+                    <button class="btn-primary" style="width: 100%; margin-top: 15px;">Open Chat App</button>
+                </div>
+
+                <div class="panel-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3 style="margin-bottom: 20px; color: var(--primary-dark);">Active Channels</h3>
+                    <ul class="activity-list">
+                        <li>
+                            <div class="activity-icon bg-dark" style="border-radius: 8px;"><i
+                                    class="fa-solid fa-hashtag"></i></div>
+                            <div class="activity-content" style="flex: 1;">
+                                <p><strong>general-announcements</strong></p>
+                                <span>Company-wide updates</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="activity-icon"
+                                style="background: rgba(59, 130, 246, 0.1); color: #3B82F6; border-radius: 8px;"><i
+                                    class="fa-solid fa-hashtag"></i></div>
+                            <div class="activity-content" style="flex: 1;">
+                                <p><strong>design-team-sync</strong></p>
+                                <span>UI/UX discussions</span>
+                            </div>
+                            <span class="badge badge-yellow">5</span>
+                        </li>
+                        <li>
+                            <div class="activity-icon"
+                                style="background: rgba(46, 229, 157, 0.1); color: var(--primary-green); border-radius: 8px;">
+                                <i class="fa-solid fa-hashtag"></i></div>
+                            <div class="activity-content" style="flex: 1;">
+                                <p><strong>frontend-devs</strong></p>
+                                <span>Code reviews & bugs</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="panel-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3 style="margin-bottom: 20px; color: var(--primary-dark);">Recent Shared Media</h3>
+                    <div class="media-grid">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=300&auto=format&fit=crop"
+                            alt="UI Mockup" class="shared-media-img">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=300&auto=format&fit=crop"
+                            alt="Team Meeting" class="shared-media-img">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=300&auto=format&fit=crop"
+                            alt="Chart" class="shared-media-img">
+                        <div class="shared-media-more">
+                            <span>+12</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-card" data-aos="fade-up" data-aos-delay="400">
+                    <h3 style="margin-bottom: 20px; color: var(--primary-dark);">Important Updates</h3>
+                    <ul class="activity-list">
+                        <li>
+                            <div class="activity-icon bg-yellow"><i class="fa-solid fa-bell"></i></div>
+                            <div class="activity-content">
+                                <p><strong>Meeting Reminder:</strong> Daily Standup in 15 mins</p>
+                                <span>From: System Bot</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="activity-icon bg-dark"><i class="fa-solid fa-bullhorn"></i></div>
+                            <div class="activity-content">
+                                <p><strong>Announcement:</strong> Office will remain closed on Friday.</p>
+                                <span>From: HR Dept</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="member-profile" class="content-section">
+            <h2 class="page-title">My Profile</h2>
+            <p class="page-subtitle">Manage your account details and performance metrics.</p>
+
+            <h3 class="section-heading" style="margin-top: 30px;">Work Performance</h3>
+            <div class="grid-layout">
+                <div class="stat-card">
+                    <i class="fa-solid fa-check-double"
+                        style="color: var(--primary-green); background: rgba(46, 229, 157, 0.1);"></i>
+                    <div>
+                        <h4 class="stat-title">Tasks Completed</h4>
+                        <h3 class="stat-value">124</h3>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-folder-open" style="color: #3B82F6; background: rgba(59, 130, 246, 0.1);"></i>
+                    <div>
+                        <h4 class="stat-title">Projects Contributed</h4>
+                        <h3 class="stat-value">8</h3>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-solid fa-bolt" style="color: #F59E0B; background: rgba(245, 158, 11, 0.1);"></i>
+                    <div>
+                        <h4 class="stat-title">Productivity Score</h4>
+                        <h3 class="stat-value">92%</h3>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fa-regular fa-calendar-check"
+                        style="color: var(--primary-dark); background: rgba(30, 41, 59, 0.1);"></i>
+                    <div>
+                        <h4 class="stat-title">Attendance Rate</h4>
+                        <h3 class="stat-value">100%</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-layout" style="margin-top: 30px;">
+                <div class="panel-card">
+                    <h3 style="margin-bottom: 20px; color: var(--primary-dark);">Personal Information</h3>
+                    <div class="form-group"><label>Full Name</label><input type="text" id="profileNameInput"></div>
+                    <div class="form-group"><label>Email Address</label><input type="email" id="profileEmailInput"
+                            readonly style="background: #f9f9f9;"></div>
+                    <div class="form-group"><label>Role / Position</label><input type="text" value="Frontend Developer"
+                            readonly style="background: #f9f9f9;"></div>
+                    <button class="btn-primary">Update Details</button>
+                </div>
+
+                <div class="panel-card">
+                    <h3 style="margin-bottom: 20px; color: var(--primary-dark);">Preferences & Security</h3>
+                    <div class="form-group"><label>New Password</label><input type="password" placeholder="••••••••">
+                    </div>
+
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-top: 25px; border-top: 1px solid var(--border-color); padding-top: 15px;">
+                        <div>
+                            <p style="font-weight: 600; font-size: 14px; color: #333;">Task Notifications</p>
+                            <p style="font-size: 12px; color: var(--text-grey);">Receive email alerts for tasks</p>
+                        </div>
+                        <input type="checkbox" checked
+                            style="width: 18px; height: 18px; accent-color: var(--primary-green);">
+                    </div>
+                    <button class="btn-primary"
+                        style="margin-top: 20px; background: transparent; color: var(--primary-dark); border: 2px solid var(--primary-dark);">Save
+                        Preferences</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+    window.addEventListener("load", () => {
+        const loader = document.getElementById("premiumLoaderPro");
+        
+        // Exact 2 seconds delay
+        setTimeout(() => {
+            // Adds the 'hide' class which triggers the sleek CSS exit animation
+            loader.classList.add("hide");
+            
+            // Wait for transition to finish before removing from DOM
+            setTimeout(() => {
+                loader.remove();
+            }, 700); // 700ms matches the CSS transition time
+            
+        }, 2000);
+    });
+</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Animation
+            AOS.init({ once: true });
+
+            // Extract Email & Name Logic
+            const email = localStorage.getItem('loggedInEmail') || 'user@stackly.com';
+            document.getElementById('userMail').innerText = email;
+            document.getElementById('profileEmailInput').value = email;
+
+            let namePart = email.split('@')[0];
+            let formattedName = namePart.charAt(0).toUpperCase() + namePart.slice(1);
+
+            document.getElementById('welcomeName').innerText = `Hi ${formattedName} 👋`;
+            document.getElementById('profileNameInput').value = formattedName;
+        });
+
+        // Tab Switching Logic
+        function showSection(sectionId, element) {
+            document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.menu-item').forEach(m => m.classList.remove('active'));
+
+            document.getElementById(sectionId).classList.add('active');
+            element.classList.add('active');
+
+            // Auto close mobile menu after clicking
+            if (window.innerWidth <= 992) toggleMenu();
+        }
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const side = document.getElementById('sidebar');
+            const over = document.getElementById('overlay');
+            if (side.classList.contains('open')) {
+                side.classList.remove('open');
+                over.style.display = 'none';
+            } else {
+                side.classList.add('open');
+                over.style.display = 'block';
+            }
+        }
+
+        // Initialize Pie Chart
+        const ctx = document.getElementById('taskPieChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut', // Doughnut gives a premium modern look compared to a standard pie
+            data: {
+                labels: ['Completed', 'In Progress', 'Pending', 'To Do'],
+                datasets: [{
+                    data: [45, 25, 20, 10],
+                    backgroundColor: [
+                        '#2EE59D', // Stackly Green
+                        '#3B82F6', // Blue
+                        '#F59E0B', // Yellow
+                        '#1E293B'  // Primary Dark
+                    ],
+                    borderWidth: 0,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: {
+                            font: { family: 'Inter', size: 12 },
+                            color: '#6B7280'
+                        }
+                    }
+                },
+                cutout: '70%' // Creates the hollow center
+            }
+        });
+    </script>
+</body>
+
+</html>
