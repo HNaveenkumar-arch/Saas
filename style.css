@@ -1,6 +1,4 @@
-/* ========================================== */
-/* HERO SECTION STYLES */
-/* ========================================== */
+
 :root {
   --primary-violet: #ffffff;
   --dark-violet: rgb(75, 42, 75);
@@ -8,7 +6,7 @@
   --primary-green: #2ee59d;
   --dark-green-hover: #22c583;
 
-  --bg-color: #160a2e; /* Deep Dark Violet */
+  --bg-color: #160a2e; 
   --text-dark: #ffffff;
   --text-secondary: #b1a5cd;
   --border-color: rgba(46, 229, 157, 0.15);
@@ -16,7 +14,7 @@
 
 .hero-section {
   position: relative;
-  padding: 180px 20px 0; /* Top padding to clear the fixed navbar */
+  padding: 180px 20px 0; 
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -24,7 +22,6 @@
   background-color: var(--bg-color);
 }
 
-/* Animated Gradient Background Glow */
 .hero-bg-glow {
   position: absolute;
   top: -10%;
@@ -54,21 +51,19 @@
 }
 
 .hero-container {
-  max-width: 1100px; /* Overall width-a konjam kuraichirukkom */
+  max-width: 1100px; 
   margin: 0 auto;
   padding: 0 0px;
   display: flex;
   align-items: center;
-  justify-content: center; /* Rendu section-ayum center-ku thalla */
-  gap: 70px; /* Content-kum Mockup-kum naduvula exact aana gap */
+  justify-content: center; 
+  gap: 70px; 
   position: relative;
   z-index: 1;
 }
 
-/* --- Left Content Styles --- */
 .hero-content {
   flex: 1;
-  /* max-width: 580px; */
 }
 
 .badge {
@@ -153,10 +148,9 @@
   background: rgba(46, 229, 157, 0.05);
 }
 
-/* --- Right Visual & Dashboard Mockup Styles --- */
 .hero-visual {
   flex: 1;
-  max-width: 500px; /* Right side mockup width-a restrict panni balance panna */
+  max-width: 500px; 
   position: relative;
   display: flex;
   justify-content: center;
@@ -241,7 +235,6 @@
   width: 50%;
 }
 
-/* --- Floating Stats Cards --- */
 .floating-card {
   position: absolute;
   background: rgba(38, 22, 74, 0.85);
@@ -290,7 +283,6 @@
   right: -20px;
 }
 
-/* Floating Animations */
 .floating-anim-1 {
   animation: float 4s ease-in-out infinite;
 }
@@ -310,9 +302,6 @@
   }
 }
 
-/* ========================================== */
-/* Mobile Responsive (Hero Section) FIXES */
-/* ========================================== */
 @media (max-width: 992px) {
   .hero-container {
     flex-direction: column;
@@ -333,7 +322,6 @@
     width: 100%;
   }
 
-  /* Fix: Dynamic features text alignment on mobile */
   .dynamic-features-wrapper {
     width: 100%;
   }
@@ -342,10 +330,9 @@
     text-align: center;
   }
   .dynamic-feature h3 {
-    justify-content: center; /* Center icon and title */
+    justify-content: center; 
   }
 
-  /* Fix: Visual container full width to prevent squishing */
   .hero-visual {
     width: 100%;
     max-width: 600px;
@@ -358,7 +345,7 @@
   }
   .hero-container {
     padding: 0 7px;
-  } /* Reduce side padding for small screens */
+  } 
   .hero-title {
     font-size: 35px;
   }
@@ -371,7 +358,6 @@
     justify-content: center;
   }
 
-  /* Adjust wrapper height for text wrapping on small screens */
   .dynamic-features-wrapper {
     height: 140px;
     margin-bottom: 20px;
@@ -385,7 +371,6 @@
     height: 150px;
   }
 
-  /* Fix: Resize floating cards so they don't block the mockup */
   .floating-card {
     padding: 10px 15px;
     gap: 10px;
@@ -403,7 +388,6 @@
     margin-top: 0;
   }
 
-  /* Position them neatly inside the screen */
   .card-top-left {
     left: -5px;
     top: -15px;
@@ -420,9 +404,8 @@
   }
   .dynamic-features-wrapper {
     height: 160px;
-  } /* Extra space for very small phones */
+  }
 
-  /* Tuck cards slightly inwards so they don't cause horizontal scroll */
   .card-top-left {
     left: 10px;
     top: -10px;
@@ -433,9 +416,8 @@
   }
 }
 
-/* --- Dynamic Features (Changes every 3s) --- */
 .dynamic-features-wrapper {
-  height: 100px; /* Layout jump aagama irukka fixed height */
+  height: 100px; 
   position: relative;
   margin-bottom: 40px;
 }
@@ -471,7 +453,6 @@
   line-height: 1.5;
 }
 
-/* --- Mockup Image & Text Updates --- */
 .mockup-body {
   padding: 20px;
   display: flex;
@@ -482,7 +463,7 @@
 
 .mockup-image-container {
   width: 100%;
-  height: 180px; /* Image height */
+  height: 180px; 
   border-radius: 10px;
   overflow: hidden;
   border-bottom: 2px solid var(--primary-green);
@@ -491,12 +472,12 @@
 .mockup-image-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Image stretch aagama fill aaga */
+  object-fit: cover; 
   transition: transform 0.5s ease;
 }
 
 .mockup-image-container:hover img {
-  transform: scale(1.05); /* Hover effect for image */
+  transform: scale(1.05); 
 }
 
 .mockup-details {
@@ -511,11 +492,10 @@
   letter-spacing: 0.5px;
 }
 
-/* --- Mockup Text Details --- */
 .mockup-data {
   display: flex;
   flex-direction: column;
-  gap: 8px; /* Text varigaluku naduvula gap */
+  gap: 8px; 
   margin-top: 5px;
 }
 
@@ -527,7 +507,7 @@
   gap: 8px;
   margin: 0;
   padding: 6px 10px;
-  background: rgba(255, 255, 255, 0.03); /* Chinna background box effect */
+  background: rgba(255, 255, 255, 0.03); 
   border-radius: 6px;
   transition: all 0.3s ease;
 }
@@ -537,9 +517,6 @@
   color: #ffffff;
 }
 
-/* ========================================== */
-/* BRANDS PARTNER SECTION */
-/* ========================================== */
 .brands-section {
   padding: 60px 20px;
   background-color: var(--bg-color);
@@ -562,22 +539,20 @@
   margin-bottom: 30px;
 }
 
-/* Glassmorphism Marquee Strip */
 .brands-marquee-strip {
-  background: rgba(38, 22, 74, 0.4); /* Light glass background */
+  background: rgba(38, 22, 74, 0.4); 
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   padding: 30px 0;
-  overflow: hidden; /* Hide logos outside the box */
+  overflow: hidden; 
   position: relative;
   width: 100%;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Fade Effect on Left & Right Edges */
 .brands-marquee-strip::before,
 .brands-marquee-strip::after {
   content: "";
@@ -596,14 +571,12 @@
   background: linear-gradient(to left, var(--bg-color) 0%, transparent 100%);
 }
 
-/* Marquee Track Animation */
 .marquee-track {
   display: flex;
-  width: max-content; /* Let it be as wide as the logos */
-  animation: scrollMarquee 25s linear infinite; /* Adjust 25s to change speed */
+  width: max-content; 
+  animation: scrollMarquee 25s linear infinite; 
 }
 
-/* Pause animation when user hovers */
 .brands-marquee-strip:hover .marquee-track {
   animation-play-state: paused;
 }
@@ -614,8 +587,8 @@
   gap: 12px;
   font-size: 24px;
   font-weight: 700;
-  color: rgba(177, 165, 205, 0.4); /* Dimmed gray/violet color */
-  margin: 0 40px; /* Space between logos */
+  color: rgba(177, 165, 205, 0.4); 
+  margin: 0 40px; 
   transition: all 0.3s ease;
   cursor: default;
 }
@@ -624,13 +597,11 @@
   font-size: 34px;
 }
 
-/* Color up on Hover */
 .logo-item:hover {
   color: var(--primary-green);
   transform: scale(1.05);
 }
 
-/* CSS Keyframe for Infinite Scroll */
 @keyframes scrollMarquee {
   0% {
     transform: translateX(0);
@@ -638,12 +609,8 @@
   100% {
     transform: translateX(-50%);
   }
-  /* Translates -50% because we duplicated the logos. This creates a seamless loop! */
 }
 
-/* ========================================== */
-/* Mobile Responsive (Brands Section) */
-/* ========================================== */
 @media (max-width: 768px) {
   .brands-section {
     padding: 40px 20px;
@@ -662,40 +629,35 @@
   .logo-item i {
     font-size: 26px;
   }
-  /* Reduce fade width on mobile */
   .brands-marquee-strip::before,
   .brands-marquee-strip::after {
     width: 60px;
   }
 }
 
-/* ========================================== */
-/* WHY CHOOSE US - STICKY SCROLL DESIGN (FIXED) */
-/* ========================================== */
 
 .sticky-features-section {
   padding: 40px 20px;
   background-color: var(--bg-color);
   position: relative;
   width: 100%;
-  box-sizing: border-box; /* Protects section outer boundaries */
+  box-sizing: border-box; 
 }
 
 .sticky-container {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  align-items: flex-start; /* Keeps sticky working correctly */
+  align-items: flex-start;
   gap: 80px;
   width: 100%;
   box-sizing: border-box;
 }
 
-/* --- Left Sticky Section --- */
 .sticky-left {
   flex: 1;
   position: sticky;
-  top: 120px; /* Distance from top when locked */
+  top: 120px; 
   height: max-content;
   padding-bottom: 20px;
 }
@@ -715,7 +677,6 @@
   margin-bottom: 40px;
 }
 
-/* Glass Mockup Container */
 .sticky-visual .glass-mockup {
   background: rgba(38, 22, 74, 0.4);
   border: 1px solid var(--border-color);
@@ -752,18 +713,16 @@
   right: -15px;
 }
 
-/* --- Right Scrolling Section --- */
 .scrolling-right {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 40px;
   margin-top: 50px;
-  min-width: 0; /* CRITICAL FIX: Prevents layout bursting screen limits on mobile */
+  min-width: 0; 
   width: 100%;
 }
 
-/* Glass Cards Layout */
 .feature-scroll-card {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -771,9 +730,9 @@
   border-radius: 24px;
   transition: all 0.4s ease;
   backdrop-filter: blur(10px);
-  position: relative; /* specific card-kula icon positioning-ku support */
-  width: 100%; /* Force exact layout constraint calculation */
-  box-sizing: border-box; /* Safely wraps inner padding metrics */
+  position: relative; 
+  width: 100%; 
+  box-sizing: border-box; 
 }
 
 .feature-scroll-card:hover {
@@ -783,7 +742,6 @@
   box-shadow: 0 10px 30px rgba(46, 229, 157, 0.1);
 }
 
-/* Icon (Normal State) */
 .feature-icon {
   width: 60px;
   height: 60px;
@@ -799,13 +757,12 @@
   transition:
     transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
     color 0.4s ease,
-    background 0.4s ease; /* Premium bounce logic added */
+    background 0.4s ease; 
 }
 
-/* Specific Card Hover Panumpothu Icon Animation */
 .feature-scroll-card:hover .feature-icon {
-  transform: rotate(360deg) scale(1.05); /* Full rotation with slight pulse */
-  color: #000000 !important; /* Elegant dark contrast contrast match on hover */
+  transform: rotate(360deg) scale(1.05); 
+  color: #000000 !important; 
   background: var(--primary-green);
   border-color: var(--primary-green);
 }
@@ -838,19 +795,16 @@
   gap: 12px;
 }
 
-/* ========================================== */
-/* Mobile Responsive (Sticky Design) - PERFECT FIX */
-/* ========================================== */
 @media (max-width: 1024px) {
   .sticky-container {
-    flex-direction: column !important; /* Overrides desktop alignment securely */
+    flex-direction: column !important; 
     align-items: center;
     gap: 60px;
-    padding: 0 30px; /* Tablet view side safety tracks */
+    padding: 0 30px; 
   }
 
   .sticky-left {
-    position: relative !important; /* Disables fixed scroll lock */
+    position: relative !important; 
     top: 0 !important;
     width: 100%;
   }
@@ -867,7 +821,7 @@
   .scrolling-right {
     margin-top: 0;
     width: 100% !important;
-    max-width: 650px; /* Center bounds constraints lock */
+    max-width: 650px; 
     margin-left: auto;
     margin-right: auto;
   }
@@ -875,11 +829,11 @@
 
 @media (max-width: 768px) {
   .sticky-features-section {
-    padding: 60px 0; /* Let mobile views fluidly resize inside container bounds */
+    padding: 60px 0; 
   }
 
   .sticky-container {
-    padding: 0 20px !important; /* Exact safety block space to avoid card spillover */
+    padding: 0 20px !important; 
   }
 
   .sticky-content-wrapper .section-title {
@@ -887,7 +841,7 @@
   }
 
   .feature-scroll-card {
-    padding: 35px 24px !important; /* Force exact inner padding overrides */
+    padding: 35px 24px !important; 
   }
 
   .floating-badge.bottom-right {
@@ -899,7 +853,7 @@
 
 @media (max-width: 480px) {
   .sticky-container {
-    padding: 0 2px !important; /* Tight wrap for compact screen sizing */
+    padding: 0 2px !important; 
   }
 
   .sticky-content-wrapper .section-title {
@@ -915,9 +869,6 @@
   }
 }
 
-/* ========================================== */
-/* FEATURES SHOWCASE (BENTO GRID DESIGN) - FIXED */
-/* ========================================== */
 
 .features-showcase-section {
   padding: 60px 20px;
@@ -931,7 +882,6 @@
   margin: 0 auto;
 }
 
-/* FIX: Ensuring all section header titles have explicit brilliant white colors */
 .features-showcase-section .section-title {
   color: #ffffff !important;
   font-size: 42px;
@@ -946,18 +896,16 @@
   margin-bottom: 60px;
 }
 
-/* --- Bento Grid Structural Fix --- */
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(
     220px,
     auto
-  ); /* Flexible height to prevent content spilling */
+  ); 
   gap: 25px;
 }
 
-/* Core Cards Configuration */
 .bento-card {
   position: relative;
   background: rgba(
@@ -965,7 +913,7 @@
     22,
     74,
     0.35
-  ); /* Increased base opacity for premium look */
+  );
   border-radius: 24px;
   padding: 35px;
   overflow: hidden;
@@ -987,7 +935,6 @@
   gap: 20px;
 }
 
-/* --- Column Configurations --- */
 .bento-large-featured {
   grid-column: span 2;
   grid-row: span 2;
@@ -997,12 +944,11 @@
   grid-column: span 2;
 }
 
-/* --- Core Content Styling --- */
 .bento-icon {
   width: 52px;
   height: 52px;
-  background: rgba(46, 229, 157, 0.08); /* Base Brand Green Tint */
-  color: var(--primary-green); /* Base Brand Green Text */
+  background: rgba(46, 229, 157, 0.08); 
+  color: var(--primary-green);
   border-radius: 14px;
   display: flex;
   align-items: center;
@@ -1011,7 +957,6 @@
   border: 1px solid rgba(46, 229, 157, 0.2);
   margin-bottom: 5px;
 
-  /* Smooth 360 Elastic Spin & Fill Transition */
   transition:
     transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
     color 0.4s ease,
@@ -1036,7 +981,7 @@
 }
 
 .bento-card h3 {
-  color: #ffffff !important; /* Explicit overrides for headers */
+  color: #ffffff !important; 
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 12px;
@@ -1064,7 +1009,6 @@
   color: var(--primary-green);
 }
 
-/* Custom Large Image Display Box Control */
 .bento-visual-mini {
   margin-top: 20px;
   width: 100%;
@@ -1079,7 +1023,6 @@
   object-fit: cover;
 }
 
-/* --- Premium Radial Glow Animations --- */
 .bento-glow-glow {
   position: absolute;
   top: 50%;
@@ -1100,7 +1043,6 @@
   pointer-events: none;
 }
 
-/* --- Interactive States --- */
 .bento-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
@@ -1113,17 +1055,14 @@
 }
 
 .bento-card:hover .bento-icon {
-  transform: rotate(360deg) scale(1.05); /* Smooth Single Spin */
-  color: #000000 !important; /* Premium Contrast Shift (Black Text on Green BG) */
+  transform: rotate(360deg) scale(1.05); 
+  color: #000000 !important; 
   background-color: var(
     --primary-green
-  ); /* Fills with full solid Brand Green */
+  ); 
   border-color: var(--primary-green);
 }
 
-/* ========================================== */
-/* Mobile & Tablet Responsive Architecture */
-/* ========================================== */
 @media (max-width: 992px) {
   .bento-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1158,9 +1097,6 @@
   }
 }
 
-/* ========================================== */
-/* PRODUCT WALKTHROUGH (TIMELINE DESIGN) - FIXED */
-/* ========================================== */
 
 .walkthrough-section {
   padding: 60px 20px;
@@ -1174,7 +1110,6 @@
   margin: 0 auto;
 }
 
-/* FIX: Explicit white color to prevent text blending with dark background */
 .walkthrough-section .section-title {
   color: #ffffff !important;
   font-size: 42px;
@@ -1194,7 +1129,6 @@
   margin-right: auto;
 }
 
-/* --- Timeline Architecture --- */
 .timeline-wrapper {
   position: relative;
   margin-top: 80px;
@@ -1203,7 +1137,6 @@
   gap: 60px;
 }
 
-/* Connected Center Line */
 .timeline-line {
   position: absolute;
   left: 50%;
@@ -1228,7 +1161,6 @@
   z-index: 2;
 }
 
-/* Center Dot Node (With smooth 360 spin state) */
 .timeline-dot {
   position: absolute;
   left: 50%;
@@ -1254,7 +1186,6 @@
     box-shadow 0.4s ease;
 }
 
-/* Step Card Layout */
 .timeline-content {
   width: 45%;
   background: rgba(38, 22, 74, 0.25);
@@ -1285,7 +1216,6 @@
   align-items: flex-start;
 }
 
-/* Typography Inside Card */
 .step-number {
   font-size: 12px;
   font-weight: 700;
@@ -1322,13 +1252,12 @@
   border-radius: 8px;
 }
 
-/* --- Hover Effects (Unified Icon Color & Spin Change) --- */
 .timeline-item:hover .timeline-dot {
   background-color: var(--primary-green);
-  color: #000000; /* Contrast shift text on hover */
+  color: #000000; 
   border-color: var(--primary-green);
   box-shadow: 0 0 25px rgba(46, 229, 157, 0.4);
-  transform: translateX(-50%) rotate(360deg) scale(1.1); /* Combines center fix with 360 rotation */
+  transform: translateX(-50%) rotate(360deg) scale(1.1); 
 }
 
 .timeline-item:hover .timeline-content {
@@ -1337,9 +1266,6 @@
   transform: translateY(-4px);
 }
 
-/* ========================================== */
-/* Mobile & Tablet Responsive Architecture */
-/* ========================================== */
 @media (max-width: 992px) {
   .timeline-line {
     left: 30px;
@@ -1359,7 +1285,6 @@
     align-items: flex-start !important;
   }
 
-  /* Keep positioning locked correctly on mobile hover state */
   .timeline-item:hover .timeline-dot {
     transform: translateX(-50%) rotate(360deg) scale(1.1);
   }
@@ -1380,9 +1305,6 @@
   }
 }
 
-/* ========================================== */
-/* SUCCESS METRICS SECTION - 3 COLUMNS SYSTEM */
-/* ========================================== */
 
 .metrics-section {
   padding: 60px 20px;
@@ -1419,15 +1341,13 @@
   margin-right: auto;
 }
 
-/* FIX: Strict 3-Column configuration for Desktop Row Layouts */
 .metrics-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Pure 3 Columns split array */
-  gap: 30px; /* Enhanced breathing gap spaces */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 30px; 
   width: 100%;
 }
 
-/* --- Interactive Card Frame Architecture --- */
 .metric-card {
   position: relative;
   background: rgba(38, 22, 74, 0.35);
@@ -1438,19 +1358,16 @@
   cursor: pointer;
   box-sizing: border-box;
 
-  /* Default-la box shadow soft-a dull-a background low intensity-la irukkum */
   box-shadow:
     0 10px 30px rgba(0, 0, 0, 0.3),
     0 0 0 rgba(46, 229, 157, 0);
 
-  /* Smooth cubic-bezier for a premium pop-up feel */
   transition:
     transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
     border-color 0.4s ease,
     box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* --- Image Container (Default Layer View) --- */
 .metric-cover-image {
   position: absolute;
   top: 0;
@@ -1467,7 +1384,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.35) saturate(0.7); /* Deep elegant premium integration black mix overlay */
+  filter: brightness(0.35) saturate(0.7); 
   transition: transform 0.6s ease;
 }
 
@@ -1486,7 +1403,6 @@
   gap: 10px;
 }
 
-/* --- Hover State Data Panel Setup --- */
 .metric-hover-content {
   position: absolute;
   top: 0;
@@ -1508,12 +1424,10 @@
     transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* --- Hover Trigger Interactions --- */
 .metric-card:hover {
-  transform: translateY(-8px); /* Card-a konjam mela thukkum */
-  border-color: rgba(46, 229, 157, 0.5); /* Border intense green-a maarum */
+  transform: translateY(-8px); 
+  border-color: rgba(46, 229, 157, 0.5); 
 
-  /* FIX: Solid Dark Shadow + Premium Brand Neon Green Glow Back-drop Layer */
   box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.6),
     0 0 30px rgba(46, 229, 157, 0.25);
@@ -1530,7 +1444,6 @@
   transform: scale(1);
 }
 
-/* --- Core Internal Elements Re-Style --- */
 .metric-icon {
   width: 52px;
   height: 52px;
@@ -1605,12 +1518,9 @@
 .card-highlighted:hover {
   box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.7),
-    0 0 40px rgba(46, 229, 157, 0.4); /* Innum thookalaana glow implementation */
+    0 0 40px rgba(46, 229, 157, 0.4); 
 }
 
-/* ========================================== */
-/* Mobile & Tablet Responsive Architecture FIXES */
-/* ========================================== */
 @media (max-width: 1024px) {
   .metrics-container {
     padding: 0 30px;
@@ -1619,7 +1529,7 @@
     grid-template-columns: repeat(
       2,
       1fr
-    ); /* Transforms row view into 2 columns on tablets */
+    ); 
     gap: 25px;
   }
 }
@@ -1636,7 +1546,7 @@
   }
 
   .metrics-grid {
-    grid-template-columns: 1fr; /* Pure single columns stacking array logic for phone */
+    grid-template-columns: 1fr; 
     gap: 20px;
   }
 
@@ -1658,9 +1568,6 @@
   }
 }
 
-/* ========================================== */
-/* 3D STACKED TESTIMONIAL SLIDER - TEXT VISIBILITY & TRANSFORMS FIX */
-/* ========================================== */
 
 .testimonials-slider-section {
   padding: 60px 20px;
@@ -1677,9 +1584,8 @@
   width: 100%;
 }
 
-/* --- FIX: Section Header Overrides (Forcing Brilliant White Visibility) --- */
 .testimonials-slider-section .section-title {
-  color: #ffffff !important; /* Force overrides dark default inheritance system */
+  color: #ffffff !important; 
   font-size: 42px;
   font-weight: 800;
   margin: 15px 0;
@@ -1690,7 +1596,7 @@
 .testimonials-slider-section .section-subtitle {
   color: var(
     --text-secondary
-  ) !important; /* Ensures nalla text contrast over dark background */
+  ) !important; 
   font-size: 17px;
   line-height: 1.6;
   margin-bottom: 70px;
@@ -1700,10 +1606,9 @@
   margin-right: auto;
 }
 
-/* --- 3D Stage Theater Matrix View Configs --- */
 .stacked-carousel-stage {
   position: relative;
-  max-width: 1000px; /* Expands widths to safely clear center cards overlapping margins */
+  max-width: 1000px; 
   margin: 60px auto 0;
   height: 440px;
   display: flex;
@@ -1718,14 +1623,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  perspective: 1400px; /* Extends 3D field depth perspective matrix nodes */
+  perspective: 1400px; 
 }
 
-/* Base Sizing and Transitions For Slides */
 .stacked-card-slide {
   position: absolute;
   width: 100%;
-  max-width: 580px; /* Compact box optimization for clear visibility of sides elements */
+  max-width: 580px; 
   height: auto;
   transition:
     transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
@@ -1736,9 +1640,8 @@
   box-sizing: border-box;
 }
 
-/* --- Card Base UI Core Template Panel --- */
 .glass-slider-card {
-  background: #19122b; /* Deep contrast dark purple base code */
+  background: #19122b; 
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 24px;
   padding: 40px;
@@ -1749,9 +1652,6 @@
     box-shadow 0.4s ease;
 }
 
-/* ========================================== */
-/* 3D STACKED TESTIMONIAL SLIDER - RESPONSIVE FIX */
-/* ========================================== */
 
 .testimonials-slider-section {
   padding: 60px 20px;
@@ -1768,7 +1668,6 @@
   width: 100%;
 }
 
-/* --- Section Header Overrides --- */
 .testimonials-slider-section .section-title {
   color: #ffffff !important;
   font-size: 42px;
@@ -1789,12 +1688,11 @@
   margin-right: auto;
 }
 
-/* --- DESKTOP STATE ONLY: 3D Stage Theater Matrix View --- */
 .stacked-carousel-stage {
   position: relative;
   max-width: 1000px;
   margin: 60px auto 0;
-  height: 460px; /* Locked desktop viewport frame */
+  height: 460px; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1811,7 +1709,6 @@
   perspective: 1400px;
 }
 
-/* Base Absolute Layout strictly for Desktop layers */
 .stacked-card-slide {
   position: absolute;
   width: 100%;
@@ -1826,7 +1723,6 @@
   box-sizing: border-box;
 }
 
-/* --- Card Base UI Panel --- */
 .glass-slider-card {
   background: #19122b;
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -1840,9 +1736,6 @@
     transform 0.4s ease;
 }
 
-/* --- 3D TRANSFORM CO-ORDINATES --- */
-
-/* 1. Center Active Front Card */
 .stacked-card-slide.active-front {
   z-index: 10;
   opacity: 1;
@@ -1857,7 +1750,6 @@
     0 0 40px rgba(46, 229, 157, 0.25);
 }
 
-/* 2. Left Stack Card */
 .stacked-card-slide.stack-left {
   z-index: 5;
   opacity: 0.45;
@@ -1865,7 +1757,6 @@
   pointer-events: auto;
 }
 
-/* 3. Right Stack Card */
 .stacked-card-slide.stack-right {
   z-index: 5;
   opacity: 0.45;
@@ -1873,7 +1764,6 @@
   pointer-events: auto;
 }
 
-/* 4. Background Hidden Loop Cards */
 .stacked-card-slide.hidden-back {
   z-index: 1;
   opacity: 0;
@@ -1881,7 +1771,6 @@
   pointer-events: none;
 }
 
-/* --- Internal Typo Styles --- */
 .card-top-identity {
   display: flex;
   align-items: center;
@@ -1932,7 +1821,6 @@
   text-align: left;
 }
 
-/* Desktop Navigation Controls */
 .slider-action-controls {
   display: flex;
   position: absolute;
@@ -1964,12 +1852,6 @@
   transform: scale(1.05);
 }
 
-/* ========================================== */
-/* CRITICAL MOBILE RESPONSIVE ENGINE REBUILD  */
-/* ========================================== */
-/* ========================================== */
-/* MOBILE RESPONSIVE SLIDER CENTRALIZATION FIX */
-/* ========================================== */
 
 @media (max-width: 992px) {
   .stacked-carousel-stage {
@@ -1984,7 +1866,6 @@
   }
 }
 
-/* --- THE ULTIMATE PHONE BREAKPOINT OVERRIDE (CENTER LOCK ENGINE) --- */
 @media (max-width: 768px) {
   .testimonials-slider-section {
     padding: 60px 0;
@@ -2000,14 +1881,13 @@
     font-size: 32px;
   }
 
-  /* FIX: Force stage area to act as a strict centralized flex container */
   .stacked-carousel-stage {
-    height: 420px !important; /* Fixed height container to wrap layout texts */
+    height: 420px !important; 
     max-width: 100% !important;
     margin: 30px auto 0 !important;
     display: flex !important;
     align-items: center !important;
-    justify-content: center !important; /* Centers elements perfectly on screen */
+    justify-content: center !important; 
     position: relative !important;
     overflow: visible !important;
   }
@@ -2015,21 +1895,20 @@
   .stacked-carousel-track {
     display: flex !important;
     align-items: center !important;
-    justify-content: center !important; /* Force track axis alignment to true zero center */
+    justify-content: center !important; 
     width: 100% !important;
     height: 100% !important;
     perspective: 1200px !important;
   }
 
-  /* FIX: Precise width bounding setup with left absolute zero coordinate resets */
   .stacked-card-slide {
     position: absolute !important;
     width: calc(
       100vw - 50px
-    ) !important; /* Dynamic sizing to prevent screen edge spillover */
+    ) !important; 
     max-width: 480px !important;
     height: auto !important;
-    left: auto !important; /* Removes legacy left position drift bounds templates */
+    left: auto !important; 
     top: auto !important;
     margin: 0 auto !important;
     transition:
@@ -2038,40 +1917,33 @@
       z-index 0.5s ease !important;
   }
 
-  /* --- HORIZONTAL STACK CO-ORDINATES (CENTER VISIBILITY ACTIVATION) --- */
-
-  /* 1. FRONT ACTIVE CARD (Sits exactly center dead zero location) */
   .stacked-card-slide.active-front {
     z-index: 10 !important;
     opacity: 1 !important;
-    transform: translate3d(0, 0, 0) scale(1) !important; /* Strict zero position vectors balance */
+    transform: translate3d(0, 0, 0) scale(1) !important; 
     pointer-events: auto !important;
   }
 
-  /* 2. BACKGROUND SLIDE LEFT */
   .stacked-card-slide.stack-left {
     z-index: 4 !important;
-    opacity: 0.12 !important; /* Blends back softly to avoid distracting visual lines */
-    transform: translate3d(-85%, 0, -150px) scale(0.85) !important; /* Tucked left securely */
+    opacity: 0.12 !important; 
+    transform: translate3d(-85%, 0, -150px) scale(0.85) !important; 
     pointer-events: auto !important;
   }
 
-  /* 3. BACKGROUND SLIDE RIGHT */
   .stacked-card-slide.stack-right {
     z-index: 4 !important;
     opacity: 0.12 !important;
-    transform: translate3d(85%, 0, -150px) scale(0.85) !important; /* Tucked right securely */
+    transform: translate3d(85%, 0, -150px) scale(0.85) !important; 
     pointer-events: auto !important;
   }
 
-  /* 4. INACTIVE HIDDEN TRAILING LOOPS */
   .stacked-card-slide.hidden-back {
     z-index: 1 !important;
     opacity: 0 !important;
     transform: translate3d(0, 0, -300px) scale(0.7) !important;
   }
 
-  /* CARD COMPONENTS RATIO PROTECTION LOGIC */
   .glass-slider-card {
     padding: 30px 20px !important;
     border-radius: 20px !important;
@@ -2082,7 +1954,7 @@
   .profile-image-frame {
     width: 52px !important;
     height: 52px !important;
-    flex-shrink: 0 !important; /* Stop vertical elliptical profile smash bugs */
+    flex-shrink: 0 !important; 
     border-radius: 50% !important;
   }
 
@@ -2092,7 +1964,6 @@
     text-align: left !important;
   }
 
-  /* NAVIGATION BUTTONS POSITION ADJUSTMENTS */
   .slider-action-controls {
     display: flex !important;
     bottom: -20px !important;
@@ -2105,15 +1976,12 @@
   }
   .stacked-carousel-stage {
     height: 440px !important;
-  } /* Safeguard box overhead ceiling space */
+  } 
   .stacked-card-slide {
     width: calc(100vw - 30px) !important;
   }
 }
 
-/* ========================================== */
-/* INTEGRATIONS HUB - HOVER CARD PREVIEW FIXED */
-/* ========================================== */
 
 .integrations-section {
   padding: 60px 20px;
@@ -2149,7 +2017,6 @@
   margin-right: auto;
 }
 
-/* --- Orbit Stage Architecture Engine --- */
 .orbit-theater-stage {
   position: relative;
   width: 640px;
@@ -2161,7 +2028,6 @@
   box-sizing: border-box;
 }
 
-/* --- CENTRAL STACKLY LOGO --- */
 .orbit-center-core {
   position: relative;
   width: 90px;
@@ -2201,7 +2067,6 @@
   z-index: 1;
 }
 
-/* --- ORBITAL TRACK RINGS --- */
 .orbit-ring {
   position: absolute;
   border: 1px dashed rgba(255, 255, 255, 0.08);
@@ -2226,7 +2091,6 @@
   animation: rotateOrbitCounterClockwise 50s linear infinite;
 }
 
-/* --- INTERACTIVE FLOATING APP CARDS FRAME SYSTEM --- */
 .floating-app-wrapper {
   position: absolute;
   width: 60px;
@@ -2255,22 +2119,21 @@
 }
 
 .invert-img {
-  filter: brightness(0) invert(1); /* GitHub absolute white override layout */
+  filter: brightness(0) invert(1); 
 }
 
-/* --- THE POP-UP PREVIEW CARD STYLE (HIDDEN BY DEFAULT) --- */
 .app-hover-preview-card {
   position: absolute;
-  bottom: 85px; /* Floats perfectly over the app icon badge */
+  bottom: 85px; 
   left: 50%;
   transform: translateX(-50%) translateY(15px) scale(0.85);
   width: 280px;
-  background: #19122b; /* Dark purple container block tone matching image reference */
-  border: 1px solid rgba(46, 229, 157, 0.3); /* Stackly Green custom pop boundary lines */
+  background: #19122b; 
+  border: 1px solid rgba(46, 229, 157, 0.3); 
   border-radius: 20px;
   overflow: hidden;
   opacity: 0;
-  pointer-events: none; /* Stops clipping errors blocking orbit mouse swipes */
+  pointer-events: none; 
   box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.6),
     0 0 30px rgba(46, 229, 157, 0.15);
@@ -2280,7 +2143,6 @@
     transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Inner Details inside Popups Cards */
 .preview-card-img {
   width: 100%;
   height: 120px;
@@ -2317,33 +2179,30 @@
   display: inline-block;
 }
 
-/* --- THE HOVER TRIGGER SYSTEM MECHANICS --- */
 .floating-app-wrapper:hover {
-  z-index: 999; /* Force card popups on top of all ring paths lines layout layers */
+  z-index: 999; 
 }
 
 .floating-app-wrapper:hover .app-icon-inner {
   border-color: var(--primary-green);
   background: var(
     --primary-green
-  ); /* Full stackly green swap on hover tracking */
+  ); 
   transform: scale(1.15);
   box-shadow: 0 0 20px rgba(46, 229, 157, 0.4);
 }
 
 .floating-app-wrapper:hover .app-icon-inner img {
   transform: scale(1.05);
-  filter: brightness(0) cubic-bezier(0.1, 1, 0.1, 1); /* Force dark image contrast logic on green active layer */
+  filter: brightness(0) cubic-bezier(0.1, 1, 0.1, 1); 
 }
 
-/* Fades and slides up the advanced preview card layout */
 .floating-app-wrapper:hover .app-hover-preview-card {
   opacity: 1;
   pointer-events: auto;
   transform: translateX(-50%) translateY(0) scale(1);
 }
 
-/* Trigonometric Coordinate positions mappings */
 .app-notion {
   top: 0;
   left: 50%;
@@ -2371,7 +2230,6 @@
   transform: translate(50%, 0);
 }
 
-/* --- Anti-Rotation Matrix Control (Corrects Icons & Cards to stay vertical) --- */
 .inner-ring .floating-app-wrapper {
   animation: counteractRotationClockwise 30s linear infinite;
 }
@@ -2379,9 +2237,6 @@
   animation: counteractRotationCounterClockwise 50s linear infinite;
 }
 
-/* ========================================== */
-/* ANIMATIONS TIMELINES KEYFRAMES ENGINES */
-/* ========================================== */
 @keyframes corePulse {
   0%,
   100% {
@@ -2427,9 +2282,6 @@
   }
 }
 
-/* ========================================== */
-/* Mobile Responsive Adaptive Architecture Setup */
-/* ========================================== */
 @media (max-width: 768px) {
   .integrations-section {
     padding: 80px 0;
@@ -2438,7 +2290,6 @@
     font-size: 34px;
   }
 
-  /* Shrinks the orbit fields safely to fit mobile bounds sizes */
   .orbit-theater-stage {
     width: 280px;
     height: 280px;
@@ -2466,7 +2317,6 @@
     height: 44px;
   }
 
-  /* Re-scale the advanced preview popups cleanly for phone display views */
   .app-hover-preview-card {
     width: 200px;
     bottom: 60px;
@@ -2495,9 +2345,6 @@
   } /* Avoids horizontal line bleed cuts errors */
 }
 
-/* ========================================== */
-/* FAQ SECTION - MODERN ACCORDION ARCHITECTURE */
-/* ========================================== */
 
 .faq-section {
   padding: 60px 20px;
@@ -2509,7 +2356,7 @@
 }
 
 .faq-container {
-  max-width: 850px; /* Tight container layout for premium editorial scannability feel */
+  max-width: 850px; 
   margin: 0 auto;
   width: 100%;
 }
@@ -2533,15 +2380,14 @@
   margin-right: auto;
 }
 
-/* --- Accordion Rows Container Array --- */
 .faq-accordion-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 18px; /* Breathing gap margins split rows */
+  gap: 18px; 
   width: 100%;
 }
 
-/* Base Individual Item Grid Layout Glass Panels */
+
 .faq-item {
   background: rgba(38, 22, 74, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.04);
@@ -2555,7 +2401,6 @@
     background-color 0.4s ease;
 }
 
-/* --- THE ACCORDION TRIGGER BUTTON LAYER --- */
 .faq-question-btn {
   width: 100%;
   padding: 26px 30px;
@@ -2572,14 +2417,13 @@
 }
 
 .faq-question-btn span:first-child {
-  color: #ffffff !important; /* Highly readable crystal white question text font */
+  color: #ffffff !important; 
   font-size: 18px;
   font-weight: 700;
   line-height: 1.4;
   transition: color 0.3s ease;
 }
 
-/* Dynamic Accent Plus-Minus Icon Node Badge Box */
 .faq-toggle-icon {
   width: 36px;
   height: 36px;
@@ -2591,7 +2435,7 @@
   align-items: center;
   justify-content: center;
   font-size: 13px;
-  flex-shrink: 0; /* Blocking dimensional distortion */
+  flex-shrink: 0; 
   transition:
     transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
     color 0.4s ease,

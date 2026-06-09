@@ -1,4 +1,3 @@
-
 :root {
   --primary-violet: #ffffff;
   --dark-violet: #2ee59d;
@@ -6,7 +5,7 @@
   --primary-green: #2ee59d;
   --dark-green-hover: #22c583;
 
-  --bg-color: #160a2e; 
+  --bg-color: #160a2e;
   --text-dark: #ffffff;
   --text-secondary: #b1a5cd;
   --border-color: rgba(46, 229, 157, 0.15);
@@ -68,25 +67,25 @@ body.no-scroll {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1001; 
+  z-index: 1001;
 }
 
 .nav-logo-section a {
-  text-decoration: none; 
+  text-decoration: none;
   display: flex;
   align-items: center;
 }
 
 .logo {
-  height: 35px; 
-  width: auto; 
+  height: 35px;
+  width: auto;
   object-fit: contain;
-  transition: transform 0.3s ease; 
+  transition: transform 0.3s ease;
   cursor: pointer;
 }
 
 .logo:hover {
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
@@ -128,7 +127,6 @@ body.no-scroll {
   transition: all 0.3s ease;
 }
 
-/* Hover State */
 .nav-item:hover {
   color: var(--primary-green);
   background-color: rgba(46, 229, 157, 0.1); /* Light green background glow */
@@ -147,7 +145,6 @@ body.no-scroll {
   color: var(--primary-green);
 }
 
-/* --- Action Buttons --- */
 .nav-actions {
   display: flex;
   align-items: center;
@@ -191,7 +188,6 @@ body.no-scroll {
   box-shadow: 0 6px 20px rgba(46, 229, 157, 0.5);
 }
 
-/* Hide mobile elements on desktop */
 .hamburger {
   display: none;
   font-size: 24px;
@@ -205,7 +201,6 @@ body.no-scroll {
   display: none;
 }
 
-/* --- Responsive Styles (Mobile Full Screen Menu) --- */
 @media (max-width: 992px) {
   .nav-links {
     gap: 10px;
@@ -216,27 +211,24 @@ body.no-scroll {
   }
 }
 
-/* Update your media query in style.css */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
   }
 
-  /* Full Screen Side Menu styling */
   .nav-links {
     position: fixed;
     top: 0;
-    right: -200%; /* Start hidden off-screen */
-    width: 100%; /* 100% Full Screen Width */
-    height: 100vh; /* 100% Full Screen Height */
+    right: -200%;
+    width: 100%;
+    height: 100vh;
     background: var(--bg-color);
     flex-direction: column;
-    align-items: center; /* Center horizontally */
+    align-items: center;
 
-    /* FIX FOR SCROLLING & ALIGNMENT */
-    justify-content: flex-start; /* Start from top instead of center */
-    padding: 80px 20px 40px; /* Top padding space for close button */
-    overflow-y: auto; /* Enable vertical scrolling */
+    justify-content: flex-start;
+    padding: 80px 20px 40px;
+    overflow-y: auto;
 
     transition: right 0.4s ease-in-out;
     z-index: 2000;
@@ -246,18 +238,17 @@ body.no-scroll {
     right: 0;
   }
 
-  /* FIX FOR CLOSE BUTTON */
   .mobile-close-btn {
     display: block;
     position: absolute;
-    top: 25px; /* Fixed distance from top */
-    right: 30px; /* Fixed distance from right */
+    top: 25px;
+    right: 30px;
     font-size: 32px;
     color: var(--primary-violet);
     cursor: pointer;
     transition: transform 0.3s ease;
-    z-index: 2001; /* Ensure it stays above links */
-    background: var(--bg-color); /* Add bg to prevent overlap issues */
+    z-index: 2001;
+    background: var(--bg-color);
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -279,15 +270,13 @@ body.no-scroll {
     justify-content: center;
   }
 
-  /* Action buttons in mobile menu */
   .nav-actions-mobile-wrapper {
     width: 80%;
     max-width: 300px;
-    margin-top: 20px; /* Reduced margin */
-    padding-top: 20px; /* Reduced padding */
+    margin-top: 20px;
+    padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 30px; /* Extra space at the bottom for scrolling */
-    /* margin-left: 60px; */
+    margin-bottom: 30px;
   }
 
   .nav-actions {
@@ -305,23 +294,18 @@ body.no-scroll {
   }
 }
 
-/* Desktop View mattum (Mobile-a affect pannadhu) */
 @media (min-width: 769px) {
   .nav-links {
-    flex: 1; /* Navbar-oda mīthi ulla muzhu space-ayum eduthukum */
+    flex: 1;
     justify-content: center;
-    margin-left: 50px; /* Menu items-a exact center-ku kondu vara */
+    margin-left: 50px;
   }
 
   .nav-actions-mobile-wrapper {
-    margin-left: auto; /* Login & Get Started buttons-a extreme right-ku push panna */
+    margin-left: auto;
   }
 }
 
-/* --- Footer Main Styles --- */
-/* ========================================== */
-/* Footer Styles */
-/* ========================================== */
 .footer {
   background-color: #26164a;
   color: #b1a5cd;
@@ -336,7 +320,6 @@ body.no-scroll {
   padding: 0 20px;
 }
 
-/* --- Grid Layout --- */
 .footer-top {
   display: grid;
   grid-template-columns: 2fr 1fr 1.5fr 2fr;
@@ -344,24 +327,21 @@ body.no-scroll {
   margin-bottom: 40px;
 }
 
-/* --- Column 1: Brand Info --- */
-/* --- Column 1: Brand Info Logo --- */
 .footer-brand .logo {
   display: flex;
-  flex-direction: row; /* Idhu dhaan pakathu pakathula kondu varum */
-  align-items: center; /* Rendayum neduvala nera (vertically center) vekkum */
-  justify-content: flex-start; /* Left side align panna */
-  gap: 12px; /* Logo-kum text-kum naduvula gap */
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
   font-size: 24px;
   font-weight: 800;
-  color: #22c583; /* Text color green-ku */
+  color: #22c583;
   margin-bottom: 20px;
   letter-spacing: 1px;
 }
 
-/* Image-kana specific size */
 .footer-logo-img {
-  height: 35px; /* Logo size-a inga adjust pannikonga */
+  height: 35px;
   width: auto;
   object-fit: contain;
 }
@@ -396,7 +376,6 @@ body.no-scroll {
   transform: translateY(-3px);
 }
 
-/* --- Column 2: Platform Links --- */
 .footer-heading {
   color: #ffffff;
   font-size: 18px;
@@ -422,7 +401,6 @@ body.no-scroll {
   color: #2ee59d;
 }
 
-/* --- Column 3: Support Info --- */
 .support-info {
   list-style: none;
   display: flex;
@@ -444,7 +422,6 @@ body.no-scroll {
   text-align: center;
 }
 
-/* --- Column 4: Newsletter --- */
 .newsletter-desc {
   margin-bottom: 20px;
 }
@@ -515,7 +492,6 @@ body.no-scroll {
   display: block;
 }
 
-/* --- Footer Bottom --- */
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 20px;
@@ -556,12 +532,6 @@ body.no-scroll {
   pointer-events: none;
 }
 
-/* --- Mobile Responsive --- */
-/* ========================================== */
-/* FOOTER MOBILE RESPONSIVE ENGINE            */
-/* ========================================== */
-
-/* Tablet View (2 columns) */
 @media (max-width: 992px) {
   .footer-top {
     grid-template-columns: 1fr 1fr;
@@ -569,13 +539,12 @@ body.no-scroll {
   }
 }
 
-/* Mobile View (1 column + Sticky Footer Adjustments) */
 @media (max-width: 768px) {
   .footer-top {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  
+
   .brand-desc {
     max-width: 100%;
   }
@@ -597,22 +566,21 @@ body.no-scroll {
   }
 }
 
-/* Super Small Phones (Newsletter Input Fix) */
 @media (max-width: 480px) {
   .newsletter-input-group {
-    flex-direction: column; /* Stack button below input */
+    flex-direction: column;
     gap: 10px;
   }
-  
+
   .newsletter-input {
-    border-radius: 6px !important; /* Force rounded corners on all sides */
+    border-radius: 6px !important;
   }
-  
+
   .newsletter-btn {
     border-radius: 6px !important;
-    width: 100%; /* Button takes full width */
+    width: 100%;
   }
-    .navbar-wrapper.scrolled{
-    padding: 0px;   
+  .navbar-wrapper.scrolled {
+    padding: 0px;
   }
 }

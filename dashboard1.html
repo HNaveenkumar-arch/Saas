@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./asset/logo_Favicon.webp">
     <title>Stackly - Startup Owner Dashboard</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
@@ -22,7 +23,7 @@
             <div class="stackly-glow"></div>
 
             <h1 class="stackly-brand">
-                <i class="fa-brands fa-stack-exchange"></i> STACKLY
+                <img src="./asset/green1_logo.webp" class="logo" alt="logo">
             </h1>
             <p class="load-p">Saas StartUp</p>
 
@@ -342,10 +343,11 @@
 
                 <div class="table-container">
                     <h3 style="margin-bottom: 15px; color: var(--primary-violet);">Invite New Member</h3>
-                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <form id="inviteForm" style="display: flex; flex-direction: column; gap: 15px;"
+                        onsubmit="validateInvite(event)">
 
                         <div style="display: flex; gap: 10px;">
-                            <select
+                            <select id="roleSelect"
                                 style="flex: 1; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; outline: none; background: #fff;">
                                 <option value="" disabled selected>Select Role</option>
                                 <option value="dev">Developer</option>
@@ -353,13 +355,15 @@
                                 <option value="marketing">Marketing</option>
                                 <option value="manager">Project Manager</option>
                             </select>
-                            <button
-                                style="padding: 12px 20px; background: var(--primary-green); color: #000; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 8px;"
-                                onclick="window.location.href='404page.html'">
+
+                            <button type="submit"
+                                style="padding: 12px 20px; background: var(--primary-green); color: #000; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 8px;">
                                 <i class="fa-solid fa-paper-plane"></i> Send
                             </button>
                         </div>
-                    </div>
+                        <span id="roleError" style="color: red; font-size: 12px; display: none;">Please select a role
+                            before sending!</span>
+                    </form>
                 </div>
 
             </div>
@@ -694,6 +698,22 @@
                 options: { maintainAspectRatio: false }
             });
         }
+        function validateInvite(event) {
+    event.preventDefault(); // Prevents the form from submitting/refreshing
+    
+    const roleSelect = document.getElementById("roleSelect");
+    const roleError = document.getElementById("roleError");
+
+    if (roleSelect.value === "") {
+        roleError.style.display = "block";
+        roleSelect.style.border = "1px solid red";
+    } else {
+        roleError.style.display = "none";
+        roleSelect.style.border = "1px solid var(--border-color)";
+        
+        window.location.href = '404page.html';
+    }
+}
     </script>
 
 </body>

@@ -1,7 +1,3 @@
-/* ========================================== */
-/* dashboard1.css - Startup Owner Dashboard   */
-/* ========================================== */
-
 :root {
   --primary-violet: #26164a;
   --dark-violet: #160a2e;
@@ -27,7 +23,6 @@ body {
   overflow-x: hidden;
 }
 
-/* --- Sidebar --- */
 .sidebar {
   width: 280px;
   background-color: var(--primary-violet);
@@ -89,154 +84,165 @@ body {
   border-left-color: var(--primary-green);
 }
 
-/* ========================================== */
-/* Ultra Premium Loader Styles                */
-/* ========================================== */
-
 .stackly-loader-wrapper {
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #110822; /* Deepest Violet for cinematic look */
-    transition: opacity 0.7s cubic-bezier(0.87, 0, 0.13, 1),
-                visibility 0.7s cubic-bezier(0.87, 0, 0.13, 1);
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #110822;
+  transition:
+    opacity 0.7s cubic-bezier(0.87, 0, 0.13, 1),
+    visibility 0.7s cubic-bezier(0.87, 0, 0.13, 1);
 }
 
 .stackly-loader-content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transform: translateY(0);
-    transition: transform 0.7s cubic-bezier(0.87, 0, 0.13, 1);
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(0);
+  transition: transform 0.7s cubic-bezier(0.87, 0, 0.13, 1);
 }
 
-/* Ambient Breathing Glow */
 .stackly-glow {
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    background: #2EE59D;
-    filter: blur(90px);
-    opacity: 0.15;
-    border-radius: 50%;
-    animation: pulseGlow 2s ease-in-out infinite;
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: #2ee59d;
+  filter: blur(90px);
+  opacity: 0.15;
+  border-radius: 50%;
+  animation: pulseGlow 2s ease-in-out infinite;
 }
 
-/* Gradient Text Style */
 .stackly-brand {
-    font-size: 42px;
-    font-weight: 900;
-    letter-spacing: 6px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 40px;
-    position: relative;
-    background: linear-gradient(135deg, #FFFFFF 0%, #B1A5CD 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: 6px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 0%, #b1a5cd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Floating Icon */
 .stackly-brand i {
-    color: #2EE59D;
-    -webkit-text-fill-color: #2EE59D; 
-    font-size: 48px;
-    animation: floatIcon 2s ease-in-out infinite;
+  color: #2ee59d;
+  -webkit-text-fill-color: #2ee59d;
+  font-size: 48px;
+  animation: floatIcon 2s ease-in-out infinite;
 }
 
-/* Sleek Progress Track */
 .stackly-progress-track {
-    width: 260px;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.05);
-    position: relative;
-    overflow: hidden;
-    border-radius: 2px;
+  width: 260px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
 }
 
-/* Glowing Progress Bar */
 .stackly-progress-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    background: #2EE59D;
-    width: 0%;
-    box-shadow: 0 0 10px #2EE59D, 0 0 20px rgba(46, 229, 157, 0.6);
-    /* 1.8 seconds loading animation */
-    animation: ultraLoad 1.8s cubic-bezier(0.76, 0, 0.24, 1) forwards; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #2ee59d;
+  width: 0%;
+  box-shadow:
+    0 0 10px #2ee59d,
+    0 0 20px rgba(46, 229, 157, 0.6);
+  animation: ultraLoad 1.8s cubic-bezier(0.76, 0, 0.24, 1) forwards;
 }
 
-/* The Exit Animation Class */
 .stackly-loader-wrapper.hide {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
-.load-p{
+.load-p {
   color: #ffffff;
   margin-bottom: 20px;
   font-size: 30px;
-
 }
 
-/* Content sliding slightly up and fading out */
 .stackly-loader-wrapper.hide .stackly-loader-content {
-    transform: translateY(-40px) scale(0.98);
+  transform: translateY(-40px) scale(0.98);
 }
 
-/* --- Keyframe Animations --- */
 @keyframes pulseGlow {
-    0%, 100% { transform: scale(1); opacity: 0.15; }
-    50% { transform: scale(1.5); opacity: 0.25; }
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.25;
+  }
 }
 
 @keyframes floatIcon {
-    0%, 100% { transform: translateY(0); filter: drop-shadow(0 0 0 rgba(46,229,157,0)); }
-    50% { transform: translateY(-6px); filter: drop-shadow(0 10px 15px rgba(46,229,157,0.4)); }
+  0%,
+  100% {
+    transform: translateY(0);
+    filter: drop-shadow(0 0 0 rgba(46, 229, 157, 0));
+  }
+  50% {
+    transform: translateY(-6px);
+    filter: drop-shadow(0 10px 15px rgba(46, 229, 157, 0.4));
+  }
 }
 
 @keyframes ultraLoad {
-    0% { width: 0%; }
-    40% { width: 70%; }
-    100% { width: 100%; }
+  0% {
+    width: 0%;
+  }
+  40% {
+    width: 70%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
-/* Mobile Adjustments */
 @media (max-width: 768px) {
-    .stackly-brand { font-size: 32px; letter-spacing: 4px; }
-    .stackly-brand i { font-size: 38px; }
-    .stackly-progress-track { width: 200px; }
+  .stackly-brand {
+    font-size: 32px;
+    letter-spacing: 4px;
+  }
+  .stackly-brand i {
+    font-size: 38px;
+  }
+  .stackly-progress-track {
+    width: 200px;
+  }
 }
-
-/* ========================================== */
-/* SIDEBAR FOOTER & HOVER EFFECTS             */
-/* ========================================== */
 
 .sidebar-footer {
   padding: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Adds neat spacing between the two links */
+  gap: 10px;
 }
 
 .footer-link {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #b1a5cd; /* Default text color for Dashboard 1 */
+  color: #b1a5cd;
   text-decoration: none;
-  padding: 12px 15px; /* Creates a clickable button area */
+  padding: 12px 15px;
   border-radius: 8px;
   font-weight: 500;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Smooth bouncy slide */
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .footer-link i {
@@ -244,56 +250,50 @@ body {
   transition: color 0.3s ease;
 }
 
-/* Base Hover Effect (For 'Back To Home') */
 .footer-link:hover {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.05); /* Soft highlight background */
-  transform: translateX(6px); /* Slides right slightly */
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(6px);
 }
 
 .footer-link:hover i {
-  color: var(--primary-green); /* Icon turns Stackly green */
+  color: var(--primary-green);
 }
 
-/* Logout Specific Hover (Danger / Red Alert Effect) */
 .footer-link.logout-link:hover {
-  background: rgba(239, 68, 68, 0.08); /* Soft red background */
-  color: #ef4444; /* Red text */
+  background: rgba(239, 68, 68, 0.08);
+  color: #ef4444;
 }
 
 .footer-link.logout-link:hover i {
-  color: #ef4444; /* Red icon */
+  color: #ef4444;
 }
 
-/* --- Main Content --- */
 .main-content {
   flex: 1;
   margin-left: 280px;
   padding: 30px;
   transition: 0.3s;
 
-  /* CRITICAL FIX FOR OVERFLOW */
   min-width: 0;
   box-sizing: border-box;
 }
 
-/* Desktop-la indha header theriya koodadhu */
 .mobile-only-header {
-    display: none; 
+  display: none;
 }
 
-/* Mobile View (992px-ku keezha pogum pothu mattum theriyum) */
 @media (max-width: 992px) {
-    .mobile-only-header {
-        display: flex; /* flex kudutha dhaan pakathu pakathula varum */
-        justify-content: space-between; /* Onnu left, onnu right */
-        align-items: center; /* Neduvala crt-a align panna */
-        padding: 15px 20px;
-        background: #fff;
-        border-radius: 12px;
-        margin-bottom: 20px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Light shadow for premium look */
-    }
+  .mobile-only-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #fff;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
 }
 
 .mobile-nav {
@@ -305,11 +305,9 @@ body {
   border-radius: 10px;
   margin-bottom: 20px;
 
-  /* CRITICAL FIX FOR OVERFLOW */
   box-sizing: border-box;
 }
 
-/* --- Content Sections (Tabs) --- */
 .content-section {
   display: none;
   animation: fadeIn 0.5s ease;
@@ -330,7 +328,6 @@ body {
   }
 }
 
-/* Welcome Card */
 .welcome-card {
   background: linear-gradient(
     135deg,
@@ -354,7 +351,6 @@ body {
   font-size: 13px;
 }
 
-/* --- Insights Grid --- */
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -380,7 +376,6 @@ body {
   border-radius: 12px;
 }
 
-/* --- Tables (Team) --- */
 .table-container {
   background: #fff;
   border-radius: 15px;
@@ -419,7 +414,6 @@ td {
   color: #15803d;
 }
 
-/* --- Project Cards --- */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -446,7 +440,6 @@ td {
   background: var(--primary-green);
 }
 
-/* --- Settings --- */
 .settings-card {
   max-width: 600px;
   background: #fff;
@@ -470,9 +463,6 @@ td {
   border: 1px solid var(--border-color);
   border-radius: 8px;
 }
-/* ========================================== */
-/* ADVANCED MOBILE RESPONSIVE ENGINE & OVERFLOW FIX */
-/* ========================================== */
 
 @media (max-width: 992px) {
   .sidebar {
@@ -486,8 +476,8 @@ td {
     margin-left: 0;
     padding: 20px;
     width: 100%;
-    max-width: 100vw; /* Strict boundary lock */
-    overflow-x: hidden; /* Prevents any internal element from pushing screen wide */
+    max-width: 100vw;
+    overflow-x: hidden;
   }
 
   .mobile-nav {
@@ -496,7 +486,6 @@ td {
 }
 
 @media (max-width: 768px) {
-  /* --- Welcome Card & Base Grids --- */
   .welcome-card {
     flex-direction: column;
     align-items: flex-start;
@@ -507,7 +496,7 @@ td {
   .email-badge {
     width: 100%;
     text-align: center;
-    word-break: break-all; /* Prevents long emails from breaking layout */
+    word-break: break-all;
   }
 
   .grid-3,
@@ -534,7 +523,6 @@ td {
     font-size: 22px !important;
   }
 
-  /* --- TEAM SECTION MOBILE FIXES --- */
   #team > div:first-child {
     flex-direction: column;
     align-items: flex-start;
@@ -548,7 +536,6 @@ td {
     padding: 15px 0 !important;
   }
 
-  /* Force Icon and Text to stay side-by-side always */
   #team ul li > div {
     display: flex !important;
     flex-direction: row !important;
@@ -556,13 +543,11 @@ td {
     gap: 15px !important;
   }
 
-  /* Move the pending badge to align nicely under the text */
   #team ul li > span {
     align-self: flex-start;
     margin-left: 35px;
   }
 
-  /* Invite Form Flex Fix */
   #team .table-container > div > div:nth-child(2) {
     flex-direction: column;
     gap: 10px;
@@ -579,7 +564,6 @@ td {
 }
 
 @media (max-width: 480px) {
-  /* --- Typography & Paddings --- */
   .main-content {
     padding: 15px;
   }
@@ -603,13 +587,12 @@ td {
     font-size: 20px;
   }
 
-  /* --- Team Specific Tiny Phone Fixes --- */
   #team ul li > div {
-    flex-direction: row !important; /* Strictly lock as row */
+    flex-direction: row !important;
     align-items: center !important;
   }
 
   #team ul li i {
-    margin-bottom: 0 !important; /* Remove bottom margin */
+    margin-bottom: 0 !important;
   }
 }
