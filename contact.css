@@ -1,0 +1,761 @@
+/* ========================================== */
+/* CONTACT HERO SECTION MASTER STYLES         */
+/* ========================================== */
+
+.contact-hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 20px;
+    overflow: hidden; 
+}
+
+/* --- THE PARALLAX MAGIC --- */
+.contact-parallax-bg {
+    position: fixed; 
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    background: url('./asset/m5.webp') center/cover no-repeat;
+    z-index: -2; 
+}
+
+/* --- ANIMATED GRADIENT OVERLAY --- */
+.contact-gradient-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    background: linear-gradient(135deg, rgba(5,2,10,0.95) 0%, rgba(5,2,10,0.85) 50%, rgba(46, 229, 157, 0.25) 100%);
+    background-size: 200% 200%;
+    animation: contactGradientShift 8s ease infinite alternate;
+    z-index: -1;
+}
+
+@keyframes contactGradientShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* --- SPLIT LAYOUT CONTAINER --- */
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    z-index: 10; 
+}
+
+/* --- NEW: BREADCRUMB STYLES --- */
+.breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #94A3B8;
+    margin-bottom: 25px;
+    backdrop-filter: blur(10px);
+}
+
+.breadcrumb a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.breadcrumb a:hover {
+    color: #2EE59D;
+}
+
+.breadcrumb .current {
+    color: #2EE59D;
+    font-weight: 600;
+}
+
+.breadcrumb .separator {
+    font-size: 11px;
+    opacity: 0.6;
+}
+
+/* --- LEFT CONTENT --- */
+.contact-left-content {
+    color: #fff;
+}
+
+.contact-title {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.contact-desc {
+    font-size: 18px;
+    color: #94A3B8;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 500px;
+}
+
+.contact-btns {
+    justify-content: flex-start;
+}
+
+/* --- RIGHT SIDE GLASSMORPHISM CARD --- */
+.glass-contact-info {
+    background: rgba(22, 10, 46, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 0 20px rgba(255,255,255,0.02);
+    border-radius: 24px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.glass-contact-info:hover {
+    transform: translateY(-10px);
+    border-color: rgba(46, 229, 157, 0.3);
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    background: rgba(46, 229, 157, 0.1);
+    color: #2EE59D;
+    border: 1px solid rgba(46, 229, 157, 0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.info-text h4 {
+    color: #fff;
+    font-size: 18px;
+    margin: 0 0 5px 0;
+}
+
+.info-text p {
+    color: #94A3B8;
+    font-size: 14px;
+    margin: 0 0 10px 0;
+}
+
+.contact-link {
+    color: #2EE59D;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.contact-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* ========================================== */
+/* MOBILE RESPONSIVE ENGINE                   */
+/* ========================================== */
+
+@media (max-width: 992px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .breadcrumb {
+        margin: 0 auto 25px auto; /* Centers the breadcrumb on mobile */
+    }
+
+    .contact-title { font-size: 40px; }
+    .contact-desc { margin: 0 auto 30px auto; }
+    .contact-btns { justify-content: center; }
+    
+    .info-item {
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-hero-section {
+        padding: 120px 15px 60px 15px;
+    }
+    
+    .contact-title { font-size: 32px; }
+    
+    .glass-contact-info {
+        padding: 30px 20px;
+        gap: 25px;
+    }
+}
+
+/* ========================================== */
+/* GLOBAL BUTTON STYLES (REQUIRED FOR LINKS)  */
+/* ========================================== */
+
+.action-btn-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap; /* Mobile-la idikkama irukka */
+}
+
+.action-btn {
+    display: inline-block; /* 🔥 Ithu thaan link-a button-a mathum */
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none !important; /* 🔥 Blue underline-a remove pannum */
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+/* Primary Solid Green Button */
+.btn-solid-green {
+    background-color: #2EE59D !important;
+    color: #000 !important;
+    border: none;
+    box-shadow: 0 4px 15px rgba(46, 229, 157, 0.3);
+}
+
+.btn-solid-green:hover {
+    background-color: #22c583 !important;
+    color: #000 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(46, 229, 157, 0.4);
+}
+
+/* Secondary Outline Button */
+.btn-outline-light {
+    background-color: transparent !important;
+    color: #fff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-color: #2EE59D;
+    color: #2EE59D !important;
+}
+
+
+/* ========================================== */
+/* CONTACT INFO & 3D FLIP CARDS ENGINE        */
+/* ========================================== */
+
+.contact-info-section {
+    padding: 100px 20px;
+    background-color: #0B0616; /* Slight variation from hero dark theme */
+}
+
+/* Flex Grid for Cards */
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 50px auto 0;
+}
+
+/* --- THE 3D FLIP MECHANISM --- */
+
+.flip-card {
+    background-color: transparent;
+    width: 270px;
+    height: 250px;
+    perspective: 1000px; /* Gives the 3D depth */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+/* Trigger flip on hover */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front and Back common styles */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* FRONT SIDE STYLES */
+.flip-card-front {
+    background: rgba(22, 10, 46, 0.6);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.flip-icon {
+    font-size: 40px;
+    color: #2EE59D;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 15px rgba(46, 229, 157, 0.3));
+}
+
+.flip-card-front h3 {
+    color: #fff;
+    font-size: 20px;
+    margin: 0;
+    font-weight: 700;
+}
+
+/* BACK SIDE STYLES */
+.flip-card-back {
+    background: linear-gradient(145deg, #160a2e, #0b0616);
+    color: white;
+    transform: rotateY(180deg); /* Start flipped */
+    border-color: rgba(46, 229, 157, 0.3); /* Green border on back */
+}
+
+.flip-card-back h4 {
+    color: #2EE59D;
+    font-size: 22px;
+    margin: 0 0 10px 0;
+}
+
+.flip-card-back p {
+    color: #94A3B8;
+    font-size: 14px;
+    margin: 0 0 20px 0;
+    line-height: 1.5;
+}
+
+/* Utility to make buttons smaller inside flip cards */
+.btn-small {
+    padding: 10px 20px !important;
+    font-size: 13px !important;
+}
+
+/* ========================================== */
+/* MOBILE RESPONSIVE ENGINE                   */
+/* ========================================== */
+
+@media (max-width: 1200px) {
+    .flip-card {
+        width: calc(50% - 15px); /* 2 columns on tablet */
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-info-section {
+        padding: 60px 20px;
+    }
+    
+    .contact-grid {
+        gap: 20px;
+    }
+    
+    .flip-card {
+        width: 100%; /* 1 column on mobile */
+        max-width: 320px;
+        height: 220px;
+    }
+    
+    /* Mobile hover is triggered by tapping */
+}
+
+/* ========================================== */
+/* GLOBAL SECTION HEADER TYPOGRAPHY           */
+/* ========================================== */
+
+.section-header.text-center {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    color: #ffffff; /* Velichamaana white color */
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.section-subtitle {
+    color: #94A3B8; /* Premium light grey */
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Green Gradient Text Effect */
+.text-gradient {
+    background: linear-gradient(135deg, #2EE59D 0%, #10b981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+/* Mobile Responsive for Headings */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 32px;
+    }
+    .section-subtitle {
+        font-size: 15px;
+        padding: 0 15px;
+    }
+}
+
+
+/* ========================================== */
+/* CONTACT FORM & MAP STYLES                  */
+/* ========================================== */
+
+.contact-form-section {
+    padding: 100px 20px;
+    background-color: #05020A;
+}
+
+.split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.text-left { text-align: left !important; margin-bottom: 30px; }
+.text-left .section-subtitle { margin: 0; }
+
+/* --- GLASSMORPHISM FORM --- */
+.glass-form {
+    background: rgba(22, 10, 46, 0.4);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+/* --- FLOATING LABELS MAGIC --- */
+.float-input {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+    padding: 22px 15px 10px 15px; /* Extra top padding for label */
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.float-label {
+    position: absolute;
+    top: 16px;
+    left: 15px;
+    color: #94A3B8;
+    font-size: 15px;
+    pointer-events: none;
+    transition: 0.3s ease all;
+}
+
+/* When input is focused or has text, float the label up */
+.float-input:focus ~ .float-label,
+.float-input:not(:placeholder-shown) ~ .float-label {
+    top: 6px;
+    font-size: 11px;
+    color: #2EE59D;
+    font-weight: 600;
+}
+
+.float-input:focus {
+    border-color: #2EE59D;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+textarea.float-input {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* --- VALIDATION ERROR STYLES --- */
+.error-msg {
+    display: none; /* Hidden by default */
+    color: #EF4444;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-left: 5px;
+    text-align: left;
+}
+
+.float-input.input-error {
+    border-color: #EF4444 !important;
+    background: rgba(239, 68, 68, 0.05);
+}
+
+/* --- SUCCESS MESSAGE --- */
+.success-message {
+    display: none;
+    background: rgba(46, 229, 157, 0.1);
+    color: #2EE59D;
+    border: 1px solid rgba(46, 229, 157, 0.3);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 600;
+    animation: slideUpFade 0.4s ease;
+}
+
+@keyframes slideUpFade {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.w-100 { width: 100%; }
+
+/* --- RIGHT SIDE MAP/IMAGE --- */
+.glass-map-container {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.office-img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    display: block;
+}
+
+.map-overlay-info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(11, 6, 22, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.map-overlay-info h4 { color: #fff; margin: 0 0 5px 0; font-size: 18px; }
+.map-overlay-info p { color: #2EE59D; margin: 0; font-size: 14px; font-weight: 500; }
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 992px) {
+    .split-layout { grid-template-columns: 1fr; gap: 40px; }
+    .office-img { height: 400px; }
+}
+@media (max-width: 768px) {
+    .glass-form { padding: 30px 20px; }
+}
+
+
+/* ========================================== */
+/* 5️⃣ PREMIUM CTA SECTION STYLES              */
+/* ========================================== */
+
+.premium-cta-section {
+    position: relative;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #05020A 0%, #160a2e 100%); /* Deep dark purple/blue gradient */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- GLOWING PARTICLES MAGIC --- */
+.cta-particles {
+    position: absolute;
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    pointer-events: none; /* So it doesn't block clicks */
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px); /* Massive blur for glowing effect */
+    animation: floatParticle 10s infinite ease-in-out alternate;
+}
+
+/* Green Glow */
+.p-1 { 
+    width: 400px; height: 400px; 
+    top: -10%; left: -10%; 
+    background: rgba(46, 229, 157, 0.15);
+}
+/* Purple Glow */
+.p-2 { 
+    width: 500px; height: 500px; 
+    bottom: -20%; right: -10%; 
+    background: rgba(138, 43, 226, 0.15); 
+    animation-delay: -5s; 
+}
+/* Center Subtle Glow */
+.p-3 { 
+    width: 300px; height: 300px; 
+    top: 30%; left: 40%; 
+    background: rgba(46, 229, 157, 0.08); 
+    animation-duration: 15s; 
+}
+
+@keyframes floatParticle {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(50px, -50px) scale(1.1); }
+}
+
+/* --- GLASSMORPHISM CARD --- */
+.cta-glass-card {
+    position: relative;
+    z-index: 10;
+    background: rgba(22, 10, 46, 0.5);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(46, 229, 157, 0.2); /* Subtle green border */
+    border-radius: 30px;
+    padding: 80px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.6), inset 0 0 20px rgba(255,255,255,0.02);
+}
+
+.cta-title {
+    font-size: 48px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.cta-desc {
+    font-size: 18px;
+    color: #94A3B8;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+}
+
+.cta-buttons {
+    margin-bottom: 60px;
+    justify-content: center;
+}
+
+/* --- STATS ROW --- */
+.cta-stats-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cta-stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 40px;
+    font-weight: 800;
+    color: #2EE59D;
+    margin: 0 0 5px 0;
+    text-shadow: 0 0 20px rgba(46, 229, 157, 0.4); /* Neon text glow */
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #94A3B8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.cta-divider {
+    width: 1px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* ========================================== */
+/* MOBILE RESPONSIVE ENGINE                   */
+/* ========================================== */
+
+@media (max-width: 768px) {
+    .premium-cta-section { padding: 80px 15px; }
+    .cta-glass-card { padding: 50px 20px; border-radius: 20px; }
+    
+    .cta-title { font-size: 36px; }
+    .cta-desc { font-size: 16px; margin-bottom: 30px; }
+    
+    .cta-stats-row {
+        flex-direction: column; /* Stacks stats vertically */
+        gap: 30px;
+        padding-top: 30px;
+    }
+    
+    /* Change vertical divider to horizontal line for mobile */
+    .cta-divider {
+        width: 80px;
+        height: 1px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-title { font-size: 32px; }
+    .stat-number { font-size: 36px; }
+}

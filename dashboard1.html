@@ -12,25 +12,25 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <link rel="stylesheet" href="dashboard1.css">
-    
+
 </head>
 
 <body>
 
     <div class="stackly-loader-wrapper" id="premiumLoaderPro">
-    <div class="stackly-loader-content">
-        <div class="stackly-glow"></div>
-        
-        <h1 class="stackly-brand">
-            <i class="fa-brands fa-stack-exchange"></i> STACKLY
-        </h1>
-        <p class="load-p">Saas StartUp</p>
-        
-        <div class="stackly-progress-track">
-            <div class="stackly-progress-bar"></div>
+        <div class="stackly-loader-content">
+            <div class="stackly-glow"></div>
+
+            <h1 class="stackly-brand">
+                <i class="fa-brands fa-stack-exchange"></i> STACKLY
+            </h1>
+            <p class="load-p">Saas StartUp</p>
+
+            <div class="stackly-progress-track">
+                <div class="stackly-progress-bar"></div>
+            </div>
         </div>
     </div>
-</div>
     <div id="overlay"
         style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:999; display:none;"
         onclick="toggleMenu()"></div>
@@ -62,17 +62,18 @@
     </aside>
 
     <main class="main-content">
-    
-    <div class="mobile-only-header">
-    <div class="mobile-logo-section">
-        <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
-            <img src="./asset/green1_logo.webp" alt="logo" class="logo" style="height: 35px; width: auto;">
-        </a>
-        <p style="color: #434f70; font-size: 12px; margin-top: 5px; font-weight: 600;">Owner Workspace</p>
-    </div>
-    
-    <i class="fa-solid fa-bars" onclick="toggleMenu()" style="font-size: 28px; color: var(--primary-violet); cursor: pointer;"></i>
-</div>
+
+        <div class="mobile-only-header">
+            <div class="mobile-logo-section">
+                <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+                    <img src="./asset/green1_logo.webp" alt="logo" class="logo" style="height: 35px; width: auto;">
+                </a>
+                <p style="color: #434f70; font-size: 12px; margin-top: 5px; font-weight: 600;">Owner Workspace</p>
+            </div>
+
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"
+                style="font-size: 28px; color: var(--primary-violet); cursor: pointer;"></i>
+        </div>
 
         <div class="welcome-card" data-aos="fade-down">
             <div class="welcome-info">
@@ -207,28 +208,32 @@
                         <button
                             style="padding: 15px; border: 1px dashed var(--primary-green); background: rgba(46, 229, 157, 0.05); color: var(--dark-violet); border-radius: 12px; cursor: pointer; font-weight: 600; transition: 0.3s; display: flex; flex-direction: column; align-items: center; gap: 10px;"
                             onmouseover="this.style.background='var(--primary-green)'; this.style.color='#000';"
-                            onmouseout="this.style.background='rgba(46, 229, 157, 0.05)'; this.style.color='var(--dark-violet)';">
+                            onmouseout="this.style.background='rgba(46, 229, 157, 0.05)'; this.style.color='var(--dark-violet)';"
+                            onclick="window.location.href='404page.html'">
                             <i class="fa-solid fa-folder-plus" style="font-size: 22px;"></i>
                             New Project
                         </button>
                         <button
                             style="padding: 15px; border: 1px dashed var(--primary-violet); background: rgba(38, 22, 74, 0.05); color: var(--dark-violet); border-radius: 12px; cursor: pointer; font-weight: 600; transition: 0.3s; display: flex; flex-direction: column; align-items: center; gap: 10px;"
                             onmouseover="this.style.background='var(--primary-violet)'; this.style.color='#fff';"
-                            onmouseout="this.style.background='rgba(38, 22, 74, 0.05)'; this.style.color='var(--dark-violet)';">
+                            onmouseout="this.style.background='rgba(38, 22, 74, 0.05)'; this.style.color='var(--dark-violet)';"
+                            onclick="window.location.href='404page.html'">
                             <i class="fa-solid fa-user-plus" style="font-size: 22px;"></i>
                             Add Member
                         </button>
                         <button
                             style="padding: 15px; border: 1px dashed #3B82F6; background: rgba(59, 130, 246, 0.05); color: var(--dark-violet); border-radius: 12px; cursor: pointer; font-weight: 600; transition: 0.3s; display: flex; flex-direction: column; align-items: center; gap: 10px;"
                             onmouseover="this.style.background='#3B82F6'; this.style.color='#fff';"
-                            onmouseout="this.style.background='rgba(59, 130, 246, 0.05)'; this.style.color='var(--dark-violet)';">
+                            onmouseout="this.style.background='rgba(59, 130, 246, 0.05)'; this.style.color='var(--dark-violet)';"
+                            onclick="window.location.href='404page.html'">
                             <i class="fa-solid fa-file-invoice-dollar" style="font-size: 22px;"></i>
                             Create Invoice
                         </button>
                         <button
                             style="padding: 15px; border: 1px dashed #F59E0B; background: rgba(245, 158, 11, 0.05); color: var(--dark-violet); border-radius: 12px; cursor: pointer; font-weight: 600; transition: 0.3s; display: flex; flex-direction: column; align-items: center; gap: 10px;"
                             onmouseover="this.style.background='#F59E0B'; this.style.color='#fff';"
-                            onmouseout="this.style.background='rgba(245, 158, 11, 0.05)'; this.style.color='var(--dark-violet)';">
+                            onmouseout="this.style.background='rgba(245, 158, 11, 0.05)'; this.style.color='var(--dark-violet)';"
+                            onclick="window.location.href='404page.html'">
                             <i class="fa-solid fa-chart-pie" style="font-size: 22px;"></i>
                             View Reports
                         </button>
@@ -242,7 +247,8 @@
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                 <h2>Team Members</h2>
                 <button
-                    style="padding: 10px 20px; background: var(--primary-violet); color: #fff; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; display: flex; gap: 8px; align-items: center;">
+                    style="padding: 10px 20px; background: var(--primary-violet); color: #fff; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; display: flex; gap: 8px; align-items: center;"
+                    onclick="window.location.href='404page.html'">
                     <i class="fa-solid fa-download"></i> Export CSV
                 </button>
             </div>
@@ -337,10 +343,7 @@
                 <div class="table-container">
                     <h3 style="margin-bottom: 15px; color: var(--primary-violet);">Invite New Member</h3>
                     <div style="display: flex; flex-direction: column; gap: 15px;">
-                        <div>
-                            <input type="email" placeholder="Enter email address"
-                                style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; outline: none;">
-                        </div>
+
                         <div style="display: flex; gap: 10px;">
                             <select
                                 style="flex: 1; padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; outline: none; background: #fff;">
@@ -351,7 +354,8 @@
                                 <option value="manager">Project Manager</option>
                             </select>
                             <button
-                                style="padding: 12px 20px; background: var(--primary-green); color: #000; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 8px;">
+                                style="padding: 12px 20px; background: var(--primary-green); color: #000; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 8px;"
+                                onclick="window.location.href='404page.html'">
                                 <i class="fa-solid fa-paper-plane"></i> Send
                             </button>
                         </div>
@@ -372,7 +376,8 @@
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                 <h2>Current Projects</h2>
                 <button
-                    style="padding: 10px 20px; background: var(--primary-green); color: #000; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; display: flex; gap: 8px; align-items: center;">
+                    style="padding: 10px 20px; background: var(--primary-green); color: #000; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; display: flex; gap: 8px; align-items: center;"
+                    onclick="window.location.href='404page.html'">
                     <i class="fa-solid fa-plus"></i> New Project
                 </button>
             </div>
@@ -479,7 +484,8 @@
                                     <span style="font-size: 12px; color: var(--text-grey);">12 MB • Updated Today</span>
                                 </div>
                             </div>
-                            <i class="fa-solid fa-download" style="color: var(--text-grey);"></i>
+                            <a href="404page.html">
+                                <i class="fa-solid fa-download" style="color: var(--text-grey);"></i></a>
                         </div>
                         <div style="padding: 15px; border: 1px solid var(--border-color); border-radius: 10px; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; cursor: pointer;"
                             onmouseover="this.style.borderColor='var(--primary-green)'"
@@ -492,7 +498,8 @@
                                     <span style="font-size: 12px; color: var(--text-grey);">2.4 MB • 2 days ago</span>
                                 </div>
                             </div>
-                            <i class="fa-solid fa-download" style="color: var(--text-grey);"></i>
+                            <a href="404page.html">
+                                <i class="fa-solid fa-download" style="color: var(--text-grey);"></i></a>
                         </div>
                     </div>
                 </div>
@@ -522,7 +529,8 @@
                             style="background: #f9f9f9; color: var(--text-grey);">
                     </div>
                     <button
-                        style="padding:12px; background:var(--primary-green); color: #000; border:none; border-radius:8px; font-weight:700; cursor:pointer; width: 100%; transition: 0.3s; margin-top: 10px;">Save
+                        style="padding:12px; background:var(--primary-green); color: #000; border:none; border-radius:8px; font-weight:700; cursor:pointer; width: 100%; transition: 0.3s; margin-top: 10px;"
+                        onclick="window.location.href='404page.html'">Save
                         Changes</button>
                 </div>
 
@@ -602,12 +610,15 @@
                     <button
                         style="padding:12px; background: transparent; color: var(--primary-violet); border: 2px solid var(--primary-violet); border-radius:8px; font-weight:700; cursor:pointer; width: 100%; transition: 0.3s;"
                         onmouseover="this.style.background='var(--primary-violet)'; this.style.color='#fff';"
-                        onmouseout="this.style.background='transparent'; this.style.color='var(--primary-violet)';">
+                        onmouseout="this.style.background='transparent'; this.style.color='var(--primary-violet)';"
+                        onclick="window.location.href='404page.html'">
                         Upgrade Workspace
                     </button>
-                    <p
-                        style="text-align: center; margin-top: 15px; font-size: 12px; color: #EF4444; cursor: pointer; font-weight: 600; text-decoration: underline;">
-                        Cancel Subscription</p>
+                    <a href="404page.html">
+                        <p
+                            style="text-align: center; margin-top: 15px; font-size: 12px; color: #EF4444; cursor: pointer; font-weight: 600; text-decoration: underline;">
+                            Cancel Subscription</p>
+                    </a>
                 </div>
 
             </div>
@@ -616,45 +627,34 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-    window.addEventListener("load", () => {
-        const loader = document.getElementById("premiumLoaderPro");
-        
-        // Exact 2 seconds delay
-        setTimeout(() => {
-            // Adds the 'hide' class which triggers the sleek CSS exit animation
-            loader.classList.add("hide");
-            
-            // Wait for transition to finish before removing from DOM
+        window.addEventListener("load", () => {
+            const loader = document.getElementById("premiumLoaderPro");
+
             setTimeout(() => {
-                loader.remove();
-            }, 700); // 700ms matches the CSS transition time
-            
-        }, 2000);
-    });
-</script>
+                loader.classList.add("hide");
+
+                setTimeout(() => {
+                    loader.remove();
+                }, 700);
+
+            }, 2000);
+        });
+    </script>
     <script>
-        // 1. Initial Logic
         document.addEventListener('DOMContentLoaded', () => {
             AOS.init({ once: true });
 
-            // Get Email from LocalStorage
             const email = localStorage.getItem('loggedInEmail') || 'naveen@gmail.com';
             document.getElementById('userMail').innerText = email;
             document.getElementById('settingsEmail').value = email;
 
-            // --- Name Extract & Display Code ---
-            // Email-la irundhu '@' ku munnadi ulla name-a edukka
             let namePart = email.split('@')[0];
-            // First letter-a capital-a matha
             let formattedName = namePart.charAt(0).toUpperCase() + namePart.slice(1);
-            // Welcome message-la update panna
             document.getElementById('welcomeName').innerText = `Hi ${formattedName} 👋`;
-            // -----------------------------------
 
             initCharts();
         });
 
-        // 2. Tab Switching Logic
         function showSection(sectionId, element) {
             document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
             document.querySelectorAll('.menu-item').forEach(m => m.classList.remove('active'));
@@ -662,10 +662,9 @@
             document.getElementById(sectionId).classList.add('active');
             element.classList.add('active');
 
-            if (window.innerWidth <= 992) toggleMenu(); // Close mobile menu
+            if (window.innerWidth <= 992) toggleMenu();
         }
 
-        // 3. Mobile Menu Toggle
         function toggleMenu() {
             const side = document.getElementById('sidebar');
             const over = document.getElementById('overlay');
@@ -678,15 +677,14 @@
             }
         }
 
-        // 4. Charts Data
         function initCharts() {
-            // Mini Chart for Overview
+
             new Chart(document.getElementById('miniChart'), {
                 type: 'line',
                 data: { labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'], datasets: [{ label: 'Visits', data: [12, 19, 3, 5, 12], borderColor: '#2EE59D', fill: true, backgroundColor: 'rgba(46,229,157,0.1)' }] }
             });
 
-            // Big Chart for Analytics
+
             new Chart(document.getElementById('bigChart'), {
                 type: 'bar',
                 data: {
@@ -697,7 +695,7 @@
             });
         }
     </script>
-    
+
 </body>
 
 </html>

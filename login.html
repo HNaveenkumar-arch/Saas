@@ -39,17 +39,14 @@
             padding: 20px;
             overflow-x: hidden;
             position: relative;
-            /* For absolute positioning of the back link */
         }
 
-        /* --- Back to Home Link (Positioned Top Left) --- */
         .back-link {
             position: absolute;
             top: 30px;
             left: 30px;
             text-decoration: none;
             color: var(--card-bg);
-            /* White text to contrast with violet background */
             font-size: 15px;
             font-weight: 500;
             display: flex;
@@ -62,10 +59,8 @@
         .back-link:hover {
             color: var(--primary-green);
             transform: translateX(-5px);
-            /* Slight movement on hover */
         }
 
-        /* --- Main Layout Wrapper --- */
         .layout-wrapper {
             display: flex;
             flex-direction: row;
@@ -74,12 +69,10 @@
             justify-content: center;
         }
 
-        /* --- Login Card --- */
         .login-page-container {
             display: flex;
             width: 100%;
             max-width: 480px;
-            /* Centered, compact card without image */
             background: var(--card-bg);
             border-radius: 24px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
@@ -94,16 +87,13 @@
             flex-direction: column;
         }
 
-        /* --- Login Internal Styles --- */
         .logo {
             font-size: 28px;
-            /* Slightly larger logo */
             font-weight: 800;
             color: var(--text-dark);
             display: flex;
             align-items: center;
             justify-content: center;
-            /* Center logo */
             gap: 10px;
             margin-bottom: 24px;
             letter-spacing: 1px;
@@ -115,7 +105,6 @@
 
         .header-text {
             text-align: center;
-            /* Center header text */
             margin-bottom: 30px;
         }
 
@@ -131,7 +120,6 @@
             color: var(--text-grey);
         }
 
-        /* Role Selection */
         .role-container {
             display: flex;
             gap: 16px;
@@ -177,12 +165,10 @@
             line-height: 1.4;
         }
 
-        /* Form Styles & Validation */
         .login-form {
             display: flex;
             flex-direction: column;
             gap: 18px;
-            /* Slightly increased gap */
         }
 
         .input-group {
@@ -225,7 +211,6 @@
             background: #FEF2F2;
         }
 
-        /* Validation Icons */
         .status-icon {
             position: absolute;
             right: 16px;
@@ -245,7 +230,6 @@
             display: none;
         }
 
-        /* Password Specific */
         .password-wrapper input {
             padding-right: 65px;
         }
@@ -379,11 +363,21 @@
             text-decoration: none;
         }
 
+        .logo {
+            width: 138px;
+
+        }
+
+        .logo-con {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .footer-text a:hover {
             text-decoration: underline;
         }
 
-        /* --- Mobile Responsive --- */
         @media (max-width: 500px) {
             .back-link {
                 top: 15px;
@@ -409,19 +403,19 @@
 
 <body>
     <div class="stackly-loader-wrapper" id="premiumLoaderPro">
-    <div class="stackly-loader-content">
-        <div class="stackly-glow"></div>
-        
-        <h1 class="stackly-brand">
-            <i class="fa-brands fa-stack-exchange"></i> STACKLY
-        </h1>
-        <p class="load-p">Saas StartUp</p>
-        
-        <div class="stackly-progress-track">
-            <div class="stackly-progress-bar"></div>
+        <div class="stackly-loader-content">
+            <div class="stackly-glow"></div>
+
+            <h1 class="stackly-brand">
+                <i class="fa-brands fa-stack-exchange"></i> STACKLY
+            </h1>
+            <p class="load-p">Saas StartUp</p>
+
+            <div class="stackly-progress-track">
+                <div class="stackly-progress-bar"></div>
+            </div>
         </div>
     </div>
-</div>
 
     <a href="index.html" class="back-link" data-aos="fade-right" data-aos-delay="200">
         <i class="fa-solid fa-arrow-left"></i> Back to Home
@@ -432,8 +426,9 @@
         <div class="login-page-container">
             <div class="login-card">
 
-                <div class="logo">
-                    <i class="fa-brands fa-stack-exchange"></i> STACKLY
+                <div class="logo-con">
+                    <a href="index.html">
+                        <img src="./asset/green1_logo.webp" class="logo" alt="logo"></a>
                 </div>
 
                 <div class="header-text">
@@ -480,7 +475,7 @@
                         <label class="remember-me">
                             <input type="checkbox"> Remember me
                         </label>
-                        <a href="#" class="forgot-pwd">Forgot Password?</a>
+                        <a href="404page.html" class="forgot-pwd">Forgot Password?</a>
                     </div>
 
                     <button type="submit" class="submit-btn" id="loginBtn">Login as Startup Owner</button>
@@ -491,9 +486,12 @@
                 </div>
 
                 <div class="social-logins">
-                    <button class="social-btn"><i class="fa-brands fa-linkedin-in"></i></button>
-                    <button class="social-btn"><i class="fa-brands fa-instagram"></i></button>
-                    <button class="social-btn"><i class="fa-brands fa-x-twitter"></i></button>
+                    <button class="social-btn" onclick="window.location.href='404page.html'"><i
+                            class="fa-brands fa-linkedin-in"></i></button>
+                    <button class="social-btn" onclick="window.location.href='404page.html'"><i
+                            class="fa-brands fa-instagram"></i></button>
+                    <button class="social-btn" onclick="window.location.href='404page.html'"><i
+                            class="fa-brands fa-x-twitter"></i></button>
                 </div>
 
                 <div class="footer-text">
@@ -506,22 +504,19 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-    window.addEventListener("load", () => {
-        const loader = document.getElementById("premiumLoaderPro");
-        
-        // Exact 2 seconds delay
-        setTimeout(() => {
-            // Adds the 'hide' class which triggers the sleek CSS exit animation
-            loader.classList.add("hide");
-            
-            // Wait for transition to finish before removing from DOM
+        window.addEventListener("load", () => {
+            const loader = document.getElementById("premiumLoaderPro");
+
             setTimeout(() => {
-                loader.remove();
-            }, 700); // 700ms matches the CSS transition time
-            
-        }, 2000);
-    });
-</script>
+                loader.classList.add("hide");
+
+                setTimeout(() => {
+                    loader.remove();
+                }, 700);
+
+            }, 2000);
+        });
+    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -560,7 +555,6 @@
         const passwordInput = document.getElementById('passwordInput');
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        // Clear errors when the user starts typing again
         emailInput.addEventListener('input', function () {
             emailInput.classList.remove('error');
             document.getElementById('emailErrorIcon').style.display = 'none';
@@ -574,13 +568,12 @@
         });
 
         document.getElementById('loginForm').addEventListener('submit', function (e) {
-            e.preventDefault(); // Stop form submission
+            e.preventDefault();
 
             let isValid = true;
             const emailVal = emailInput.value.trim();
             const pwdVal = passwordInput.value.trim();
 
-            // 1. Validate Email ONLY on submit
             if (emailVal === '' || !emailPattern.test(emailVal)) {
                 emailInput.classList.add('error');
                 document.getElementById('emailErrorIcon').style.display = 'block';
@@ -588,7 +581,6 @@
                 isValid = false;
             }
 
-            // 2. Validate Password ONLY on submit
             if (pwdVal === '' || pwdVal.length < 6) {
                 passwordInput.classList.add('error');
                 document.getElementById('pwdErrorIcon').style.display = 'block';
@@ -596,23 +588,18 @@
                 isValid = false;
             }
 
-            // 3. If everything is correct, proceed
-            // 3. If everything is correct, proceed
             if (isValid) {
 
-                // Email-a browser-la save pandrom
                 localStorage.setItem('loggedInEmail', emailVal);
 
                 const btn = document.getElementById('loginBtn');
                 btn.innerText = 'Redirecting...';
 
-                // Role-a check panni correct-ana dashboard-ku redirect pandrom
                 const destination = (currentRole === 'owner') ? 'dashboard1.html' : 'dashboard2.html';
 
                 setTimeout(() => {
                     window.location.href = destination;
 
-                    // Redirect aanathuku appuram button text update aagum
                     btn.innerText = `Login as ${currentRole === 'owner' ? 'Startup Owner' : 'Team Member'}`;
                 }, 1000);
             }

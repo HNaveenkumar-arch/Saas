@@ -16,7 +16,7 @@
 
 .hero-section {
   position: relative;
-  padding: 180px 20px 100px; /* Top padding to clear the fixed navbar */
+  padding: 180px 20px 0; /* Top padding to clear the fixed navbar */
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -437,7 +437,7 @@
 .dynamic-features-wrapper {
   height: 100px; /* Layout jump aagama irukka fixed height */
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .dynamic-feature {
@@ -674,7 +674,7 @@
 /* ========================================== */
 
 .sticky-features-section {
-  padding: 120px 20px;
+  padding: 40px 20px;
   background-color: var(--bg-color);
   position: relative;
   width: 100%;
@@ -894,11 +894,12 @@
     right: 10px;
     bottom: -10px;
   }
+
 }
 
 @media (max-width: 480px) {
   .sticky-container {
-    padding: 0 15px !important; /* Tight wrap for compact screen sizing */
+    padding: 0 2px !important; /* Tight wrap for compact screen sizing */
   }
 
   .sticky-content-wrapper .section-title {
@@ -919,7 +920,7 @@
 /* ========================================== */
 
 .features-showcase-section {
-  padding: 120px 20px;
+  padding: 60px 20px;
   background-color: var(--bg-color);
   position: relative;
   overflow: hidden;
@@ -1162,7 +1163,7 @@
 /* ========================================== */
 
 .walkthrough-section {
-  padding: 120px 20px;
+  padding: 60px 20px;
   background-color: var(--bg-color);
   position: relative;
   overflow: hidden;
@@ -1351,8 +1352,8 @@
   }
 
   .timeline-content {
-    width: calc(100% - 80px);
-    margin-left: 80px !important;
+    width: calc(100%);
+    margin-left: 42px !important;
     margin-right: 0 !important;
     text-align: left !important;
     align-items: flex-start !important;
@@ -1384,7 +1385,7 @@
 /* ========================================== */
 
 .metrics-section {
-  padding: 120px 20px;
+  padding: 60px 20px;
   background-color: var(--bg-color);
   position: relative;
   overflow: hidden;
@@ -1662,7 +1663,7 @@
 /* ========================================== */
 
 .testimonials-slider-section {
-  padding: 120px 20px;
+  padding: 60px 20px;
   background-color: var(--bg-color);
   position: relative;
   overflow: hidden;
@@ -1753,7 +1754,7 @@
 /* ========================================== */
 
 .testimonials-slider-section {
-  padding: 120px 20px;
+  padding: 60px 20px;
   background-color: var(--bg-color);
   position: relative;
   overflow: hidden;
@@ -2115,7 +2116,7 @@
 /* ========================================== */
 
 .integrations-section {
-  padding: 120px 20px;
+  padding: 60px 20px;
   background-color: var(--bg-color);
   position: relative;
   overflow: hidden;
@@ -2449,8 +2450,8 @@
     height: 170px;
   }
   .orbit-ring.outer-ring {
-    width: 310px;
-    height: 310px;
+    width: 242px;
+    height: 242px;
   }
   .orbit-center-core {
     width: 70px;
@@ -2499,7 +2500,7 @@
 /* ========================================== */
 
 .faq-section {
-  padding: 120px 20px;
+  padding: 60px 20px;
   background-color: var(--bg-color);
   position: relative;
   overflow: hidden;
@@ -2901,7 +2902,7 @@
   }
 
   .cta-glow-card {
-    padding: 50px 24px;
+    padding: 33px 8px;
     border-radius: 24px;
   }
 
@@ -2933,7 +2934,7 @@
 /* ========================================== */
 
 .workspace-showcase-section {
-  padding: 120px 20px;
+  padding: 60px 20px;
   background-color: var(--bg-color);
   position: relative;
   overflow: hidden;

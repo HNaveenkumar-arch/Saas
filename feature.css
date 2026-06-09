@@ -20,7 +20,7 @@
         135deg, 
         rgba(42, 10, 74, 0.95) 0%, 
         rgba(91, 33, 182, 0.85) 100%
-    ), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+    ), url('./asset/d2.webp') center/cover no-repeat;
     
     /* Backgroud Image is Fixed */
     background-attachment: fixed;
@@ -409,7 +409,7 @@
 /* --- Features Bento Section --- */
 .features-bento-section {
     background-color: var(--violet-dark);
-    padding: 120px 0;
+    padding: 60px 0;
     position: relative;
     z-index: 2;
 }
@@ -565,7 +565,7 @@
 /* --- Smart Project Management Section --- */
 .smart-project-section {
     background: linear-gradient(180deg, var(--violet-dark) 0%, #1b0735 100%);
-    padding: 120px 0;
+    padding: 60px 0;
     position: relative;
     overflow: hidden;
 }
@@ -833,7 +833,7 @@
 /* --- Collaboration Section Setup --- */
 .collaboration-section {
     background-color: var(--violet-dark);
-    padding: 120px 0;
+    padding: 60px 0;
     position: relative;
     overflow: hidden;
 }
@@ -1075,7 +1075,7 @@
 
 .ai-automation-section {
     background-color: #120322;
-    padding: 120px 0;
+    padding: 60px 0;
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -1401,7 +1401,7 @@
 /* ========================================== */
 
 .analytics-section {
-    padding: 120px 20px;
+    padding: 60px 20px;
     background-color: #0E081F; /* Premium Deep Dark Purple/Blue */
     position: relative;
     overflow: hidden;
@@ -1742,7 +1742,7 @@
 /* ========================================== */
 
 .security-section {
-    padding: 120px 20px;
+    padding: 60px 20px;
     background-color: #0A0514; 
     position: relative;
     width: 100%;

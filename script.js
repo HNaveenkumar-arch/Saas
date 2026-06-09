@@ -283,16 +283,7 @@ if (nlForm) {
 
             // Simulate API call
             setTimeout(() => {
-                nlMessage.textContent = 'Successfully joined the newsletter!';
-                nlMessage.className = 'form-message success';
-                nlBtn.innerText = 'JOINED';
-                nlInput.value = '';
-
-                // Reset button
-                setTimeout(() => {
-                    nlBtn.innerText = originalText;
-                    nlMessage.className = 'form-message';
-                }, 3000);
+                window.location.href='404page.html';
             }, 1000);
         }
     });

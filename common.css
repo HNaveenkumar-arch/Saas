@@ -1,8 +1,4 @@
-/* ========================================== */
-/* style.css */
-/* ========================================== */
 
-/* Color Palette Variables - Dark SaaS Theme */
 :root {
   --primary-violet: #ffffff;
   --dark-violet: #2ee59d;
@@ -10,7 +6,7 @@
   --primary-green: #2ee59d;
   --dark-green-hover: #22c583;
 
-  --bg-color: #160a2e; /* Deep Dark Violet */
+  --bg-color: #160a2e; 
   --text-dark: #ffffff;
   --text-secondary: #b1a5cd;
   --border-color: rgba(46, 229, 157, 0.15);
@@ -27,12 +23,10 @@ body {
   background-color: var(--bg-color);
 }
 
-/* Prevent scroll when menu is open */
 body.no-scroll {
   overflow: hidden;
 }
 
-/* --- Navbar Wrapper --- */
 .navbar-wrapper {
   position: fixed;
   top: 0;
@@ -55,7 +49,6 @@ body.no-scroll {
   border: 1px solid var(--border-color);
 }
 
-/* --- Navbar Container --- */
 .navbar-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -71,38 +64,34 @@ body.no-scroll {
   transition: all 0.4s ease;
 }
 
-/* --- Logo Section --- */
-/* --- Logo Section --- */
 .nav-logo-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1001; /* Mobile menu overlay-ku mela theriya */
+  z-index: 1001; 
 }
 
 .nav-logo-section a {
-  text-decoration: none; /* Link underline-a remove panna */
+  text-decoration: none; 
   display: flex;
   align-items: center;
 }
 
 .logo {
-  height: 35px; /* Unga thevaikku yetpa idhai mathikonga (e.g., 40px, 50px) */
-  width: auto; /* Aspect ratio-a maintain panna */
-  object-fit: contain; /* Image stretch aagama irukka */
-  transition: transform 0.3s ease; /* Hover aagum pothu smooth-a vara */
+  height: 35px; 
+  width: auto; 
+  object-fit: contain;
+  transition: transform 0.3s ease; 
   cursor: pointer;
 }
 
-/* Logo Hover Effect (Optional) */
 .logo:hover {
-  transform: scale(1.05); /* Hover pannum pothu light-a perusaaga */
+  transform: scale(1.05); 
 }
 
-/* Mobile Responsive */
 @media (max-width: 768px) {
   .logo {
-    height: 35px; /* Mobile-la konjam chinna size-la theriya */
+    height: 35px;
   }
 }
 
@@ -113,13 +102,11 @@ body.no-scroll {
   margin-top: 2px;
 }
 
-/* --- Navigation Links --- */
 .nav-links {
   display: flex;
   gap: 20px;
   list-style: none;
   align-items: center;
-  /* margin-right: 40px; */
 }
 
 .nav-item {
@@ -339,7 +326,7 @@ body.no-scroll {
   background-color: #26164a;
   color: #b1a5cd;
   padding: 60px 0 20px;
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1.6;
 }
 
@@ -624,5 +611,8 @@ body.no-scroll {
   .newsletter-btn {
     border-radius: 6px !important;
     width: 100%; /* Button takes full width */
+  }
+    .navbar-wrapper.scrolled{
+    padding: 0px;   
   }
 }
