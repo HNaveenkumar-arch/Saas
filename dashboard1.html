@@ -4,7 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="./asset/logo_Favicon.webp">
+    <meta name="description"
+        content="Master Python with our interactive 6-week course. Build real-world projects and get certified. Enroll today to start coding!">
+
+    <meta property="og:title" content="Master Python: 6-Week Bootcamp" />
+    <meta property="og:description" content="Build real-world projects and get certified. Enroll today!" />
+    <meta property="og:image" content="https://yoursite.com/images/python-social-card.jpg" />
+    <meta property="og:url" content="https://yoursite.com/python-course" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" href="./asset/logo_Favicon.webp" loading="lazy">
     <title>Stackly - Startup Owner Dashboard</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
@@ -23,7 +33,7 @@
             <div class="stackly-glow"></div>
 
             <h1 class="stackly-brand">
-                <img src="./asset/green1_logo.webp" class="logo" alt="logo">
+                <img src="./asset/green1_logo.webp" class="logo" alt="logo" loading="lazy">
             </h1>
             <p class="load-p">Saas StartUp</p>
 
@@ -39,7 +49,7 @@
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <a href="index.html">
-                <img src="./asset/green1_logo.webp" alt="logo" class="logo"></a>
+                <img src="./asset/green1_logo.webp" alt="logo" class="logo" loading="lazy"></a>
             <p style="color: #ffffff; font-size: 12px; margin-top: 5px; padding-left: 35px;">Owner Workspace</p>
         </div>
         <div class="sidebar-menu">
@@ -67,7 +77,8 @@
         <div class="mobile-only-header">
             <div class="mobile-logo-section">
                 <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
-                    <img src="./asset/green1_logo.webp" alt="logo" class="logo" style="height: 35px; width: auto;">
+                    <img src="./asset/green1_logo.webp" alt="logo" class="logo" loading="lazy"
+                        style="height: 35px; width: auto;">
                 </a>
                 <p style="color: #434f70; font-size: 12px; margin-top: 5px; font-weight: 600;">Owner Workspace</p>
             </div>
@@ -699,21 +710,21 @@
             });
         }
         function validateInvite(event) {
-    event.preventDefault(); // Prevents the form from submitting/refreshing
-    
-    const roleSelect = document.getElementById("roleSelect");
-    const roleError = document.getElementById("roleError");
+            event.preventDefault(); // Prevents the form from submitting/refreshing
 
-    if (roleSelect.value === "") {
-        roleError.style.display = "block";
-        roleSelect.style.border = "1px solid red";
-    } else {
-        roleError.style.display = "none";
-        roleSelect.style.border = "1px solid var(--border-color)";
-        
-        window.location.href = '404page.html';
-    }
-}
+            const roleSelect = document.getElementById("roleSelect");
+            const roleError = document.getElementById("roleError");
+
+            if (roleSelect.value === "") {
+                roleError.style.display = "block";
+                roleSelect.style.border = "1px solid red";
+            } else {
+                roleError.style.display = "none";
+                roleSelect.style.border = "1px solid var(--border-color)";
+
+                window.location.href = '404page.html';
+            }
+        }
     </script>
 
 </body>

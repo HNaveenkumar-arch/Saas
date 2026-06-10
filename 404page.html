@@ -4,55 +4,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Master Python with our interactive 6-week course. Build real-world projects and get certified. Enroll today to start coding!">
+
+    <meta property="og:title" content="Master Python: 6-Week Bootcamp" />
+    <meta property="og:description" content="Build real-world projects and get certified. Enroll today!" />
+    <meta property="og:image" content="https://yoursite.com/images/python-social-card.jpg" />
+    <meta property="og:url" content="https://yoursite.com/python-course" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/png" href="./asset/logo_Favicon.webp">
     <title>404 - Lost Connection | Stackly Ecosystem</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
-            background: #05020A; 
+            background: #05020A;
             font-family: 'Inter', sans-serif;
             color: #fff;
             min-height: 100vh;
-            display: flex; justify-content: center; align-items: center;
-            overflow: hidden; 
-            perspective: 2000px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            perspective: 2000px;
         }
 
-        
+
         .error-bg-glow {
-            position: absolute; width: 1200px; height: 1200px;
+            position: absolute;
+            width: 1200px;
+            height: 1200px;
             background: radial-gradient(circle, rgba(138, 43, 226, 0.1) 0%, transparent 70%);
-            top: 50%; left: 50%;
+            top: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
-            z-index: -1; pointer-events: none;
+            z-index: -1;
+            pointer-events: none;
             animation: pulseVioletGlow 6s ease-in-out infinite alternate;
         }
 
         @keyframes pulseVioletGlow {
-            0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.6; }
-            100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+            0% {
+                transform: translate(-50%, -50%) scale(0.9);
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1.1);
+                opacity: 1;
+            }
         }
 
         .scrolling-data-lines {
-            position: absolute; top: -100%; left: 0; width: 100%; height: 300%;
-            background-image: 
-                linear-gradient(rgba(46, 229, 157, 0.05) 1px, transparent 1px); 
-            background-size: 100% 60px; 
-            z-index: 0; pointer-events: none;
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 300%;
+            background-image:
+                linear-gradient(rgba(46, 229, 157, 0.05) 1px, transparent 1px);
+            background-size: 100% 60px;
+            z-index: 0;
+            pointer-events: none;
             opacity: 0.8;
-            transform: rotateX(60deg); 
+            transform: rotateX(60deg);
             animation: infiniteScrollLines 15s linear infinite;
         }
 
         @keyframes infiniteScrollLines {
-            0% { background-position-y: 0; }
-            100% { background-position-y: -1000px; } 
+            0% {
+                background-position-y: 0;
+            }
+
+            100% {
+                background-position-y: -1000px;
+            }
         }
 
         .error-container {
@@ -62,18 +101,21 @@
             padding: 20px;
             max-width: 700px;
             width: 100%;
-            transition: transform 0.1s ease-out; 
+            transition: transform 0.1s ease-out;
         }
 
         .status-badge {
             font-family: 'Orbitron', sans-serif;
-            background: rgba(46, 229, 157, 0.1); 
-            border: 1px solid #2EE59D; 
-            color: #2EE59D; 
+            background: rgba(46, 229, 157, 0.1);
+            border: 1px solid #2EE59D;
+            color: #2EE59D;
             padding: 8px 18px;
-            font-size: 0.85rem; font-weight: 700;
-            letter-spacing: 2px; border-radius: 4px;
-            display: inline-block; margin-bottom: 25px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 25px;
             text-shadow: 0 0 10px rgba(46, 229, 157, 0.3);
         }
 
@@ -83,81 +125,141 @@
             font-weight: 900;
             line-height: 1;
             color: #eaeaea;
-            position: relative; display: inline-block;
-            text-shadow: 0 0 40px rgba(46, 229, 157, 0.5); 
+            position: relative;
+            display: inline-block;
+            text-shadow: 0 0 40px rgba(46, 229, 157, 0.5);
             animation: connectionFlicker 8s ease-in-out infinite;
         }
 
         @keyframes connectionFlicker {
-            0%, 100%, 80%, 82%, 84%, 86%, 88% { opacity: 1; transform: scale(1); }
-            81%, 83%, 85%, 87%, 89% { opacity: 0.1; transform: scale(1.05) skewX(5deg); }
+
+            0%,
+            100%,
+            80%,
+            82%,
+            84%,
+            86%,
+            88% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            81%,
+            83%,
+            85%,
+            87%,
+            89% {
+                opacity: 0.1;
+                transform: scale(1.05) skewX(5deg);
+            }
         }
 
         .error-code::before,
         .error-code::after {
-            content: '404'; position: absolute; top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: #05020A; 
+            content: '404';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #05020A;
             font-family: 'Orbitron', sans-serif;
         }
 
         .error-code::before {
             left: 2px;
-            text-shadow: -2px 0 #8A2BE2; 
+            text-shadow: -2px 0 #8A2BE2;
             clip: rect(44px, 450px, 56px, 0);
             animation: glitchAnimTop 5s infinite linear alternate-reverse;
         }
 
         .error-code::after {
             left: -2px;
-            text-shadow: -2px 0 #2EE59D; 
+            text-shadow: -2px 0 #2EE59D;
             clip: rect(85px, 450px, 140px, 0);
             animation: glitchAnimBottom 5s infinite linear alternate-reverse;
         }
 
-        @keyframes glitchAnimTop { 0% { clip: rect(31px, 9999px, 94px, 0); } 100% { clip: rect(67px, 9999px, 102px, 0); } }
-        @keyframes glitchAnimBottom { 0% { clip: rect(76px, 9999px, 116px, 0); } 100% { clip: rect(95px, 9999px, 45px, 0); } }
+        @keyframes glitchAnimTop {
+            0% {
+                clip: rect(31px, 9999px, 94px, 0);
+            }
+
+            100% {
+                clip: rect(67px, 9999px, 102px, 0);
+            }
+        }
+
+        @keyframes glitchAnimBottom {
+            0% {
+                clip: rect(76px, 9999px, 116px, 0);
+            }
+
+            100% {
+                clip: rect(95px, 9999px, 45px, 0);
+            }
+        }
 
         .error-desc {
             color: rgba(255, 255, 255, 0.6);
-            font-size: 1.2rem; line-height: 1.6;
-            margin-bottom: 40px; padding: 0 20px;
-            margin-top: -10px; 
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            padding: 0 20px;
+            margin-top: -10px;
         }
 
         .error-actions {
-            display: flex; justify-content: center;
-            gap: 20px; flex-wrap: wrap;
-            max-width: 500px; margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
         .btn-base {
-            display: inline-flex; align-items: center; justify-content: center;
-            gap: 10px; padding: 16px 35px;
-            font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 700;
-            text-decoration: none; border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 35px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
             transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer; flex: 1; min-width: 180px;
+            cursor: pointer;
+            flex: 1;
+            min-width: 180px;
         }
 
-        .btn-base i { transition: transform 0.3s ease; }
+        .btn-base i {
+            transition: transform 0.3s ease;
+        }
 
         .btn-go-back {
-            background: #2EE59D; color: #05020A;
+            background: #2EE59D;
+            color: #05020A;
             border: 2px solid #2EE59D;
             box-shadow: 0 0 25px rgba(46, 229, 157, 0.2);
         }
 
         .btn-go-back:hover {
             transform: scale(1.05) translateY(-3px);
-            background: #10b981; border-color: #10b981;
+            background: #10b981;
+            border-color: #10b981;
             box-shadow: 0 0 35px rgba(46, 229, 157, 0.6);
         }
 
-        .btn-go-back:hover i { transform: translateX(-5px); }
+        .btn-go-back:hover i {
+            transform: translateX(-5px);
+        }
 
         .btn-go-home {
-            background: transparent; color: #8A2BE2;
+            background: transparent;
+            color: #8A2BE2;
             border: 2px solid #8A2BE2;
             box-shadow: none;
         }
@@ -165,29 +267,48 @@
         .btn-go-home:hover {
             transform: scale(1.05) translateY(-3px);
             background: rgba(138, 43, 226, 0.05);
-            color: #fff; border-color: #fff;
+            color: #fff;
+            border-color: #fff;
             box-shadow: 0 0 25px rgba(138, 43, 226, 0.4);
         }
 
-        .btn-go-home:hover i { transform: scale(1.2); }
+        .btn-go-home:hover i {
+            transform: scale(1.2);
+        }
 
         @media (max-width: 768px) {
-            .error-code { font-size: 6.5rem; }
-            .status-badge { font-size: 0.75rem; padding: 6px 14px; margin-bottom: 20px; }
-            .error-desc { font-size: 1rem; margin-bottom: 30px; }
+            .error-code {
+                font-size: 6.5rem;
+            }
+
+            .status-badge {
+                font-size: 0.75rem;
+                padding: 6px 14px;
+                margin-bottom: 20px;
+            }
+
+            .error-desc {
+                font-size: 1rem;
+                margin-bottom: 30px;
+            }
 
             .error-actions {
                 flex-direction: column;
-                width: 100%; align-items: center;
+                width: 100%;
+                align-items: center;
                 gap: 15px;
             }
 
             .btn-base {
-                width: 100%; max-width: 280px;
-                padding: 14px 25px; font-size: 1rem;
+                width: 100%;
+                max-width: 280px;
+                padding: 14px 25px;
+                font-size: 1rem;
             }
-            
-            .scrolling-data-lines { animation-duration: 25s; }
+
+            .scrolling-data-lines {
+                animation-duration: 25s;
+            }
         }
     </style>
 </head>
@@ -226,9 +347,9 @@
             const halfW = window.innerWidth / 2;
             const halfH = window.innerHeight / 2;
 
-            const xVal = (halfW - e.pageX) / 40; 
-            const yVal = (halfH - e.pageY) / 40; 
-            
+            const xVal = (halfW - e.pageX) / 40;
+            const yVal = (halfH - e.pageY) / 40;
+
             container.style.transform = `rotateY(${xVal * -1}deg) rotateX(${yVal}deg)`;
             glow.style.transform = `translate(${-50 + xVal * 0.2}%, ${-50 + yVal * 0.2}%) scale(1)`;
         });
